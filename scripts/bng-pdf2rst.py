@@ -40,15 +40,15 @@ from __future__ import annotations
 import argparse
 import collections
 import difflib
-import html
 import os
 import re
 import shutil
-import subprocess
 import sys
 import tempfile
-import textwrap
 from dataclasses import dataclass, field
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pdf2rst_common as C  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Layout constants (points). Tuned for this document's template; anything
@@ -71,7 +71,6 @@ MARKER_Y_TOL = 4.0           # "1." number vs. its item's first line
 BULLET_PROBE = (14.0, 4.0)   # look for ink from x-14 to x-4 (pt) for a bullet
 INK_THRESHOLD = 200          # gray level (0-255) counted as ink
 WORD_GLUE_GAP = 0.8          # word pieces closer than this are one word
-WRAP = 79
 
 TERMINAL_PUNCT = tuple(".:;!?…)")
 FOOTER_RE = re.compile(r"^\S.* · \d{1,3}$")
@@ -87,8 +86,7 @@ ADORN_TITLE, ADORN_SUBTITLE = "#", "*"
 ADORN_LEVELS = {1: "=", 2: "-", 3: "~", 4: "^"}
 
 
-class ConversionError(RuntimeError):
-    pass
+ConversionError = C.ConvertError
 
 
 # ---------------------------------------------------------------------------
@@ -111,43 +109,27 @@ class Line:
         return self.y1 - self.y0
 
 
-def run(cmd: list[str]) -> bytes:
-    try:
-        return subprocess.run(cmd, check=True, capture_output=True).stdout
-    except FileNotFoundError:
-        raise ConversionError(f"{cmd[0]} not found: install poppler-utils")
-    except subprocess.CalledProcessError as e:
-        raise ConversionError(f"{' '.join(cmd)} failed: {e.stderr.decode(errors='replace')}")
-
-
 def extract_lines(pdf: str) -> tuple[list[Line], list[tuple[float, float]]]:
-    xhtml = run(["pdftotext", "-bbox-layout", "-enc", "UTF-8", pdf, "-"]).decode("utf-8")
-    page_re = re.compile(r'<page width="([\d.]+)" height="([\d.]+)">(.*?)</page>', re.S)
-    line_re = re.compile(
-        r'<line xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" yMax="([\d.]+)">(.*?)</line>', re.S)
-    word_re = re.compile(r'<word xMin="([\d.]+)" yMin="[\d.]+" xMax="([\d.]+)" yMax="[\d.]+">(.*?)</word>', re.S)
     lines, sizes = [], []
-    for pno, pm in enumerate(page_re.finditer(xhtml), 1):
-        sizes.append((float(pm.group(1)), float(pm.group(2))))
-        for lm in line_re.finditer(pm.group(3)):
+    for pno, page in enumerate(C.read_bbox(pdf), 1):
+        sizes.append((page.width, page.height))
+        for bl in (bl for b in page.blocks for bl in b.lines):
             # A word whose font changes mid-way (bold "alimentación" + regular ",")
             # comes out as two <word> pieces with no gap: glue those back together.
             text, prev_x1 = "", None
-            for wx0, wx1, w in word_re.findall(lm.group(5)):
-                w = html.unescape(w)
+            for wx0, _, wx1, _, w in bl.words:
                 if prev_x1 is not None:
-                    text += "" if float(wx0) - prev_x1 < WORD_GLUE_GAP else " "
+                    text += "" if wx0 - prev_x1 < WORD_GLUE_GAP else " "
                 text += w
-                prev_x1 = float(wx1)
-            x0, y0, x1, y1 = map(float, lm.groups()[:4])
-            lines.append(Line(pno, x0, y0, x1, y1, text))
+                prev_x1 = wx1
+            lines.append(Line(pno, bl.x0, bl.y0, bl.x1, bl.y1, text))
     if not lines:
         raise ConversionError("pdftotext returned no text (scanned PDF?)")
     return lines, sizes
 
 
 def extract_reference(pdf: str) -> str:
-    return run(["pdftotext", "-enc", "UTF-8", pdf, "-"]).decode("utf-8")
+    return C.run(["pdftotext", "-enc", "UTF-8", pdf, "-"])
 
 
 class PageBitmaps:
@@ -159,7 +141,7 @@ class PageBitmaps:
         if not self.enabled:
             return
         self.tmp = tempfile.mkdtemp(prefix="pdf2rst-")
-        run(["pdftoppm", "-gray", "-r", "72", pdf, os.path.join(self.tmp, "p")])
+        C.run(["pdftoppm", "-gray", "-r", "72", pdf, os.path.join(self.tmp, "p")])
         for fn in os.listdir(self.tmp):
             m = re.match(r"p-0*(\d+)\.pgm$", fn)
             if m:
@@ -245,8 +227,7 @@ def classify(lines: list[Line]) -> dict:
 
 def attach_markers(lines: list[Line]) -> list[Line]:
     """Fold "1." marker lines into the body line they number."""
-    out = []
-    for i, l in enumerate(lines):
+    for l in lines:
         if l.kind != "enum_marker":
             continue
         cands = [b for b in lines if b.kind == "body" and b.page == l.page
@@ -405,40 +386,19 @@ def assign_heading_levels(blocks: list[Block]) -> None:
 # ---------------------------------------------------------------------------
 # Step 2c: RST emission
 # ---------------------------------------------------------------------------
-_ENUMERATOR = re.compile(r"^(\(?)(?:\d+|[A-Za-z]|[ivxlcdmIVXLCDM]+|#)([.)])(\s|$)")
-_OTHER_CONSTRUCT = re.compile(r"^(?:[-+*•‣⁃](?:\s|$)|\.\.(?:\s|$)|:|>>>)")
-
-
 def esc_inline(text: str) -> str:
-    """Escape characters that would start inline markup."""
-    return re.sub(r"([\\*`|_\[\]])", r"\\\1", text)
+    """Escape characters that would start inline markup ([ and ] too)."""
+    return C.esc_inline(text, extra="[]")
 
 
 def esc(text: str) -> str:
     """Escape inline markup and any start that RST would read as a list,
     comment, field or doctest block (e.g. the paragraph "1) En materia...")."""
-    m = _ENUMERATOR.match(text)
-    if m:
-        pos = 0 if m.group(1) else m.start(2)      # "\(a) ..." or "1\) ..."
-        return esc_inline(text[:pos]) + "\\" + esc_inline(text[pos:])
-    if _OTHER_CONSTRUCT.match(text):
-        return "\\" + esc_inline(text) if text[0] not in "\\*`|_[]" else esc_inline(text)
-    return esc_inline(text)
-
-
-def wrap(text: str, indent: str, first: str = "") -> list[str]:
-    first = first or indent
-    out = textwrap.wrap(text, width=WRAP, initial_indent=first, subsequent_indent=indent,
-                        break_long_words=False, break_on_hyphens=False)
-    # A continuation line made only of punctuation could read as an adornment.
-    if any(re.fullmatch(r"\s*\W+", ln) for ln in out[1:]):
-        out = [first + text]
-    return out
+    return C.esc_start(esc_inline(text))
 
 
 def heading(text: str, ch: str, over: bool = False) -> list[str]:
-    bar = ch * len(text)
-    return ([bar] if over else []) + [text, bar, ""]
+    return C.heading(text, ch, over, escape=False)
 
 
 def emit(blocks: list[Block]) -> str:
@@ -456,9 +416,9 @@ def emit(blocks: list[Block]) -> str:
             out += heading(esc_inline(b.text), ADORN_LEVELS[b.level])
         elif b.kind == "toc":
             for main, subs in b.toc:
-                out += wrap(esc(main), "  ", "* ") + [""]
+                out += C.wrap(esc(main), "  ", "* ") + [""]
                 for s in subs:
-                    out += wrap(esc(s), "    ", "  * ") + [""]
+                    out += C.wrap(esc(s), "    ", "  * ") + [""]
         elif b.kind == "para":
             text = esc(b.text)
             if b.item:
@@ -468,12 +428,12 @@ def emit(blocks: list[Block]) -> str:
                 marker = "* " if b.item == "bullet" else b.item + " "
                 content = base + len(marker)
                 stack.append((b.x, content))
-                out += wrap(text, " " * content, " " * base + marker)
+                out += C.wrap(text, " " * content, " " * base + marker)
             else:
                 while stack and stack[-1][0] > b.x + X_TOL:
                     stack.pop()
                 indent = stack[-1][1] if stack else 0
-                out += wrap(text, " " * indent)
+                out += C.wrap(text, " " * indent)
             out.append("")
     while out and out[-1] == "":
         out.pop()
@@ -532,52 +492,6 @@ def reference_words(ref: str) -> tuple[list[str], list[str]]:
     return words, removed
 
 
-def pandoc_words(rst: str) -> list[str]:
-    """Words of the document as pandoc's RST parser understands it. List
-    numbers are not text in the AST, so they are rebuilt from the list
-    attributes (start number + delimiter), as a reader would see them."""
-    import json
-    proc = subprocess.run(["pandoc", "-f", "rst", "-t", "json"], input=rst.encode("utf-8"),
-                          capture_output=True)
-    if proc.returncode:
-        raise ConversionError(proc.stderr.decode(errors="replace"))
-    doc = json.loads(proc.stdout)
-    buf: list[str] = []
-
-    def walk(node):
-        if isinstance(node, list):
-            for n in node:
-                walk(n)
-        elif isinstance(node, dict):
-            t, c = node.get("t"), node.get("c")
-            if t == "Str":
-                buf.append(c)
-            elif t in ("Space", "SoftBreak", "LineBreak"):
-                buf.append(" ")
-            elif t == "Header":
-                walk(c[2]); buf.append(" ")
-            elif t == "OrderedList":
-                (start, _style, delim), items = c
-                d = {"Period": ".", "OneParen": ")", "TwoParens": ")"}.get(delim["t"], ".")
-                for k, item in enumerate(items):
-                    buf.append(f" {'(' if delim['t'] == 'TwoParens' else ''}{start + k}{d} ")
-                    walk(item)
-            elif t in ("MetaInlines", "MetaString"):
-                walk(c) if t == "MetaInlines" else buf.append(c)
-                buf.append(" ")
-            elif c is not None:
-                walk(c)
-                if t in ("Para", "Plain"):
-                    buf.append(" ")
-
-    meta = doc.get("meta", {})
-    for key in ("title", "subtitle"):
-        if key in meta:
-            walk(meta[key])
-    walk(doc["blocks"])
-    return "".join(buf).split()
-
-
 def verify(rst: str, ref: str) -> tuple[bool, list[str]]:
     msgs = []
     out_w = rst_to_words(rst)
@@ -611,7 +525,7 @@ def verify(rst: str, ref: str) -> tuple[bool, list[str]]:
     # Optional: independent parse with pandoc's RST reader
     if shutil.which("pandoc"):
         try:
-            pw = pandoc_words(rst)
+            pw = C.pandoc_read(rst).words
             sm = difflib.SequenceMatcher(a=ref_w, b=pw, autojunk=False)
             diffs = [op for op in sm.get_opcodes() if op[0] != "equal"]
             if diffs:

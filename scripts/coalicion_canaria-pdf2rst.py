@@ -53,16 +53,17 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import os
 import re
 import shutil
-import subprocess
 import sys
 import textwrap
 from collections import Counter
 from dataclasses import dataclass, field
-from xml.etree import ElementTree as ET
 
-XHTML = "{http://www.w3.org/1999/xhtml}"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pdf2rst_common as C  # noqa: E402
+
 WRAP = 79
 
 # Word height (pt) -> role.  Heights are matched with a tolerance of HEIGHT_TOL.
@@ -93,11 +94,7 @@ TERMINAL = tuple(".:;!?»)\"”")
 # --------------------------------------------------------------------------
 
 def pdftotext(pdf: str, *args: str) -> str:
-    if not shutil.which("pdftotext"):
-        sys.exit("pdftotext not found: install poppler-utils")
-    res = subprocess.run(["pdftotext", "-enc", "UTF-8", *args, pdf, "-"],
-                         capture_output=True, check=True)
-    return res.stdout.decode("utf-8")
+    return C.run(["pdftotext", "-enc", "UTF-8", *args, pdf, "-"])
 
 
 @dataclass
@@ -146,24 +143,18 @@ class Block:
     def text(self): return " ".join(l.text for l in self.lines)
 
 
-def parse_bbox(html: str) -> list[list[Block]]:
-    html = re.sub(r"<!DOCTYPE[^>]*>", "", html)
-    root = ET.fromstring(html)
+def parse_bbox(pdf: str) -> list[list[Block]]:
     pages = []
-    for pno, pg in enumerate(root.iter(XHTML + "page"), 1):
+    for pno, page in enumerate(C.read_bbox(pdf), 1):
         blocks = []
-        for fno, fl in enumerate(pg.findall(XHTML + "flow")):
-            for b in fl.findall(XHTML + "block"):
-                lines = []
-                for l in b.findall(XHTML + "line"):
-                    ws = [Word(w.text or "", float(w.get("xMin")), float(w.get("yMin")),
-                               float(w.get("xMax")), float(w.get("yMax")))
-                          for w in l.findall(XHTML + "word")]
-                    ws = [w for w in ws if w.text]
-                    if ws:
-                        lines.append(Line(ws))
-                if lines:
-                    blocks.append(Block(pno, fno, lines))
+        for bb in page.blocks:
+            lines = []
+            for bl in bb.lines:
+                ws = [Word(t, x0, y0, x1, y1) for x0, y0, x1, y1, t in bl.words if t]
+                if ws:
+                    lines.append(Line(ws))
+            if lines:
+                blocks.append(Block(pno, bb.flow, lines))
         pages.append(blocks)
     return pages
 
@@ -642,55 +633,7 @@ def structural_checks(elems: list[Elem]) -> list[str]:
 
 def pandoc_tokens(rst: str) -> list[str] | None:
     """Words of the RST as parsed by pandoc (enumerators rebuilt from start+index)."""
-    import json
-    if not shutil.which("pandoc"):
-        return None
-    res = subprocess.run(["pandoc", "-f", "rst", "-t", "json"], input=rst.encode("utf-8"),
-                         capture_output=True, check=True)
-    doc = json.loads(res.stdout)
-    toks: list[str] = []
-    buf: list[str] = []
-
-    def flush():
-        if buf:
-            toks.extend("".join(buf).split())
-            buf.clear()
-
-    def walk(node):
-        if isinstance(node, list):
-            for n in node:
-                walk(n)
-        elif isinstance(node, dict):
-            t, c = node.get("t"), node.get("c")
-            if t == "Str":
-                buf.append(c)
-            elif t in ("Space", "SoftBreak", "LineBreak"):
-                buf.append(" ")
-            elif t == "OrderedList":
-                flush()
-                start = c[0][0]
-                for i, item in enumerate(c[1]):
-                    toks.append(f"{start + i}.")
-                    walk(item)
-                    flush()
-            elif t in ("Para", "Plain", "Header"):
-                flush()
-                walk(c)
-                flush()
-            elif t == "MetaInlines":
-                flush()
-                walk(c)
-                flush()
-            else:
-                walk(c)
-
-    meta = doc.get("meta", {})
-    for key in ("title", "subtitle"):
-        if key in meta:
-            walk(meta[key])
-    walk(doc.get("blocks", []))
-    flush()
-    return toks
+    return C.pandoc_read(rst).words if shutil.which("pandoc") else None
 
 
 def docutils_check(rst: str) -> list[str]:
@@ -718,7 +661,7 @@ def main(argv=None) -> int:
     out_path = args.output or re.sub(r"\.pdf$", "", args.pdf, flags=re.I) + ".rst"
 
     warnings: list[str] = []
-    pages = parse_bbox(pdftotext(args.pdf, "-bbox-layout"))
+    pages = parse_bbox(args.pdf)
     classify(pages, warnings)
     b = Builder(warnings)
     for blocks in pages:

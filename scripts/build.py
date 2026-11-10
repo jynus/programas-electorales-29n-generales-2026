@@ -15,7 +15,8 @@ Steps
      a. independent text check: pandoc parses the RST and its words are
         compared with the plain ``pdftotext`` output of the PDF. Allowed:
         whitespace re-segmentation, line-end de-hyphenation, omitted words
-        (page furniture: footers, page numbers, running headers; all listed
+        (page furniture: footers, page numbers, running headers -- lines the
+        PDF repeats on 3+ pages --, table-of-contents dot leaders; all listed
         in the report) and blocks moved unchanged. Every RST word must be
         accounted for by a distinct word of the PDF, so any added or altered
         word fails.
@@ -59,6 +60,9 @@ import sys
 import tempfile
 from dataclasses import dataclass, field
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+import pdf2rst_common as C  # noqa: E402  (shared pandoc reader)
+
 # --------------------------------------------------------------------------- layout
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES_DIR = "documentos_originales"     # original PDFs + latest.json + SHA256SUM.txt
@@ -70,13 +74,21 @@ README = "README.md"
 
 # Display names for README; an entry may also carry a "name" key in latest.json.
 PARTY_NAMES = {
-    "pp": "Partido Popular (PP)",
     "adelante_andalucia": "Adelante Andalucía",
     "bng": "Bloque Nacionalista Galego (BNG)",
+    "coalicion_canaria": "Coalición Canaria y Municipalistas",
     "coalicion_canaria_y_municipalistas": "Coalición Canaria y Municipalistas",
+    "erc": "Esquerra Republicana (ERC)",
+    "partido_humanista": "Partido Humanista",
+    "pnv": "EAJ-PNV",
+    "pp": "Partido Popular (PP)",
+    "salf": "Se Acabó La Fiesta (SALF)",
 }
 REQUIRED_KEYS = ("party", "version", "program_url", "sha256sum")
 DEHYPHEN_WINDOW = 12   # max words of page furniture between "consen-" and "so"
+DOT_LEADER = re.compile(r"\.{4,}")
+PAGE_NUMBERS = re.compile(r"(?:\d{1,3}|[^\w\s]+)(?:\s+(?:\d{1,3}|[^\w\s]+))*")   # "12", "– 12 –"
+PAGE_NUMBER = re.compile(r"\d{1,3}")
 
 
 class InputError(Exception):
@@ -211,75 +223,17 @@ def check_sources(sources: list[Source]) -> list[str]:
 
 
 # --------------------------------------------------------------------------- 4a. independent check
-INLINE = {"Str", "Emph", "Underline", "Strong", "Strikeout", "Superscript", "Subscript",
-          "SmallCaps", "Quoted", "Cite", "Code", "Space", "SoftBreak", "LineBreak", "Math",
-          "RawInline", "Link", "Image", "Note", "Span"}
-
-
-def _roman(n: int) -> str:
-    out = ""
-    for v, r in ((1000, "m"), (900, "cm"), (500, "d"), (400, "cd"), (100, "c"), (90, "xc"),
-                 (50, "l"), (40, "xl"), (10, "x"), (9, "ix"), (5, "v"), (4, "iv"), (1, "i")):
-        while n >= v:
-            out, n = out + r, n - v
-    return out
-
-
-def _enum_label(n: int, style: str, delim: str) -> str:
-    lab = {"LowerAlpha": lambda: chr(96 + n), "UpperAlpha": lambda: chr(64 + n),
-           "LowerRoman": lambda: _roman(n), "UpperRoman": lambda: _roman(n).upper()
-           }.get(style, lambda: str(n))()
-    return f"({lab})" if delim == "TwoParens" else f"{lab})" if delim == "OneParen" else f"{lab}."
-
-
 def pandoc_document(rst_path: str) -> dict:
-    proc = subprocess.run(["pandoc", "-f", "rst", "-t", "json", rst_path], capture_output=True)
-    if proc.returncode:
-        raise RuntimeError("pandoc could not parse the RST: " + proc.stderr.decode(errors="replace")[:500])
-    return json.loads(proc.stdout)
+    try:
+        return C.pandoc_ast(open(rst_path, encoding="utf-8").read())[0]
+    except C.ConvertError as e:
+        raise RuntimeError("pandoc could not parse the RST: " + str(e))
 
 
 def pandoc_words(doc: dict) -> list[str]:
     """The words a reader sees once pandoc has parsed the RST. Comments are
     dropped by the parser; list numbers are rebuilt from the list attributes."""
-    buf: list[str] = []
-
-    def walk(n):
-        if isinstance(n, list):
-            inline = all(isinstance(x, dict) and x.get("t") in INLINE for x in n)
-            for x in n:
-                walk(x)
-                if not inline:
-                    buf.append(" ")
-        elif isinstance(n, dict):
-            t, c = n.get("t"), n.get("c")
-            if t == "Str":
-                buf.append(c)
-            elif t in ("Space", "SoftBreak", "LineBreak"):
-                buf.append(" ")
-            elif t in ("Code", "CodeBlock", "RawInline", "RawBlock", "Math"):
-                buf.append(f" {c[-1]} ")
-            elif t == "Header":
-                walk(c[2])
-                buf.append(" ")
-            elif t == "OrderedList":
-                (start, style, delim), items = c
-                for k, item in enumerate(items):
-                    buf.append(f" {_enum_label(start + k, style['t'], delim['t'])} ")
-                    walk(item)
-            elif t == "MetaString":
-                buf.append(f" {c} ")
-            elif c is not None:
-                walk(c)
-                if t not in INLINE:
-                    buf.append(" ")
-
-    meta = doc.get("meta", {})
-    for key in ("title", "subtitle"):
-        if key in meta:
-            walk(meta[key])
-    walk(doc["blocks"])
-    return "".join(buf).split()
+    return C.ast_text(doc).words
 
 
 def first_heading(doc: dict) -> str:
@@ -337,14 +291,17 @@ class Pool:
         return next(((ri, ti) for ri, ti in self.index.get(token, []) if self.free(ri, ti)), None)
 
     def dehyphenated(self, word: str):
-        """'consen-' + (up to DEHYPHEN_WINDOW furniture words) + 'so' == 'consenso'."""
+        """'consen-' + (up to DEHYPHEN_WINDOW furniture words) + 'so' == 'consenso';
+        a word broken after an en dash keeps it: 'Real–' + 'Martos–Jaén'."""
         for ri, r in enumerate(self.runs):
             for ti, t in enumerate(r):
-                if not self.free(ri, ti) or len(t) < 2 or not t.endswith("-") \
-                        or not word.startswith(t[:-1]):
+                if not self.free(ri, ti) or len(t) < 2 or t[-1] not in "-\u2010–":
+                    continue
+                head = t if t[-1] == "–" else t[:-1]
+                if not word.startswith(head):
                     continue
                 for tj in range(ti + 1, min(ti + 1 + DEHYPHEN_WINDOW, len(r))):
-                    if self.free(ri, tj) and t[:-1] + r[tj] == word:
+                    if self.free(ri, tj) and head + r[tj] == word:
                         return [(ri, ti), (ri, tj)]
         return None
 
@@ -359,7 +316,9 @@ class Pool:
                     tj += 1
                     if acc == word and tj - ti > 1:
                         return [(ri, q) for q in range(ti, tj)]
-        for cut in range(1, len(word)):              # two pieces from anywhere
+        for cut in range(1, len(word)):              # a word and a mark from anywhere
+            if not (re.fullmatch(r"[^\w\s]+", word[:cut]) or re.fullmatch(r"[^\w\s]+", word[cut:])):
+                continue                             # ("españoles" + "‘‘"), never two word pieces
             a = self.find_free(word[:cut])
             if a:
                 self.used[a[0]][a[1]] = True
@@ -379,9 +338,11 @@ class Pool:
 
 
 def split_glued(pdf_words: list[str], rst_words: list[str]):
-    """pdftotext sometimes glues overlapping words ("SiLasganas"). A PDF word
-    that never occurs in the RST is split into the fewest pieces (2-4, each at
-    least 2 characters) that all occur as RST words; every split is reported."""
+    """pdftotext sometimes glues overlapping words ("SiLasganas") or a figure
+    and its symbol ("3→1", "0%"). A PDF word that never occurs in the RST is
+    split into the fewest pieces (2-4, each at least 2 characters, or 1 when
+    the word has digits or symbols) that all occur as RST words; every split
+    is reported."""
     vocab = set(rst_words)
     out, splits, cache = [], [], {}
 
@@ -390,13 +351,14 @@ def split_glued(pdf_words: list[str], rst_words: list[str]):
             return cache[w]
         best = None
         n = len(w)
+        minlen = 1 if re.search(r"[\d\W]", w) else 2
         # dp[i] = fewest pieces covering w[:i]
         dp = [None] * (n + 1)
         dp[0] = []
         for i in range(n):
             if dp[i] is None or len(dp[i]) >= 4:
                 continue
-            for j in range(i + 2, n + 1):
+            for j in range(i + minlen, n + 1):
                 if w[i:j] in vocab and (dp[j] is None or len(dp[i]) + 1 < len(dp[j])):
                     dp[j] = dp[i] + [w[i:j]]
         if dp[n] and len(dp[n]) >= 2:
@@ -408,11 +370,13 @@ def split_glued(pdf_words: list[str], rst_words: list[str]):
 
     def occurs(w):        # also inside an RST word, e.g. "ellos" in "ellos‘‘"
         if w not in present:
-            present[w] = w in vocab or any(w in t for t in vocab)
+            symbolic = bool(re.search(r"[\d\W]", w))     # "0€": inside "200€" says nothing
+            present[w] = w in vocab or (not symbolic and any(w in t for t in vocab))
         return present[w]
 
     for w in pdf_words:
-        pieces = None if (w.endswith("-") or len(w) < 4 or occurs(w)) else best_split(w)
+        short = len(w) < (2 if re.search(r"\d", w) and re.search(r"[^\w\s]", w) else 4)
+        pieces = None if (w[-1:] in ("-", "\u2010", "–") or short or occurs(w)) else best_split(w)
         if pieces:
             out += pieces
             splits.append((w, pieces))
@@ -450,28 +414,51 @@ def is_subsequence(small: str, big: str) -> bool:
     return all(ch in it for ch in small)
 
 
-def is_furniture(run: str, shape: collections.Counter) -> bool:
+def running_lines(ref: str) -> list[re.Pattern]:
+    """Lines printed on 3+ pages (digits aside) are running headers/footers."""
+    pages = collections.defaultdict(set)
+    for n, page in enumerate(ref.split("\f")):
+        for line in page.split("\n"):
+            line = " ".join(line.split())
+            if line and len(line.split()) <= 12:
+                pages[re.sub(r"\d+", "#", line)].add(n)
+    shapes = sorted((k for k, v in pages.items() if len(v) >= 3 and re.search(r"[^\W\d_]", k)),
+                    key=len, reverse=True)
+    return [re.compile(re.escape(k).replace("\\#", r"\d+").replace("\\ ", r"\s+")) for k in shapes]
+
+
+def is_furniture(run: str, shape: collections.Counter, running: list[re.Pattern] = ()) -> bool:
     """Running headers/footers repeat from page to page (digits aside); page
     numbers are numbers; a footer on a single page is short and numbered."""
     if shape[re.sub(r"\d+", "#", run)] >= 2:
         return True
-    if re.fullmatch(r"[\d\W\s]+", run):
+    rest = run
+    for rx in running:
+        rest = rx.sub(" ", rest)
+    if rest != run and re.fullmatch(r"[\d\W\s]*", rest):
         return True
+    if PAGE_NUMBERS.fullmatch(run):
+        return True                     # page numbers: short integers (not "195.000")
     return len(run.split()) <= 6 and bool(re.search(r"(?:^|\s)\d{1,3}(?:\s|$)", run))
 
 
-def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
-    report = []
+def reference_text(pdf: str) -> tuple[str, int, int]:
+    """Plain pdftotext, with TOC dot leaders ("PREÀMBUL........5": 4+ dots;
+    an ellipsis has 3) set aside and U+2010 layout hyphens at line ends
+    joined. Returns (text, leaders removed, hyphens joined)."""
     ref = subprocess.run(["pdftotext", "-enc", "UTF-8", absp(pdf), "-"],
                          capture_output=True, check=True).stdout.decode("utf-8")
-    doc = pandoc_document(rst_path)
-    res.title = first_heading(doc)
-    a, b = ref.split(), pandoc_words(doc)
-    res.words = len(b)
-    a, glued = split_glued(a, b)
+    ref, n_leaders = DOT_LEADER.subn(" ", ref)
+    ref, n_u2010 = re.subn("\u2010[ \t]*\n", "", ref)
+    return ref, n_leaders, n_u2010
+
+
+def diff_words(a: list[str], b: list[str], counts: collections.Counter):
+    """Align PDF words a with RST words b. Whitespace re-segmentation and
+    line-end hyphen joins are accepted (and counted); the rest is returned
+    as deleted PDF runs and inserted (position, RST run) pairs."""
     sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
     in_place = sum(m.size for m in sm.get_matching_blocks())
-    counts = collections.Counter()
     deleted, inserted = [], []
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal":
@@ -488,8 +475,13 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
             deleted.append(A)
         if B:
             inserted.append((j1, B))
+    return in_place, deleted, inserted
 
-    pool = Pool(deleted)
+
+def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections.Counter) -> list[str]:
+    """Every RST word not in place must take a distinct unused PDF word: a
+    moved run, a word de-hyphenated across furniture, or a word re-assembled
+    from pieces. Returns the RST words nothing accounts for."""
     unexplained = []
     for j, B in inserted:
         k = 0
@@ -507,19 +499,22 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
             else:
                 hit = pool.composed(w)
                 if hit:
-                    counts["words re-assembled from moved pieces"] += 1
+                    counts["words re-assembled from a moved word and mark"] += 1
             if hit:
                 pool.take(hit)
             else:
                 ctx = " ".join(b[max(0, j + k - 6):j + k])
                 unexplained.append(f"…{ctx} [{w}]")
             k += 1
+    return unexplained
 
-    # Omissions: words kept in RST comments are not lost (pandoc just doesn't
-    # render comments); the rest must look like page furniture.
-    comment_texts = rst_comments(open(rst_path, encoding="utf-8").read())
-    comments = collections.Counter(w for c in comment_texts for w in c.split())
+
+def claim_comment_words(pool: Pool, comment_texts: list[str]) -> tuple[list[str], int]:
+    """Unused PDF words kept in RST comments (not rendered, but not lost).
+    Returns (the runs still unaccounted for, words found in comments)."""
     in_comments = 0
+    comments = collections.Counter(w for c in comment_texts for w in c.split()
+                                   if not PAGE_NUMBER.fullmatch(w))
     for ri, r in enumerate(pool.runs):
         for ti, t in enumerate(r):
             if pool.free(ri, ti) and comments[t] > 0:
@@ -535,12 +530,64 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
             in_comments += len(run.split())
         else:
             omitted.append(run)
+    return omitted, in_comments
+
+
+def not_furniture(omitted: list[str], ref: str) -> list[str]:
+    """Omitted runs that do not look like page furniture, i.e. lost content.
+    A bare number counts as a page number only if the PDF has that many pages
+    and it is omitted at most twice."""
+    shape = collections.Counter(re.sub(r"\d+", "#", o) for o in omitted)
+    running = running_lines(ref)
+    pages = ref.count("\f") + 1
+    content = [o for o in omitted if not is_furniture(o, shape, running)]
+    seen_nums = collections.Counter()
+    for o in omitted:
+        if o in content:
+            continue
+        for tok in o.split():
+            if PAGE_NUMBER.fullmatch(tok) and PAGE_NUMBERS.fullmatch(o):
+                seen_nums[tok] += 1
+                if int(tok) > pages or seen_nums[tok] > 2:      # not a page number
+                    content.append(o)
+                    break
+    return content
+
+
+def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
+    report = []
+    ref, n_leaders, n_u2010 = reference_text(pdf)
+    doc = pandoc_document(rst_path)
+    res.title = first_heading(doc)
+    a, b = ref.split(), pandoc_words(doc)
+    res.words = len(b)
+    a, glued = split_glued(a, b)
+    counts = collections.Counter()
+    in_place, deleted, inserted = diff_words(a, b, counts)
+
+    pool = Pool(deleted)
+    # Page numbers the RST keeps in comments claim their PDF page numbers
+    # first, so moved text cannot borrow them (a "48" turned into "24").
+    comment_texts = rst_comments(open(rst_path, encoding="utf-8").read())
+    in_comments = 0
+    for tok in (t for c in comment_texts for t in c.split() if PAGE_NUMBER.fullmatch(t)):
+        hit = pool.find_free(tok)
+        if hit:
+            pool.take([hit])
+            in_comments += 1
+    unexplained = account_for_inserted(pool, inserted, b, counts)
+    omitted, more = claim_comment_words(pool, comment_texts)
+    in_comments += more
     if in_comments:
         counts["words kept in RST comments"] = in_comments
     n_omitted = sum(len(o.split()) for o in omitted)
-    shape = collections.Counter(re.sub(r"\d+", "#", o) for o in omitted)
-    content = [o for o in omitted if not is_furniture(o, shape)]
+    content = not_furniture(omitted, ref)
+
     report.append(f"PDF words (pdftotext): {len(a)}   RST words (pandoc): {len(b)}   in place: {in_place}")
+    if n_leaders:
+        report.append(f"  table-of-contents dot leaders set aside: {n_leaders}")
+    if n_u2010:
+        report.append(f"  layout hyphens (U+2010) joined at line ends: {n_u2010}")
     for g, pieces in glued:
         report.append(f"  glued PDF word split: {g} -> {' '.join(pieces)}")
     for k_, v in sorted(counts.items()):
