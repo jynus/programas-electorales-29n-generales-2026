@@ -1,27 +1,59 @@
 [
 	{
-		"party": "pp",
-		"version": 1,
-		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf",
-		"sha256sum": "cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe"
-	},
-	{
 		"party": "adelante_andalucia",
 		"version": 1,
 		"program_url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
+		"file": "programa-29n-adelante-andalucia.pdf",
 		"sha256sum": "223fcb661c92858f1425cdbf8d671673c89a23c5952cbc232fed02e49d2d4f0f"
 	},
 	{
 		"party": "bng",
 		"version": 1,
 		"program_url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
+		"file": "26_bng_xerais_documentos_programa_electoral.pdf",
 		"sha256sum": "fd5aef260b9c66d030b57b7b0e18914c8ad79384e2c46b2346d9fb4f6514a97d"
 	},
 	{
-		"party": "coalicion_canaria_y_municipalistas",
+		"party": "coalicion_canaria",
 		"version": 1,
 		"program_url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
+		"file": "CCA-26-Programa_Electoral-29NOV.pdf",
 		"sha256sum": "3c40c0a6e38d8dd80ae1061d94b614f4e3f1b6492ec8c801834fb497f337044e"
+	},
+	{
+		"party": "erc",
+		"version": 1,
+		"program_url": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
+		"file": "e2026-programa.pdf"
+		"sha256sum": "61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04"
+	},
+	{
+		"party": "partido_humanista",
+		"version": 1,
+		"program_url": "https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf",
+		"file": "Programa Generales 2026.pdf",
+		"sha256sum": "c53ab576b0c57a091665795cb8676269b85cc6f9b7e22c9d65ce11d86502086f"
+	},
+	{
+		"party": "pnv",
+		"version": 1,
+		"program_url": "https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n",
+		"file": "programa-electoral-29n.pdf",
+		"sha256sum": "5af7a5b6f67c26bad87ef6c3ca01ae38aa1f1d7d9029efb32fc52482de0c1314"
+	}
+	{
+		"party": "pp",
+		"version": 1,
+		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf",
+		"file": "LA-RECONSTRUCCION-NACIONAL-1.pdf",
+		"sha256sum": "cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe"
+	},
+	{
+		"party": "salf",
+		"version": 1,
+		"program_url": "https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf",
+		"file": "SALF_Contrato_Electoral_29N.pdf",
+		"sha256sum": "073425b9522da77608a0399923c2e0d3b9153776e8a0436ac8f0aea794b7893b"
 	}
 ]
 

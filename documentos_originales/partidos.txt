@@ -1,0 +1,22 @@
+Partidos nacionales
+-------------------
+pp
+psoe [pendiente] https://www.psoe.es/transparencia/informacion-politica-organizativa/programa/
+vox [pendiente] https://www.voxespana.es/programa
+frente_amplio [pendiente] https://frenteamplio.info/
+partido_humanista
+podemos [pendiente] https://podemos.info/actualidad/
+democracia_21 [pendiente] https://democracia21.es/
+salf
+pacma [pendiente] https://pacma.es/programa-electoral/
+
+Partidos regionales
+-------------------
+adelante_andalucia
+erc
+junts [pendiente] https://demojunts.cat/actualitat/noticies/
+eh_bildu [pendiente] https://ehbildu.eus/
+pnv
+upn [pendiente] https://elecciones.upn.org/programa/
+bng
+coalicion_canaria
