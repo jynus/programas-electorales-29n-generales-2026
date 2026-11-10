@@ -1,0 +1,27 @@
+[
+	{
+		"party": "pp",
+		"version": 1,
+		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf",
+		"sha256sum": "cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe"
+	},
+	{
+		"party": "adelante_andalucia",
+		"version": 1,
+		"program_url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
+		"sha256sum": "223fcb661c92858f1425cdbf8d671673c89a23c5952cbc232fed02e49d2d4f0f"
+	},
+	{
+		"party": "bng",
+		"version": 1,
+		"program_url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
+		"sha256sum": "fd5aef260b9c66d030b57b7b0e18914c8ad79384e2c46b2346d9fb4f6514a97d"
+	},
+	{
+		"party": "coalicion_canaria_y_municipalistas",
+		"version": 1,
+		"program_url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
+		"sha256sum": "3c40c0a6e38d8dd80ae1061d94b614f4e3f1b6492ec8c801834fb497f337044e"
+	}
+]
+
