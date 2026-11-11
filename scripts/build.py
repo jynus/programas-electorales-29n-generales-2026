@@ -6,8 +6,8 @@ original PDF, verify the result and regenerate README.md.
 Steps
 -----
 1. Read ``documentos_originales/latest.json``: one entry per party and
-   language (party id, full name, language, version, program_url,
-   sha256sum, optionally file), processed in order of party id.
+   language (party id, full name, programme title, language, version,
+   program_url, sha256sum, optionally file), processed in order of party id.
 2. Check the SHA-256 of every original PDF against latest.json and, when it
    exists, ``documentos_originales/SHA256SUM.txt`` (both must agree).
 3. Run ``scripts/<party>-pdf2rst.py PDF -o OUT.rst`` for every entry. Each
@@ -63,6 +63,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from dataclasses import dataclass, field
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -93,7 +94,7 @@ ROOT = find_root()
 LANGUAGE_NAMES = {"es": "castellano", "ca": "catalán", "gl": "gallego", "eu": "euskera",
                   "an": "aragonés", "ast": "asturiano", "oc": "aranés", "en": "inglés",
                   "fr": "francés"}
-REQUIRED_KEYS = ("party", "name", "language", "version", "program_url", "sha256sum")
+REQUIRED_KEYS = ("party", "name", "title", "language", "version", "program_url", "sha256sum")
 DEHYPHEN_WINDOW = 12   # max words of page furniture between "consen-" and "so"
 DOT_LEADER = re.compile(r"\.{4,}")
 PAGE_NUMBERS = re.compile(r"(?:\d{1,3}|[^\w\s]+)(?:\s+(?:\d{1,3}|[^\w\s]+))*")   # "12", "– 12 –"
@@ -108,6 +109,7 @@ class InputError(Exception):
 class Source:
     party: str            # party id ("pp")
     name: str             # full name ("Partido Popular (PP)")
+    title: str            # programme title ("Reconstrucción Nacional")
     language: str         # ISO 639-1 code ("es")
     doc: str              # document id: the party id, or "<party>-<language>" when
                           # the party has programmes in several languages
@@ -128,7 +130,6 @@ class Result:
     notes: list[str] = field(default_factory=list)
     tmp_rst: str = ""
     status: str = ""      # unchanged / updated / new
-    title: str = ""
     words: int = 0
     pages: int = 0
     log: str = ""
@@ -171,8 +172,9 @@ def load_manifest(only: list[str] | None) -> list[Source]:
             raise InputError(f"{MANIFEST} entry {i}: bad party id {party!r}")
         if not re.fullmatch(r"[a-z]{2,3}", lang):
             raise InputError(f"{party}: language must be an ISO 639 code like \"es\", not {lang!r}")
-        if not isinstance(e["name"], str) or not e["name"].strip():
-            raise InputError(f"{party}: name must be a non-empty string")
+        for key in ("name", "title"):
+            if not isinstance(e[key], str) or not e[key].strip():
+                raise InputError(f"{party}: {key} must be a non-empty string")
         if (party, lang) in seen:
             raise InputError(f"{MANIFEST}: party {party!r} listed twice for language {lang!r}")
         seen.add((party, lang))
@@ -190,7 +192,7 @@ def load_manifest(only: list[str] | None) -> list[Source]:
             script = rel(SCRIPTS_DIR, f"{party}-pdf2rst.py")
         pdf_name = e.get("file") or os.path.basename(e["program_url"].split("?")[0])
         sources.append(Source(
-            party=party, name=e["name"], language=lang, doc=doc,
+            party=party, name=e["name"], title=e["title"], language=lang, doc=doc,
             version=e["version"], url=e["program_url"], sha256=e["sha256sum"].lower(),
             pdf=rel(SOURCES_DIR, pdf_name), script=script, rst=rel(OUTPUT_DIR, f"{doc}.rst")))
     if only:
@@ -263,27 +265,6 @@ def pandoc_words(doc: dict) -> list[str]:
     return C.ast_text(doc).words
 
 
-def first_heading(doc: dict) -> str:
-    meta = doc.get("meta", {})
-    target = meta["title"]["c"] if "title" in meta else next(
-        (b["c"][2] for b in doc["blocks"] if b["t"] == "Header"), [])
-    words = []
-
-    def walk(n):
-        if isinstance(n, list):
-            for x in n:
-                walk(x)
-        elif isinstance(n, dict):
-            if n.get("t") == "Str":
-                words.append(n["c"])
-            elif n.get("t") in ("Space", "SoftBreak", "LineBreak"):
-                words.append(" ")
-            elif n.get("c") is not None:
-                walk(n["c"])
-    walk(target)
-    return " ".join("".join(words).split())
-
-
 class Pool:
     """Words of the PDF that are not in place in the RST, in their original
     runs. Each can account for at most one word of the RST."""
@@ -354,6 +335,19 @@ class Pool:
                 if b:
                     return [a, b]
         return None
+
+    def drop_cap(self, word: str):
+        """A drop cap printed apart from its word: one capital letter and the
+        lower-case rest of the word, both unused ("L" + "os" -> "Los")."""
+        if len(word) < 2 or not (word[0].isupper() and word[1].islower()):
+            return None
+        a = self.find_free(word[0])
+        if not a:
+            return None
+        self.used[a[0]][a[1]] = True
+        b = self.find_free(word[1:])
+        self.used[a[0]][a[1]] = False
+        return [a, b] if b else None
 
     def remaining(self) -> list[str]:
         out = []
@@ -550,6 +544,10 @@ def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections
                 hit = pool.composed(w)
                 if hit:
                     counts["words re-assembled from a moved word and mark"] += 1
+                else:
+                    hit = pool.drop_cap(w)
+                    if hit:
+                        counts["words re-assembled from a drop cap"] += 1
             if hit:
                 pool.take(hit)
             else:
@@ -608,9 +606,12 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     report = []
     ref, n_leaders, n_u2010 = reference_text(pdf)
     doc = pandoc_document(rst_path)
-    res.title = first_heading(doc)
     a, b = ref.split(), pandoc_words(doc)
     res.words = len(b)
+    # glyphs of a font without Unicode mapping come out as control characters:
+    # no text to compare; set aside and reported
+    n_unreadable = sum(1 for t in a if all(unicodedata.category(c) == "Cc" for c in t))
+    a = [t for t in a if not all(unicodedata.category(c) == "Cc" for c in t)]
     a, kept = keep_line_end_hyphens(a, b, C.layout_hyphen_breaks(absp(pdf)))
     a, glued = split_glued(a, b)
     counts = collections.Counter()
@@ -639,6 +640,8 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
         report.append(f"  table-of-contents dot leaders set aside: {n_leaders}")
     if n_u2010:
         report.append(f"  layout hyphens (U+2010) joined at line ends: {n_u2010}")
+    if n_unreadable:
+        report.append(f"  unreadable glyphs set aside (font without Unicode mapping): {n_unreadable} words")
     for k in kept:
         report.append(f"  real hyphen kept at a line end (pdftotext -layout prints it): {k[:120]}")
     for g, pieces in glued:
@@ -751,7 +754,7 @@ def render_readme(results: list[Result]) -> str:
         s = r.src
         lines.append("| " + " | ".join([
             s.name,
-            md_link(r.title or os.path.basename(s.rst), s.rst),     # programme title -> its .rst
+            md_link(s.title, s.rst),                                # programme title -> its .rst
             LANGUAGE_NAMES.get(s.language, s.language),
             f"{md_link(os.path.basename(s.pdf), s.pdf)} ([fuente]({s.url}))",
             str(s.version),

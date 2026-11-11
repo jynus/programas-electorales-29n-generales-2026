@@ -1,9 +1,9 @@
 """
 pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
-Used by salf, partido_humanista, pnv and por_un_mundo_mas_justo (the whole
-engine: extraction with fonts, RST writing, verification and the command
-line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
+Used by salf, partido_humanista, pnv, por_un_mundo_mas_justo, frente_obrero
+and iustitia_europa (the whole engine: extraction with fonts, RST writing,
+verification and the command line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
 RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``).
 build.py uses the pandoc reader (``pandoc_ast``/``ast_text``) and the
 ``pdftotext -layout`` evidence of real line-end hyphens
@@ -700,7 +700,8 @@ def raw_units(raw: str, join_u2010=True) -> list[str]:
 
 
 def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
-                  hyphen_breaks: list[tuple[str, str]] = (), strip_start: str = "") -> bool:
+                  hyphen_breaks: list[tuple[str, str]] = (), strip_start: str = "",
+                  skip_unreadable: bool = False) -> bool:
     """For documents whose reading order the converter rebuilds: the RST text
     (whitespace aside) must be exactly the lines of plain pdftotext, each
     used once and kept whole, in any order. Nothing is set aside: running
@@ -721,6 +722,11 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
         units = [u[len(strip_start):] if u.startswith(strip_start) else u for u in units]
         units = [u for u in units if u]
         report.append(f"  set aside: {strip_start!r} starting a line (RST list markers instead): {n}")
+    if skip_unreadable:          # glyphs of a font without Unicode mapping: control characters only
+        import unicodedata
+        bad = [u for u in units if all(unicodedata.category(c) == "Cc" for c in u)]
+        units = [u for u in units if u not in bad]
+        report.append(f"  set aside: lines of unreadable glyphs (font without Unicode mapping): {len(bad)}")
     if join_u2010:
         report.append(f"  layout hyphens (U+2010) joined at line ends: {len(re.findall(chr(0x2010) + r'[ \t]*\n', raw))}")
     # Real hyphens printed at a line end (shown by pdftotext -layout) that

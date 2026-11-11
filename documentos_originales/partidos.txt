@@ -9,6 +9,7 @@ podemos [pendiente] https://podemos.info/actualidad/
 democracia_21 [pendiente] https://democracia21.es/
 salf
 pacma [pendiente] https://pacma.es/programa-electoral/
+por_un_mundo_mas_justo
 
 Partidos regionales
 -------------------
@@ -20,3 +21,5 @@ pnv
 upn [pendiente] https://elecciones.upn.org/programa/
 bng
 coalicion_canaria
+compromis
+upc

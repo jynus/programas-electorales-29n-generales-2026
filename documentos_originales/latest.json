@@ -2,6 +2,7 @@
 	{
 		"party": "adelante_andalucia",
 		"name": "Adelante Andalucía",
+		"title": "Un programa para frenar a las derechas",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
@@ -11,6 +12,7 @@
 	{
 		"party": "bng",
 		"name": "Bloque Nacionalista Galego (BNG)",
+		"title": "Programa electoral",
 		"language": "gl",
 		"version": 1,
 		"program_url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
@@ -20,6 +22,7 @@
 	{
 		"party": "coalicion_canaria",
 		"name": "Coalición Canaria y Municipalistas",
+		"title": "Defiende Canarias",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
@@ -29,6 +32,7 @@
 	{
 		"party": "erc",
 		"name": "Esquerra Republicana (ERC)",
+		"title": "Programa electoral",
 		"language": "ca",
 		"version": 1,
 		"program_url": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
@@ -36,8 +40,29 @@
 		"sha256sum": "61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04"
 	},
 	{
+		"party": "frente_obrero",
+		"name": "Frente Obrero",
+		"title": "Recuperar España",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf",
+		"file": "Programa.pdf",
+		"sha256sum": "7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282"
+	},
+	{
+		"party": "iustitia_europa",
+		"name": "Iustitia Europa (IE)",
+		"title": "Contrato electoral",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf",
+		"file": "descarga-aqui-tu-contrato-00030.pdf",
+		"sha256sum": "03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd"
+	},
+	{
 		"party": "partido_humanista",
 		"name": "Partido Humanista",
+		"title": "Elecciones Generales 2026",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf",
@@ -47,6 +72,7 @@
 	{
 		"party": "pnv",
 		"name": "EAJ-PNV",
+		"title": "Defendemos Euskadi",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n",
@@ -56,6 +82,7 @@
 	{
 		"party": "por_un_mundo_mas_justo",
 		"name": "Por un Mundo Más Justo (M+J)",
+		"title": "Si no es justo, cámbialo",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf",
@@ -65,6 +92,7 @@
 	{
 		"party": "pp",
 		"name": "Partido Popular (PP)",
+		"title": "Reconstrucción Nacional",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf",
@@ -74,6 +102,7 @@
 	{
 		"party": "salf",
 		"name": "Se Acabó La Fiesta (SALF)",
+		"title": "Contrato electoral",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf",
