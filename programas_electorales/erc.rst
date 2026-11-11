@@ -15,36 +15,36 @@ Programa electoral
 ÍNDEX
 =====
 
-=====================================================================  ====
-**PREÀMBUL**                                                           5
-**A. DEFENSAR EL PAÍS**                                                7
-A\. Autodeterminació, democràcia i drets                               7
-B\. Protecció efectiva de la llengua catalana                          9
-C\. Defensa de l’escola catalana                                       10
-D\. Finançament i sobirania fiscal                                     11
-E\. Cultura catalana i defensa d’un espai comunicatiu nacional         12
-F\. Més sobirania i competències                                       14
-G\. Unió Europea, projecció internacional i cooperació                 15
-**B. DEFENSAR LA GENT**                                                18
-A\. Pla de xoc sobre l’habitatge                                       18
-B\. Cost de la vida                                                    20
-C\. Un model econòmic i una fiscalitat més justes                      21
-D\. Més feminisme, més drets LGBTI+ i més antiracisme                  23
-E\. Treball digne i seguretat social garantida                         25
-F\. Reindustrialitzar el país                                          28
-G\. Impulsar una transició energètica justa, ecològica i accessible    29
-H\. Garantir el futur de la pagesia, la pesca i el món rural           32
-I\. Reptes de la societat digital                                      34
-J\. Avançar en la protecció i el benestar dels animals                 35
-**C. DEFENSAR ELS SERVEIS PÚBLICS**                                    37
-A\. Inversions en infraestructures i garanties d’execució              37
-B\. Una xarxa ferroviària al servei del país                           39
-C\. El sistema de serveis socials com a pilar de l’estat del benestar  41
-D\. Enfortir la sanitat pública                                        41
-E\. Més eines per la millora de la seguretat                           42
-F\. Enfortir el municipalisme                                          43
-G\. Universitats i recerca públiques, accessibles i de qualitat        44
-=====================================================================  ====
+======================================================================  ====
+**PREÀMBUL**                                                            5
+**A. DEFENSAR EL PAÍS**                                                 7
+A\. Autodeterminació, democràcia i drets.                               7
+B\. Protecció efectiva de la llengua catalana.                          9
+C\. Defensa de l’escola catalana.                                       10
+D\. Finançament i sobirania fiscal                                      11
+E\. Cultura catalana i defensa d’un espai comunicatiu nacional          12
+F\. Més sobirania i competències                                        14
+G\. Unió Europea, projecció internacional i cooperació                  15
+**B. DEFENSAR LA GENT.**                                                18
+A\. Pla de xoc sobre l’habitatge                                        18
+B\. Cost de la vida                                                     20
+C\. Un model econòmic i una fiscalitat més justes                       21
+D\. Més feminisme, més drets LGBTI+ i més antiracisme.                  23
+E\. Treball digne i seguretat social garantida                          25
+F\. Reindustrialitzar el país                                           28
+G\. Impulsar una transició energètica justa, ecològica i accessible.    29
+H\. Garantir el futur de la pagesia, la pesca i el món rural.           32
+I\. Reptes de la societat digital                                       34
+J\. Avançar en la protecció i el benestar dels animals.                 35
+**C. DEFENSAR ELS SERVEIS PÚBLICS**                                     37
+A\. Inversions en infraestructures i garanties d’execució.              37
+B\. Una xarxa ferroviària al servei del país                            39
+C\. El sistema de serveis socials com a pilar de l’estat del benestar.  41
+D\. Enfortir la sanitat pública                                         41
+E\. Més eines per la millora de la seguretat.                           42
+F\. Enfortir el municipalisme.                                          43
+G\. Universitats i recerca públiques, accessibles i de qualitat         44
+======================================================================  ====
 
 PREÀMBUL
 ========

@@ -1,6 +1,8 @@
 [
 	{
 		"party": "adelante_andalucia",
+		"name": "Adelante Andalucía",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
 		"file": "programa-29n-adelante-andalucia.pdf",
@@ -8,6 +10,8 @@
 	},
 	{
 		"party": "bng",
+		"name": "Bloque Nacionalista Galego (BNG)",
+		"language": "gl",
 		"version": 1,
 		"program_url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
 		"file": "26_bng_xerais_documentos_programa_electoral.pdf",
@@ -15,6 +19,8 @@
 	},
 	{
 		"party": "coalicion_canaria",
+		"name": "Coalición Canaria y Municipalistas",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
 		"file": "CCA-26-Programa_Electoral-29NOV.pdf",
@@ -22,13 +28,17 @@
 	},
 	{
 		"party": "erc",
+		"name": "Esquerra Republicana (ERC)",
+		"language": "ca",
 		"version": 1,
 		"program_url": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
-		"file": "e2026-programa.pdf"
+		"file": "e2026-programa.pdf",
 		"sha256sum": "61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04"
 	},
 	{
 		"party": "partido_humanista",
+		"name": "Partido Humanista",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf",
 		"file": "Programa Generales 2026.pdf",
@@ -36,13 +46,26 @@
 	},
 	{
 		"party": "pnv",
+		"name": "EAJ-PNV",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n",
 		"file": "programa-electoral-29n.pdf",
 		"sha256sum": "5af7a5b6f67c26bad87ef6c3ca01ae38aa1f1d7d9029efb32fc52482de0c1314"
-	}
+	},
+	{
+		"party": "por_un_mundo_mas_justo",
+		"name": "Por un Mundo Más Justo (M+J)",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf",
+		"file": "Castellano.pdf",
+		"sha256sum": "a3c7c807411d8565b310a9b566c6fa2cbe643e99c91f3f9f4e7d8712d949c613"
+	},
 	{
 		"party": "pp",
+		"name": "Partido Popular (PP)",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf",
 		"file": "LA-RECONSTRUCCION-NACIONAL-1.pdf",
@@ -50,6 +73,8 @@
 	},
 	{
 		"party": "salf",
+		"name": "Se Acabó La Fiesta (SALF)",
+		"language": "es",
 		"version": 1,
 		"program_url": "https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf",
 		"file": "SALF_Contrato_Electoral_29N.pdf",

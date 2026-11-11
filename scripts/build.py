@@ -5,8 +5,9 @@ original PDF, verify the result and regenerate README.md.
 
 Steps
 -----
-1. Read ``documentos_originales/latest.json`` (one entry per party: party,
-   version, program_url, sha256sum).
+1. Read ``documentos_originales/latest.json``: one entry per party and
+   language (party id, full name, language, version, program_url,
+   sha256sum, optionally file), processed in order of party id.
 2. Check the SHA-256 of every original PDF against latest.json and, when it
    exists, ``documentos_originales/SHA256SUM.txt`` (both must agree).
 3. Run ``scripts/<party>-pdf2rst.py PDF -o OUT.rst`` for every entry. Each
@@ -32,10 +33,14 @@ Steps
 
 Usage
 -----
-    python3 build.py                 # rebuild, verify, write .rst + README.md
-    python3 build.py --check         # verify only; fail if anything would change
-    python3 build.py --only bng pp   # restrict to some parties
-    python3 build.py --reports DIR   # keep converter logs and check reports
+    python3 scripts/build.py                 # rebuild, verify, write .rst + README.md
+    python3 scripts/build.py --check         # verify only; fail if anything would change
+    python3 scripts/build.py --only bng pp   # restrict to some parties (or documents)
+    python3 scripts/build.py --reports DIR   # keep converter logs and check reports
+
+build.py lives in scripts/ next to the converters; the repository root is
+found from its own location (the folder that holds
+documentos_originales/latest.json), so it can be run from any directory.
 
 Exit status: 0 all good, 1 a verification failed, 2 bad input (missing file,
 checksum mismatch, unknown converter...).
@@ -60,31 +65,35 @@ import sys
 import tempfile
 from dataclasses import dataclass, field
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
-import pdf2rst_common as C  # noqa: E402  (shared pandoc reader)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pdf2rst_common as C  # noqa: E402  (shared pandoc reader, -layout hyphen evidence)
 
 # --------------------------------------------------------------------------- layout
-ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES_DIR = "documentos_originales"     # original PDFs + latest.json + SHA256SUM.txt
 OUTPUT_DIR = "programas_electorales"      # generated .rst files
-SCRIPTS_DIR = "scripts"                   # <party>-pdf2rst.py converters
+SCRIPTS_DIR = "scripts"                   # <party>-pdf2rst.py converters (and this script)
 MANIFEST = "latest.json"
 CHECKSUMS = "SHA256SUM.txt"
 README = "README.md"
 
-# Display names for README; an entry may also carry a "name" key in latest.json.
-PARTY_NAMES = {
-    "adelante_andalucia": "Adelante Andalucía",
-    "bng": "Bloque Nacionalista Galego (BNG)",
-    "coalicion_canaria": "Coalición Canaria y Municipalistas",
-    "coalicion_canaria_y_municipalistas": "Coalición Canaria y Municipalistas",
-    "erc": "Esquerra Republicana (ERC)",
-    "partido_humanista": "Partido Humanista",
-    "pnv": "EAJ-PNV",
-    "pp": "Partido Popular (PP)",
-    "salf": "Se Acabó La Fiesta (SALF)",
-}
-REQUIRED_KEYS = ("party", "version", "program_url", "sha256sum")
+
+def find_root() -> str:
+    """The repository root: the folder above scripts/ (or this script's own
+    folder) that holds documentos_originales/latest.json."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    for d in (os.path.dirname(here), here):
+        if os.path.isfile(os.path.join(d, SOURCES_DIR, MANIFEST)):
+            return d
+    return os.path.dirname(here)       # reported as "latest.json not found" later
+
+
+ROOT = find_root()
+
+# Language names for README (ISO 639-1 code in latest.json -> Spanish name).
+LANGUAGE_NAMES = {"es": "castellano", "ca": "catalán", "gl": "gallego", "eu": "euskera",
+                  "an": "aragonés", "ast": "asturiano", "oc": "aranés", "en": "inglés",
+                  "fr": "francés"}
+REQUIRED_KEYS = ("party", "name", "language", "version", "program_url", "sha256sum")
 DEHYPHEN_WINDOW = 12   # max words of page furniture between "consen-" and "so"
 DOT_LEADER = re.compile(r"\.{4,}")
 PAGE_NUMBERS = re.compile(r"(?:\d{1,3}|[^\w\s]+)(?:\s+(?:\d{1,3}|[^\w\s]+))*")   # "12", "– 12 –"
@@ -97,11 +106,14 @@ class InputError(Exception):
 
 @dataclass
 class Source:
-    party: str
+    party: str            # party id ("pp")
+    name: str             # full name ("Partido Popular (PP)")
+    language: str         # ISO 639-1 code ("es")
+    doc: str              # document id: the party id, or "<party>-<language>" when
+                          # the party has programmes in several languages
     version: object
     url: str
     sha256: str
-    name: str
     pdf: str              # path relative to ROOT
     script: str           # path relative to ROOT
     rst: str              # final path relative to ROOT
@@ -136,6 +148,10 @@ def absp(path):
 
 # --------------------------------------------------------------------------- 1. manifest
 def load_manifest(only: list[str] | None) -> list[Source]:
+    """Entries of latest.json, sorted by party id and language. One entry per
+    party and language; a party with several languages gets one document per
+    language ("<party>-<language>.rst", converter "<party>-<language>-pdf2rst.py"
+    if it exists, otherwise the party's "<party>-pdf2rst.py")."""
     path = absp(rel(SOURCES_DIR, MANIFEST))
     try:
         entries = json.load(open(path, encoding="utf-8"))
@@ -145,32 +161,43 @@ def load_manifest(only: list[str] | None) -> list[Source]:
         raise InputError(f"{rel(SOURCES_DIR, MANIFEST)} is not valid JSON: {e}")
     if not isinstance(entries, list):
         raise InputError(f"{MANIFEST} must contain a list of entries")
-    sources, seen = [], set()
+    seen, names = set(), {}
     for i, e in enumerate(entries):
         missing = [k for k in REQUIRED_KEYS if k not in e]
         if missing:
             raise InputError(f"{MANIFEST} entry {i}: missing {', '.join(missing)}")
-        party = e["party"]
+        party, lang = e["party"], e["language"]
         if not re.fullmatch(r"[a-z0-9_]+", party):
-            raise InputError(f"{MANIFEST} entry {i}: bad party slug {party!r}")
-        if party in seen:
-            raise InputError(f"{MANIFEST}: party {party!r} listed twice")
-        seen.add(party)
+            raise InputError(f"{MANIFEST} entry {i}: bad party id {party!r}")
+        if not re.fullmatch(r"[a-z]{2,3}", lang):
+            raise InputError(f"{party}: language must be an ISO 639 code like \"es\", not {lang!r}")
+        if not isinstance(e["name"], str) or not e["name"].strip():
+            raise InputError(f"{party}: name must be a non-empty string")
+        if (party, lang) in seen:
+            raise InputError(f"{MANIFEST}: party {party!r} listed twice for language {lang!r}")
+        seen.add((party, lang))
+        if names.setdefault(party, e["name"]) != e["name"]:
+            raise InputError(f"{party}: different names in {MANIFEST} ({names[party]!r}, {e['name']!r})")
         if not re.fullmatch(r"[0-9a-f]{64}", e["sha256sum"].lower()):
             raise InputError(f"{party}: sha256sum is not a SHA-256 hex digest")
+    per_party = collections.Counter(e["party"] for e in entries)
+    sources = []
+    for e in sorted(entries, key=lambda e: (e["party"], e["language"])):
+        party, lang = e["party"], e["language"]
+        doc = party if per_party[party] == 1 else f"{party}-{lang}"
+        script = rel(SCRIPTS_DIR, f"{doc}-pdf2rst.py")
+        if not os.path.isfile(absp(script)):
+            script = rel(SCRIPTS_DIR, f"{party}-pdf2rst.py")
         pdf_name = e.get("file") or os.path.basename(e["program_url"].split("?")[0])
         sources.append(Source(
-            party=party, version=e["version"], url=e["program_url"],
-            sha256=e["sha256sum"].lower(),
-            name=e.get("name") or PARTY_NAMES.get(party) or party.replace("_", " ").title(),
-            pdf=rel(SOURCES_DIR, pdf_name),
-            script=rel(SCRIPTS_DIR, f"{party}-pdf2rst.py"),
-            rst=rel(OUTPUT_DIR, f"{party}.rst")))
+            party=party, name=e["name"], language=lang, doc=doc,
+            version=e["version"], url=e["program_url"], sha256=e["sha256sum"].lower(),
+            pdf=rel(SOURCES_DIR, pdf_name), script=script, rst=rel(OUTPUT_DIR, f"{doc}.rst")))
     if only:
-        unknown = set(only) - {s.party for s in sources}
+        unknown = set(only) - {s.party for s in sources} - {s.doc for s in sources}
         if unknown:
             raise InputError(f"--only: not in {MANIFEST}: {', '.join(sorted(unknown))}")
-        sources = [s for s in sources if s.party in only]
+        sources = [s for s in sources if s.party in only or s.doc in only]
     return sources
 
 
@@ -205,19 +232,19 @@ def check_sources(sources: list[Source]) -> list[str]:
     table = read_sha256sum_txt()
     for s in sources:
         if not os.path.isfile(absp(s.pdf)):
-            problems.append(f"{s.party}: {s.pdf} not found")
+            problems.append(f"{s.doc}: {s.pdf} not found")
             continue
         if not os.path.isfile(absp(s.script)):
-            problems.append(f"{s.party}: converter {s.script} not found")
+            problems.append(f"{s.doc}: converter {s.script} not found")
         actual = sha256_file(absp(s.pdf))
         if actual != s.sha256:
-            problems.append(f"{s.party}: {s.pdf} SHA-256 is {actual}, {MANIFEST} says {s.sha256}")
+            problems.append(f"{s.doc}: {s.pdf} SHA-256 is {actual}, {MANIFEST} says {s.sha256}")
         if table is not None:
             listed = table.get(os.path.basename(s.pdf))
             if listed is None:
-                problems.append(f"{s.party}: {os.path.basename(s.pdf)} missing from {CHECKSUMS}")
+                problems.append(f"{s.doc}: {os.path.basename(s.pdf)} missing from {CHECKSUMS}")
             elif listed != s.sha256:
-                problems.append(f"{s.party}: {CHECKSUMS} and {MANIFEST} disagree "
+                problems.append(f"{s.doc}: {CHECKSUMS} and {MANIFEST} disagree "
                                 f"({listed} vs {s.sha256})")
     return problems
 
@@ -335,6 +362,29 @@ class Pool:
             if run:
                 out.append(run)
         return out
+
+
+def keep_line_end_hyphens(pdf_words: list[str], rst_words: list[str], breaks):
+    """Plain pdftotext drops a hyphen printed at a line end ("promueve-un-" +
+    "dialogo" -> "promueve-undialogo") even when it is real; pdftotext -layout
+    shows it. A PDF word not in the RST takes the hyphen back only where
+    -layout prints it, and only if the result is an RST word or the start of
+    one (a URL also broken at the next line: the rest must then match as
+    whitespace re-segmentation)."""
+    vocab = set(rst_words)
+    out, kept = [], []
+    for w in pdf_words:
+        if w not in vocab:
+            for left, right in breaks:
+                joined = left[:-1] + right
+                if joined in w:
+                    cand = w.replace(joined, left + right, 1)
+                    if cand in vocab or any(v.startswith(cand) for v in vocab):
+                        kept.append(cand)
+                        w = cand
+                        break
+        out.append(w)
+    return out, kept
 
 
 def split_glued(pdf_words: list[str], rst_words: list[str]):
@@ -561,6 +611,7 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     res.title = first_heading(doc)
     a, b = ref.split(), pandoc_words(doc)
     res.words = len(b)
+    a, kept = keep_line_end_hyphens(a, b, C.layout_hyphen_breaks(absp(pdf)))
     a, glued = split_glued(a, b)
     counts = collections.Counter()
     in_place, deleted, inserted = diff_words(a, b, counts)
@@ -588,6 +639,8 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
         report.append(f"  table-of-contents dot leaders set aside: {n_leaders}")
     if n_u2010:
         report.append(f"  layout hyphens (U+2010) joined at line ends: {n_u2010}")
+    for k in kept:
+        report.append(f"  real hyphen kept at a line end (pdftotext -layout prints it): {k[:120]}")
     for g, pieces in glued:
         report.append(f"  glued PDF word split: {g} -> {' '.join(pieces)}")
     for k_, v in sorted(counts.items()):
@@ -637,7 +690,7 @@ def hyphen_review(pdf: str, rst_path: str, res: Result) -> list[str]:
 # --------------------------------------------------------------------------- 3+4. per source
 def process(src: Source, workdir: str, check_only: bool) -> Result:
     res = Result(src)
-    res.tmp_rst = os.path.join(workdir, f"{src.party}.rst")
+    res.tmp_rst = os.path.join(workdir, f"{src.doc}.rst")
     cmd = [sys.executable, absp(src.script), absp(src.pdf), "-o", res.tmp_rst]
     proc = subprocess.run(cmd, capture_output=True, cwd=workdir)
     res.log = proc.stdout.decode("utf-8", "replace") + proc.stderr.decode("utf-8", "replace")
@@ -691,14 +744,15 @@ def render_readme(results: list[Result]) -> str:
         "Programas electorales convertidos de su PDF original a reStructuredText, "
         "con el texto verificado frente al PDF.",
         "",
-        "| Partido | Programa | Texto (RST) | PDF original | Versión | Páginas | Palabras |",
-        "|---|---|---|---|---|---:|---:|",
+        "| Partido | Programa | Idioma | Texto (RST) | PDF original | Versión | Páginas | Palabras |",
+        "|---|---|---|---|---|---|---:|---:|",
     ]
     for r in results:
         s = r.src
         lines.append("| " + " | ".join([
             s.name,
             r.title or "—",
+            LANGUAGE_NAMES.get(s.language, s.language),
             md_link(os.path.basename(s.rst), s.rst),
             f"{md_link(os.path.basename(s.pdf), s.pdf)} ([fuente]({s.url}))",
             str(s.version),
@@ -718,7 +772,7 @@ def render_readme(results: list[Result]) -> str:
         "",
         "## Cómo se generan",
         "",
-        f"Todo se regenera con `python3 build.py`, que lee `{SOURCES_DIR}/{MANIFEST}`, "
+        f"Todo se regenera con `python3 {SCRIPTS_DIR}/build.py`, que lee `{SOURCES_DIR}/{MANIFEST}`, "
         f"comprueba el SHA-256 de cada PDF (también frente a `{SOURCES_DIR}/{CHECKSUMS}`), "
         f"ejecuta `{SCRIPTS_DIR}/<partido>-pdf2rst.py` y verifica el resultado antes de "
         f"escribir `{OUTPUT_DIR}/` y este README:",
@@ -729,7 +783,7 @@ def render_readme(results: list[Result]) -> str:
         "proceda del texto del PDF (`pdftotext`); solo se permiten cambios de espacios, "
         "unión de palabras cortadas a final de línea, bloques movidos sin cambios y la "
         "omisión de elementos de página (números de página, cabeceras y pies);",
-        "* `python3 build.py --check` falla si algún fichero de "
+        f"* `python3 {SCRIPTS_DIR}/build.py --check` falla si algún fichero de "
         f"`{OUTPUT_DIR}/` no coincide con lo que se genera a partir de los originales.",
         "",
         "Este fichero se genera automáticamente; no lo edites a mano.",
@@ -778,12 +832,12 @@ def main(argv=None) -> int:
         if args.reports:
             os.makedirs(args.reports, exist_ok=True)
             for r in results:
-                with open(os.path.join(args.reports, f"{r.src.party}.log"), "w", encoding="utf-8") as f:
+                with open(os.path.join(args.reports, f"{r.src.doc}.log"), "w", encoding="utf-8") as f:
                     f.write(r.log)
 
         for r in results:
             mark = "OK  " if r.ok else "FAIL"
-            print(f"    {mark} {r.src.party:36s} {r.status or '-':9s} {'; '.join(r.notes)}")
+            print(f"    {mark} {r.src.doc:36s} {r.status or '-':9s} {'; '.join(r.notes)}")
             for e in r.errors:
                 print(f"         error: {e}")
             for w in r.warnings:
@@ -795,6 +849,13 @@ def main(argv=None) -> int:
             return 1
 
         readme = render_readme(results) if not args.only else None
+        if not args.only:            # outputs nothing produces any more (e.g. renamed to <party>-<lang>)
+            out_dir = absp(OUTPUT_DIR)
+            expected = {os.path.basename(r.src.rst) for r in results}
+            for f in sorted(os.listdir(out_dir) if os.path.isdir(out_dir) else []):
+                if f.endswith(".rst") and f not in expected:
+                    print(f"    warning: {OUTPUT_DIR}/{f} is not generated from {MANIFEST} "
+                          f"(left in place; delete it if it is obsolete)")
         if args.check:
             if readme is not None:
                 current = open(absp(README), encoding="utf-8").read() if os.path.exists(absp(README)) else ""
@@ -808,7 +869,7 @@ def main(argv=None) -> int:
         for r in results:
             if r.status != "unchanged":
                 shutil.copyfile(r.tmp_rst, absp(r.src.rst))
-        print(f"[5] {OUTPUT_DIR}/: " + ", ".join(f"{r.src.party} {r.status}" for r in results))
+        print(f"[5] {OUTPUT_DIR}/: " + ", ".join(f"{r.src.doc} {r.status}" for r in results))
     if readme is not None:
         with open(absp(README), "w", encoding="utf-8", newline="\n") as f:
             f.write(readme)

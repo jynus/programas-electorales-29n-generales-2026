@@ -1,12 +1,13 @@
 """
 pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
-Used by salf, partido_humanista and pnv (the whole engine: extraction with
-fonts, RST writing, verification and the command line), and in part by bng,
-erc and coalicion_canaria (``read_bbox``, ``run``, RST escaping/wrapping,
-``pandoc_read``; erc also ``inline`` and ``main``). build.py uses only the
-pandoc reader (``pandoc_ast``/``ast_text``). pp and adelante_andalucia are
-self-contained.
+Used by salf, partido_humanista, pnv and por_un_mundo_mas_justo (the whole
+engine: extraction with fonts, RST writing, verification and the command
+line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
+RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``).
+build.py uses the pandoc reader (``pandoc_ast``/``ast_text``) and the
+``pdftotext -layout`` evidence of real line-end hyphens
+(``layout_hyphen_breaks``). pp and adelante_andalucia are self-contained.
 
 Extraction (poppler-utils)
   * ``pdftotext -bbox-layout`` gives the text in blocks, lines and words with
@@ -544,6 +545,8 @@ def ast_text(doc: dict, list_labels: bool = True, warnings: str = "") -> PandocT
                     buf.append(" ")
             elif t == "MetaString":
                 buf.append(f" {c} ")
+            elif t in ("Link", "Image", "Span", "Quoted", "Cite"):
+                walk(c[1])           # the inline content only: it joins what follows ("url.")
             elif c is not None:
                 walk(c)
                 if t not in _INLINE:
@@ -670,6 +673,19 @@ def verify(rst: str, raw: str, furniture: Furniture, report: list[str],
     return ok
 
 
+def layout_hyphen_breaks(pdf: str) -> list[tuple[str, str]]:
+    """Words printed with a hyphen at the end of a line, as ``pdftotext
+    -layout`` shows them (it keeps the hyphen; plain pdftotext drops it and
+    glues the halves): [("promueve-un-", "dialogo-plural-..."), ...]."""
+    layout = run(["pdftotext", "-layout", "-enc", "UTF-8", pdf, "-"])
+    lines = [l for l in re.split(r"[\n\f]", layout) if l.strip()]
+    out = []
+    for a, b in zip(lines, lines[1:]):
+        if re.search(r"\S-\s*$", a):
+            out.append((a.split()[-1], b.split()[0]))
+    return out
+
+
 def raw_units(raw: str, join_u2010=True) -> list[str]:
     """Lines of plain pdftotext, each as a whitespace-free string; U+2010
     layout hyphens at line ends joined to the next line."""
@@ -683,7 +699,8 @@ def raw_units(raw: str, join_u2010=True) -> list[str]:
     return units
 
 
-def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True) -> bool:
+def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
+                  hyphen_breaks: list[tuple[str, str]] = (), strip_start: str = "") -> bool:
     """For documents whose reading order the converter rebuilds: the RST text
     (whitespace aside) must be exactly the lines of plain pdftotext, each
     used once and kept whole, in any order. Nothing is set aside: running
@@ -699,8 +716,25 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True) -> boo
     S = "".join(out_w)
     units = raw_units(raw, join_u2010)
     report.append("[1] the RST is the PDF's lines, each once and whole, in any order")
+    if strip_start:              # bullet glyphs starting a line: RST list markers instead
+        n = sum(u.startswith(strip_start) for u in units)
+        units = [u[len(strip_start):] if u.startswith(strip_start) else u for u in units]
+        units = [u for u in units if u]
+        report.append(f"  set aside: {strip_start!r} starting a line (RST list markers instead): {n}")
     if join_u2010:
         report.append(f"  layout hyphens (U+2010) joined at line ends: {len(re.findall(chr(0x2010) + r'[ \t]*\n', raw))}")
+    # Real hyphens printed at a line end (shown by pdftotext -layout) that
+    # plain pdftotext dropped: the RST keeps them; compare without them.
+    flat_raw = "".join(raw.split())
+    kept = []
+    for left, right in hyphen_breaks:
+        rst_form, pdf_form = left + right, left[:-1] + right
+        if rst_form in S and pdf_form in flat_raw and rst_form not in flat_raw:
+            S = S.replace(rst_form, pdf_form, 1)
+            kept.append(rst_form)
+    if hyphen_breaks:
+        report.append(f"  real hyphens kept at line ends (plain pdftotext drops them): {len(kept)}")
+        report += [f"    {k[:90]}" for k in kept]
     covered = bytearray(len(S))
     pos = {}
 
@@ -797,7 +831,9 @@ def main(convert, verify_fn, doc_name: str, argv=None, default_output="out.rst")
             report.insert(0, f"convert : wrote {args.output} ({rst.count(chr(10))} lines)")
         raw = run(["pdftotext", "-enc", "UTF-8", args.pdf, "-"])
         report.append("verify  :")
-        ok = verify_fn(rst, raw, report)
+        import inspect
+        extra = {"pdf": args.pdf} if "pdf" in inspect.signature(verify_fn).parameters else {}
+        ok = verify_fn(rst, raw, report, **extra)
     except ConvertError as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
