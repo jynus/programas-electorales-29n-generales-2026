@@ -744,16 +744,15 @@ def render_readme(results: list[Result]) -> str:
         "Programas electorales convertidos de su PDF original a reStructuredText, "
         "con el texto verificado frente al PDF.",
         "",
-        "| Partido | Programa | Idioma | Texto (RST) | PDF original | Versión | Páginas | Palabras |",
-        "|---|---|---|---|---|---|---:|---:|",
+        "| Partido | Programa (RST) | Idioma | PDF original | Versión | Páginas | Palabras |",
+        "|---|---|---|---|---|---:|---:|",
     ]
     for r in results:
         s = r.src
         lines.append("| " + " | ".join([
             s.name,
-            r.title or "—",
+            md_link(r.title or os.path.basename(s.rst), s.rst),     # programme title -> its .rst
             LANGUAGE_NAMES.get(s.language, s.language),
-            md_link(os.path.basename(s.rst), s.rst),
             f"{md_link(os.path.basename(s.pdf), s.pdf)} ([fuente]({s.url}))",
             str(s.version),
             str(r.pages or "—"),

@@ -1,0 +1,49 @@
+# Python virtual environments (see requirements.txt)
+.venv/
+venv/
+env/
+ENV/
+
+# Byte-compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Tool caches (linters, type checkers, tests, coverage)
+.ruff_cache/
+.mypy_cache/
+.pytype/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local outputs of running the scripts by hand. The converters write to the
+# current directory unless -o says otherwise (out.rst, erc.rst, <name>.rst...);
+# build.py --reports DIR writes logs. The real outputs live in
+# programas_electorales/ and README.md, which build.py regenerates.
+/*.rst
+/reports/
+*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
