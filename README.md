@@ -15,6 +15,7 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | Por un Mundo Más Justo (M+J) | [Si no es justo, cámbialo](programas_electorales/por_un_mundo_mas_justo.rst) | castellano | [Castellano.pdf](documentos_originales/Castellano.pdf) ([fuente](https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf)) | 1 | 95 | 19.687 |
 | Partido Popular (PP) | [Reconstrucción Nacional](programas_electorales/pp.rst) | castellano | [LA-RECONSTRUCCION-NACIONAL-1.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL-1.pdf) ([fuente](https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL-1.pdf)) | 1 | 82 | 23.599 |
 | Se Acabó La Fiesta (SALF) | [Contrato electoral](programas_electorales/salf.rst) | castellano | [SALF_Contrato_Electoral_29N.pdf](documentos_originales/SALF_Contrato_Electoral_29N.pdf) ([fuente](https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf)) | 1 | 40 | 8.598 |
+| VOX | [Es sentido común](programas_electorales/vox.rst) | castellano | [Programa-completo-A5-1.pdf](documentos_originales/Programa-completo-A5-1.pdf) ([fuente](https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf)) | 1 | 66 | 6.812 |
 
 ## Sumas de verificación de los originales
 
@@ -31,6 +32,7 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | [Castellano.pdf](documentos_originales/Castellano.pdf) | `a3c7c807411d8565b310a9b566c6fa2cbe643e99c91f3f9f4e7d8712d949c613` |
 | [LA-RECONSTRUCCION-NACIONAL-1.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL-1.pdf) | `cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe` |
 | [SALF_Contrato_Electoral_29N.pdf](documentos_originales/SALF_Contrato_Electoral_29N.pdf) | `073425b9522da77608a0399923c2e0d3b9153776e8a0436ac8f0aea794b7893b` |
+| [Programa-completo-A5-1.pdf](documentos_originales/Programa-completo-A5-1.pdf) | `065abf6720be2f7b19b8e911920c2ee2ce5c2059d0ae8bf09770bc790ed11b65` |
 
 ## Cómo se generan
 
