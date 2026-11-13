@@ -119,6 +119,15 @@
 		"sha256sum": "073425b9522da77608a0399923c2e0d3b9153776e8a0436ac8f0aea794b7893b"
 	},
 	{
+		"party": "soria_ya",
+		"name": "Soria ¡Ya!",
+		"title": "Soria ¡Sí!",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://soriaya.org/wp-content/uploads/2026/11/ProgramaGenerales_26.pdf",
+		"sha256sum": "042e8da39561d2008db48e78a6b72fb9309f334038a1d0af67791ceb983c3e9d"
+	},
+	{
 		"party": "teruel_existe",
 		"name": "Teruel Existe",
 		"title": "Faltaría más.",
