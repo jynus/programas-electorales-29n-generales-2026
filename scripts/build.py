@@ -96,7 +96,6 @@ LANGUAGE_NAMES = {"es": "castellano", "ca": "catalán", "gl": "gallego", "eu": "
                   "fr": "francés"}
 REQUIRED_KEYS = ("party", "name", "title", "language", "version", "program_url", "sha256sum")
 DEHYPHEN_WINDOW = 12   # max words of page furniture between "consen-" and "so"
-DOT_LEADER = re.compile(r"\.{4,}")
 PAGE_NUMBERS = re.compile(r"(?:\d{1,3}|[^\w\s]+)(?:\s+(?:\d{1,3}|[^\w\s]+))*")   # "12", "– 12 –"
 PAGE_NUMBER = re.compile(r"\d{1,3}")
 
@@ -487,12 +486,12 @@ def is_furniture(run: str, shape: collections.Counter, running: list[re.Pattern]
 
 
 def reference_text(pdf: str) -> tuple[str, int, int]:
-    """Plain pdftotext, with TOC dot leaders ("PREÀMBUL........5": 4+ dots;
-    an ellipsis has 3) set aside and U+2010 layout hyphens at line ends
+    """Plain pdftotext, with TOC dot leaders (C.DOT_LEADER: "PREÀMBUL........5",
+    4+ dots; an ellipsis has 3) set aside and U+2010 layout hyphens at line ends
     joined. Returns (text, leaders removed, hyphens joined)."""
     ref = subprocess.run(["pdftotext", "-enc", "UTF-8", absp(pdf), "-"],
                          capture_output=True, check=True).stdout.decode("utf-8")
-    ref, n_leaders = DOT_LEADER.subn(" ", ref)
+    ref, n_leaders = C.DOT_LEADER.subn(" ", ref)
     ref, n_u2010 = re.subn("\u2010[ \t]*\n", "", ref)
     return ref, n_leaders, n_u2010
 
@@ -570,11 +569,12 @@ def claim_comment_words(pool: Pool, comment_texts: list[str]) -> tuple[list[str]
                 pool.used[ri][ti] = True
                 in_comments += 1
     # letter-spaced side tabs ("S E R V I C I O S") kept closed up in a comment
+    # (not a lone symbol: a list glyph "-" turns up in many a comment)
     squeezed = ["".join(c.split()) for c in comment_texts]
     omitted = []
     for run in pool.remaining():
         flat = "".join(run.split())
-        if any(len(c) >= len(flat) and is_subsequence(flat, c) for c in squeezed):
+        if (len(flat) > 1 or flat.isalnum()) and any(len(c) >= len(flat) and is_subsequence(flat, c) for c in squeezed):
             in_comments += len(run.split())
         else:
             omitted.append(run)

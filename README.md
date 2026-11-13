@@ -10,6 +10,7 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | Esquerra Republicana (ERC) | [Programa electoral](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 1 | 48 | 25.310 |
 | Frente Obrero | [Recuperar España](programas_electorales/frente_obrero.rst) | castellano | [Programa.pdf](documentos_originales/Programa.pdf) ([fuente](https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf)) | 1 | 64 | 12.979 |
 | Iustitia Europa (IE) | [Contrato electoral](programas_electorales/iustitia_europa.rst) | castellano | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) ([fuente](https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf)) | 1 | 28 | 4.382 |
+| Partido Animalista Con el Medio Ambiente (PACMA) | [Compromiso electoral](programas_electorales/pacma.rst) | castellano | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) ([fuente](https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf)) | 1 | 82 | 41.387 |
 | Partido Humanista | [Elecciones Generales 2026](programas_electorales/partido_humanista.rst) | castellano | [Programa Generales 2026.pdf](documentos_originales/Programa%20Generales%202026.pdf) ([fuente](https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf)) | 1 | 31 | 7.875 |
 | EAJ-PNV | [Defendemos Euskadi](programas_electorales/pnv.rst) | castellano | [programa-electoral-29n.pdf](documentos_originales/programa-electoral-29n.pdf) ([fuente](https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n)) | 1 | 43 | 11.267 |
 | Por un Mundo Más Justo (M+J) | [Si no es justo, cámbialo](programas_electorales/por_un_mundo_mas_justo.rst) | castellano | [Castellano.pdf](documentos_originales/Castellano.pdf) ([fuente](https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf)) | 1 | 95 | 19.687 |
@@ -27,10 +28,11 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04` |
 | [Programa.pdf](documentos_originales/Programa.pdf) | `7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282` |
 | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) | `03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd` |
+| [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) | `6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d` |
 | [Programa Generales 2026.pdf](documentos_originales/Programa%20Generales%202026.pdf) | `c53ab576b0c57a091665795cb8676269b85cc6f9b7e22c9d65ce11d86502086f` |
 | [programa-electoral-29n.pdf](documentos_originales/programa-electoral-29n.pdf) | `5af7a5b6f67c26bad87ef6c3ca01ae38aa1f1d7d9029efb32fc52482de0c1314` |
 | [Castellano.pdf](documentos_originales/Castellano.pdf) | `a3c7c807411d8565b310a9b566c6fa2cbe643e99c91f3f9f4e7d8712d949c613` |
-| [LA-RECONSTRUCCION-NACIONAL.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL.pdf) | `cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe` |
+| [LA-RECONSTRUCCION-NACIONAL-1.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL-1.pdf) | `cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe` |
 | [SALF_Contrato_Electoral_29N.pdf](documentos_originales/SALF_Contrato_Electoral_29N.pdf) | `073425b9522da77608a0399923c2e0d3b9153776e8a0436ac8f0aea794b7893b` |
 | [Programa-completo-A5-1.pdf](documentos_originales/Programa-completo-A5-1.pdf) | `065abf6720be2f7b19b8e911920c2ee2ce5c2059d0ae8bf09770bc790ed11b65` |
 

@@ -2,9 +2,10 @@
 pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
 Used by salf, partido_humanista, pnv, por_un_mundo_mas_justo, frente_obrero,
-iustitia_europa and vox (the whole engine: extraction with fonts, RST writing,
-verification and the command line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
-RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``).
+iustitia_europa, vox and pacma (the whole engine: extraction with fonts, RST
+writing, verification and the command line), and in part by bng, erc and
+coalicion_canaria (``read_bbox``, ``run``, RST escaping/wrapping,
+``pandoc_read``; erc also ``inline`` and ``main``).
 build.py uses the pandoc reader (``pandoc_ast``/``ast_text``) and the
 ``pdftotext -layout`` evidence of real line-end hyphens
 (``layout_hyphen_breaks``). pp and adelante_andalucia are self-contained.
@@ -43,6 +44,10 @@ from dataclasses import dataclass, field
 WORD_GLUE_GAP = 0.8
 WRAP = 79
 TERMINAL = tuple(".:;!?…)»”\"")      # a paragraph ending in one of these is complete
+# Table-of-contents dot leaders: 4+ dots ("PREÀMBUL........5"; an ellipsis has
+# 3), or 3 dots between a space and the page number ending the line, where a
+# long entry left room for no more ("veterinaria social ...19").
+DOT_LEADER = re.compile(r"\.{4,}|(?<= )\.{3}(?=\d+[ \t]*$)", re.M)
 
 
 class ConvertError(RuntimeError):
@@ -146,15 +151,17 @@ class Block:
     @property
     def h(self): return self.lines[0].y1 - self.lines[0].y0      # first line height ~ font size
 
-    def chars(self) -> list[tuple[str, Font]]:
+    def chars(self, keep_hyphens=False) -> list[tuple[str, Font]]:
         """Text with one font per character, built like plain pdftotext:
         lines joined with a space; a hyphen ending a line is dropped and
-        the line joined to the next one."""
+        the line joined to the next one (with ``keep_hyphens``, for PDFs
+        that are not hyphenated, the hyphen stays: "higiénico-sanitarias")."""
         out: list[tuple[str, Font]] = []
         for i, ln in enumerate(self.lines):
             if out:
                 if out[-1][0] == "-" and i > 0:
-                    out.pop()
+                    if not keep_hyphens:
+                        out.pop()
                 elif out[-1][0] == "\u2010":           # layout hyphen (U+2010) at a line end
                     out.pop()
                 else:
@@ -307,6 +314,7 @@ def font_table(blocks: list[Block]) -> list[tuple[str, int, str]]:
 _ENUMERATOR = re.compile(r"^(\(?)(?:\d+|[A-Za-z]|[ivxlcdmIVXLCDM]+|#)([.)])(\s|$)")
 _OTHER = re.compile(r"^(?:[-+*•‣⁃](?:\s|$)|\.\.(?:\s|$)|:|>>>|\||=+$|-+$)")
 NBSP = "\x00"     # protects "\ " (escaped space) from line wrapping
+KEEP_SPACE = "\x01"   # a plain space that must not become a line break
 
 
 def esc_inline(s: str, extra: str = "") -> str:
@@ -354,12 +362,16 @@ def inline(chars: list[tuple[str, Font]], strong=lambda f: f.bold, emph=lambda f
 
 def wrap(text: str, indent: str = "", first: str | None = None) -> list[str]:
     first = indent if first is None else first
+    # no line may end in "-": pandoc joins it to the next line ("Científicas -"
+    # + "CSIC" -> "-CSIC"), so the space after a hyphen is not a break point,
+    # nor the space before a lone "-" (a line starting "- " reads as a list)
+    text = text.replace(" - ", KEEP_SPACE + "- ").replace("- ", "-" + KEEP_SPACE)
     lines = textwrap.wrap(text, WRAP, initial_indent=first, subsequent_indent=indent,
                           break_long_words=False, break_on_hyphens=False)
-    if any(re.fullmatch(r"\s*\W+", l.replace(NBSP, "")) or re.match(r"\s*\.\.", l)
+    if any(re.fullmatch(r"\s*\W+", l.replace(NBSP, "").replace(KEEP_SPACE, " ")) or re.match(r"\s*\.\.", l)
            for l in lines[1:]):
         lines = [first + text]
-    return [l.replace(NBSP, "\\ ") for l in lines] or [first.rstrip()]
+    return [l.replace(NBSP, "\\ ").replace(KEEP_SPACE, " ") for l in lines] or [first.rstrip()]
 
 
 def heading(text: str, ch: str, over=False, escape=True) -> list[str]:
@@ -700,7 +712,7 @@ def raw_units(raw: str, join_u2010=True) -> list[str]:
 
 
 def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
-                  hyphen_breaks: list[tuple[str, str]] = (), strip_start: str = "",
+                  hyphen_breaks: list[tuple[str, str]] = (), strip_start: str | tuple = "",
                   skip_unreadable: bool = False, leaders: bool = False) -> bool:
     """For documents whose reading order the converter rebuilds: the RST text
     (whitespace aside) must be exactly the lines of plain pdftotext, each
@@ -715,17 +727,28 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
 
     out_w, flags = rst_words(rst)
     S = "".join(out_w)
+    n_leaders = 0
+    if leaders:                  # table-of-contents dot leaders ("Vivienda ......... 23")
+        raw, n_leaders = DOT_LEADER.subn("", raw)
+    # List glyphs starting a line: RST list markers instead. A glyph given
+    # with a trailing space ("- ") counts only when a space follows it, so a
+    # dash that is text ("-como en los casos del muflón...") stays.
+    glyphs = (strip_start,) if isinstance(strip_start, str) else strip_start
+    set_aside = []
+    for glyph in (g for g in glyphs if g.endswith(" ")):
+        raw, n = re.subn(r"(?m)^([ \t\f]*)" + re.escape(glyph.strip()) + r"[ \t]+", r"\1", raw)
+        set_aside.append((glyph, n))
     units = raw_units(raw, join_u2010)
     report.append("[1] the RST is the PDF's lines, each once and whole, in any order")
-    if strip_start:              # bullet glyphs starting a line: RST list markers instead
-        n = sum(u.startswith(strip_start) for u in units)
-        units = [u[len(strip_start):] if u.startswith(strip_start) else u for u in units]
+    for glyph in (g for g in glyphs if g and not g.endswith(" ")):
+        n = sum(u.startswith(glyph) for u in units)
+        units = [u[len(glyph):] if u.startswith(glyph) else u for u in units]
         units = [u for u in units if u]
-        report.append(f"  set aside: {strip_start!r} starting a line (RST list markers instead): {n}")
-    if leaders:                  # table-of-contents dot leaders ("Vivienda ......... 23")
-        n = sum(len(re.findall(r"\.{4,}", u)) for u in units)
-        units = [re.sub(r"\.{4,}", "", u) for u in units]
-        report.append(f"  set aside: table-of-contents dot leaders: {n}")
+        set_aside.append((glyph, n))
+    for glyph, n in sorted(set_aside, key=lambda g: glyphs.index(g[0])):
+        report.append(f"  set aside: {glyph!r} starting a line (RST list markers instead): {n}")
+    if leaders:
+        report.append(f"  set aside: table-of-contents dot leaders: {n_leaders}")
     if skip_unreadable:          # glyphs of a font without Unicode mapping: control characters only
         import unicodedata
         bad = [u for u in units if all(unicodedata.category(c) == "Cc" for c in u)]
@@ -741,6 +764,12 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
         rst_form, pdf_form = left + right, left[:-1] + right
         if rst_form in S and pdf_form in flat_raw and rst_form not in flat_raw:
             S = S.replace(rst_form, pdf_form, 1)
+            kept.append(rst_form)
+        elif rst_form in S and sum(u.count(pdf_form) for u in units) == 1:
+            # the hyphenated form is also printed inside a line elsewhere: put
+            # the hyphen back on the PDF side, where the glued form is unique
+            k = next(i for i, u in enumerate(units) if pdf_form in u)
+            units[k] = units[k].replace(pdf_form, rst_form)
             kept.append(rst_form)
     if hyphen_breaks:
         report.append(f"  real hyphens kept at line ends (plain pdftotext drops them): {len(kept)}")
