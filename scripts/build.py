@@ -20,7 +20,9 @@ Steps
         PDF repeats on 3+ pages --, table-of-contents dot leaders; all listed
         in the report) and blocks moved unchanged. Every RST word must be
         accounted for by a distinct word of the PDF, so any added or altered
-        word fails.
+        word fails. Text hidden by a copy of another page drawn through a
+        small window (pdftotext prints it all) is set aside first, as the
+        converters do it (``visible_pdf`` in pdf2rst_common.py), and reported.
      b. hyphen review: ``pdftotext -layout`` keeps the line-end hyphens that
         the default mode silently drops; joins that look like real hyphens
         (number ranges, compounds hyphenated elsewhere) become warnings.
@@ -708,8 +710,12 @@ def process(src: Source, workdir: str, check_only: bool) -> Result:
             res.warnings.append("converter: " + line.strip())
 
     try:
-        report += ["", "INDEPENDENT TEXT CHECK"] + independent_check(src.pdf, res.tmp_rst, res)
-        report += ["", "HYPHEN REVIEW"] + hyphen_review(src.pdf, res.tmp_rst, res)
+        # text hidden by a page copy drawn through a window (C.visible_pdf):
+        # set aside here too, from the same visible copy, and reported
+        with C.visible_pdf(absp(src.pdf)) as (pdf, hidden):
+            report += ["", "INDEPENDENT TEXT CHECK"] + [f"  hidden text: {n}" for n in hidden]
+            report += independent_check(pdf, res.tmp_rst, res)
+            report += ["", "HYPHEN REVIEW"] + hyphen_review(pdf, res.tmp_rst, res)
     except (RuntimeError, subprocess.CalledProcessError) as e:
         res.fail(str(e))
 

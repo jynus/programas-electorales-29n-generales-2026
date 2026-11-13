@@ -119,6 +119,15 @@
 		"sha256sum": "073425b9522da77608a0399923c2e0d3b9153776e8a0436ac8f0aea794b7893b"
 	},
 	{
+		"party": "teruel_existe",
+		"name": "Teruel Existe",
+		"title": "Faltaría más.",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://teruelexiste.info/wp-content/uploads/2026/11/Programa_Teruel_Existe_Completo_29N.pdf",
+		"sha256sum": "f93342d6c9d0f17eaa53fa68ff714bfa0981ca9c10605401b71801cf1870e190"
+	},
+	{
 		"party": "vox",
 		"name": "VOX",
 		"title": "Es sentido común",

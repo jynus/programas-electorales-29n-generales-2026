@@ -2,13 +2,14 @@
 pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
 Used by salf, partido_humanista, pnv, por_un_mundo_mas_justo, frente_obrero,
-iustitia_europa, vox and pacma (the whole engine: extraction with fonts, RST
-writing, verification and the command line), and in part by bng, erc and
-coalicion_canaria (``read_bbox``, ``run``, RST escaping/wrapping,
+iustitia_europa, vox, pacma and teruel_existe (the whole engine: extraction
+with fonts, RST writing, verification and the command line), and in part by
+bng, erc and coalicion_canaria (``read_bbox``, ``run``, RST escaping/wrapping,
 ``pandoc_read``; erc also ``inline`` and ``main``).
-build.py uses the pandoc reader (``pandoc_ast``/``ast_text``) and the
+build.py uses the pandoc reader (``pandoc_ast``/``ast_text``), the
 ``pdftotext -layout`` evidence of real line-end hyphens
-(``layout_hyphen_breaks``). pp and adelante_andalucia are self-contained.
+(``layout_hyphen_breaks``) and ``visible_pdf`` (text hidden by a page copy
+drawn through a window). pp and adelante_andalucia are self-contained.
 
 Extraction (poppler-utils)
   * ``pdftotext -bbox-layout`` gives the text in blocks, lines and words with
@@ -268,10 +269,24 @@ def apply_fonts(pdf: str, blocks: list[Block]) -> None:
                              r'font="(\d+)">(.*?)</text>', pm.group(0), re.S):
             top, left, width, height, f, txt = t.groups()
             font = fonts[f]
+            # one font per character: a run may be bold only in part
+            # ("<b>Exigir contrapartidas. </b>Todos los proyectos") when the
+            # regular and bold faces share a family name
+            chars, b, i = [], False, False
+            for piece in re.split(r"(</?[bi]>)", txt):
+                if piece in ("<b>", "</b>"):
+                    b = piece == "<b>"
+                    continue
+                if piece in ("<i>", "</i>"):
+                    i = piece == "<i>"
+                    continue
+                for c in html.unescape(re.sub(r"<[^>]+>", "", piece)):
+                    chars.append((c, Font(font.family, font.size, font.color, b, i) if b or i else font))
+            text = "".join(c for c, _ in chars)
+            cf = [f for c, f in chars if c != " "]
             if "<b>" in txt or "<i>" in txt:
                 font = Font(font.family, font.size, font.color, "<b>" in txt, "<i>" in txt)
-            txt = html.unescape(re.sub(r"<[^>]+>", "", txt))
-            runs[p].append((int(top), int(left), int(left) + int(width), int(height), font, txt))
+            runs[p].append([int(top), int(left), int(left) + int(width), int(height), font, text, cf, 0])
     for b in blocks:
         rs = runs[b.page]
         for ln in b.lines:
@@ -279,18 +294,25 @@ def apply_fonts(pdf: str, blocks: list[Block]) -> None:
                 over = sorted((r for r in rs if r[1] <= w.x1 - 0.5 and r[2] >= w.x0 + 0.5
                                and r[0] - 2 <= (w.y0 + w.y1) / 2 <= r[0] + r[3] + 2),
                               key=lambda r: r[1])
-                fs = {(r[4].family, r[4].size, r[4].color, r[4].bold) for r in over}
+                fs = {(f.family, f.size, f.color, f.bold, f.italic) for r in over for f in r[6]}
                 if len(fs) == 1:
-                    w.fonts = [over[0][4]] * len(w.text)
+                    w.fonts = [next(f for r in over for f in r[6])] * len(w.text)
                     continue
                 if not over:
                     w.fonts = [NOFONT] * len(w.text)
                     continue
+                if len(over) == 1:           # a run bold in part: the word's place in it
+                    r = over[0]
+                    s = r[5].replace(" ", "")
+                    k = s.find(w.text, r[7])
+                    if k >= 0:
+                        w.fonts, r[7] = r[6][k:k + len(w.text)], k + len(w.text)
+                        continue
                 stream, sf = "", []
                 for r in over:
                     s = r[5].replace(" ", "")
                     stream += s
-                    sf += [r[4]] * len(s)
+                    sf += r[6]
                 k = stream.find(w.text)
                 if k < 0:   # fall back to the run covering most of the word
                     best = max(over, key=lambda r: min(r[2], w.x1) - max(r[1], w.x0))
@@ -848,6 +870,335 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
     return ok
 
 
+# ---------------------------------------------------------------------------
+# Pages stamped through a window (hidden text)
+#
+# A page can carry a copy of another whole page drawn through a small window
+# (what PyMuPDF's ``show_pdf_page`` writes): a Form XObject with a small
+# /BBox (the window) and a /Matrix, whose only content is "/name Do", the
+# copied page as an inner Form. Only what falls inside the window shows (a
+# logo, say), but pdftotext and pdftohtml ignore that clipping and print all
+# the copied page's text, mixed into the page's own lines. ``visible_pdf``
+# gives a copy of the PDF with those windows emptied (an incremental update:
+# the original bytes stay as they are), after checking that the text inside
+# each window is the same with and without it, i.e. that only hidden text
+# goes. Only for PDFs with classic xref tables; anything else is left as is.
+
+class _Unsupported(Exception):
+    pass
+
+
+class _PdfFile:
+    """Just enough of a PDF reader to find stamped windows: classic xref
+    tables (with /Prev), plain objects, Flate streams."""
+
+    REF = rb"(\d+)\s+(\d+)\s+R"
+
+    def __init__(self, data: bytes):
+        self.data = data
+        m = re.search(rb"startxref\s+(\d+)\s+%%EOF\s*$", data)
+        if not m:
+            raise _Unsupported("no startxref")
+        self.offsets: dict[int, int] = {}
+        self.trailer = None
+        pos, seen = int(m.group(1)), set()
+        while pos is not None and pos not in seen:
+            seen.add(pos)
+            if not data.startswith(b"xref", pos):
+                raise _Unsupported("xref stream")
+            end = data.index(b"trailer", pos)
+            table = data[pos + 4:end]
+            for sm in re.finditer(rb"(\d+)\s+(\d+)\s*[\r\n]+((?:\d{10} \d{5} [nf][ \r\n]{1,2})*)", table):
+                first = int(sm.group(1))
+                for i, em in enumerate(re.finditer(rb"(\d{10}) \d{5} ([nf])", sm.group(3))):
+                    if em.group(2) == b"n":
+                        self.offsets.setdefault(first + i, int(em.group(1)))
+            tdict, _ = self._dict_at(end + len(b"trailer"))
+            if self.trailer is None:
+                self.trailer = tdict
+            prev = re.search(rb"/Prev\s+(\d+)", tdict)
+            pos = int(prev.group(1)) if prev else None
+
+    def _dict_at(self, i: int) -> tuple[bytes, int]:
+        """The << ... >> starting at or after i, and the index after it."""
+        return self._balanced(self.data, self.data.index(b"<<", i))
+
+    @staticmethod
+    def _balanced(d: bytes, i: int) -> tuple[bytes, int]:
+        """The dictionary starting at d[i] ("<<"), strings skipped, and the index after it."""
+        depth, j = 0, i
+        while j < len(d):
+            if d.startswith(b"<<", j):
+                depth, j = depth + 1, j + 2
+            elif d.startswith(b">>", j):
+                depth, j = depth - 1, j + 2
+                if depth == 0:
+                    return d[i:j], j
+            elif d[j:j + 1] == b"(":                         # literal string
+                k, nest = j + 1, 1
+                while nest and k < len(d):
+                    c = d[k:k + 1]
+                    if c == b"\\":
+                        k += 1
+                    elif c == b"(":
+                        nest += 1
+                    elif c == b")":
+                        nest -= 1
+                    k += 1
+                j = k
+            else:
+                j += 1
+        raise _Unsupported("unterminated dictionary")
+
+    def obj(self, num: int) -> tuple[bytes, bytes | None]:
+        """(dictionary or value, decoded stream or None) of object num."""
+        if num not in self.offsets:
+            raise _Unsupported(f"object {num} not in the xref")
+        pos = self.offsets[num]
+        m = re.compile(rb"\s*(\d+)\s+(\d+)\s+obj\s*").match(self.data, pos)
+        if not m or int(m.group(1)) != num:
+            raise _Unsupported(f"object {num} not at its offset")
+        start = m.end()
+        if not self.data.startswith(b"<<", start):
+            end = self.data.index(b"endobj", start)
+            return self.data[start:end].strip(), None
+        d, after = self._dict_at(start)
+        s = re.compile(rb"\s*stream\r?\n").match(self.data, after)
+        if not s:
+            return d, None
+        n = re.search(rb"/Length\s+(?:" + self.REF + rb"|(\d+))", d)
+        if not n:
+            raise _Unsupported(f"stream {num} without /Length")
+        length = int(n.group(3)) if n.group(3) else int(self.obj(int(n.group(1)))[0])
+        raw = self.data[s.end():s.end() + length]
+        filters = re.findall(rb"/(\w+)", (re.search(rb"/Filter\s*(\[[^\]]*\]|/\w+)", d) or [b"", b""])[1])
+        import zlib
+        for f in filters:
+            if f != b"FlateDecode":
+                raise _Unsupported(f"stream {num}: filter {f.decode()}")
+            raw = zlib.decompress(raw)
+        return d, raw
+
+    def resolve(self, value: bytes) -> bytes:
+        m = re.fullmatch(rb"\s*" + self.REF + rb"\s*", value)
+        return self.obj(int(m.group(1)))[0] if m else value
+
+    def entry(self, d: bytes, key: bytes) -> bytes | None:
+        """The value of /key in dictionary d (dictionaries, arrays, refs, names, numbers)."""
+        m = re.search(rb"/" + key + rb"(?![A-Za-z0-9])\s*", d)
+        if not m:
+            return None
+        i = m.end()
+        if d.startswith(b"<<", i):
+            return self._balanced(d, i)[0]
+        if d.startswith(b"[", i):
+            return d[i:d.index(b"]", i) + 1]
+        r = re.compile(self.REF + rb"|/[^\s/<>\[\]()]+|[-\d.]+").match(d, i)
+        return r.group(0) if r else None
+
+    def names(self, d: bytes | None) -> dict[bytes, int]:
+        """/Name N 0 R pairs of a (resolved) dictionary."""
+        if d is None:
+            return {}
+        d = self.resolve(d)
+        return {m.group(1): int(m.group(2))
+                for m in re.finditer(rb"/([^\s/<>\[\]()]+)\s+(\d+)\s+\d+\s+R", d)}
+
+    def pages(self) -> list[tuple[bytes, bytes | None]]:
+        """(page dictionary, inherited /Resources) in page order."""
+        root = self.resolve(self.entry(self.trailer, b"Root"))
+        out = []
+
+        def walk(num, inherited, depth=0):
+            d, _ = self.obj(num)
+            res = self.entry(d, b"Resources") or inherited
+            if re.search(rb"/Type\s*/Pages", d):
+                if depth > 50:
+                    raise _Unsupported("page tree too deep")
+                for k in re.finditer(self.REF, self.entry(d, b"Kids") or b""):
+                    walk(int(k.group(1)), res, depth + 1)
+            else:
+                out.append((d, res))
+
+        walk(int(re.match(self.REF, self.entry(root, b"Pages")).group(1)), None)
+        return out
+
+
+def _numbers(b: bytes | None) -> list[float]:
+    return [float(x) for x in re.findall(rb"-?\d*\.?\d+", b or b"")]
+
+
+def _mul(m, n):
+    """Matrix product m x n of PDF matrices [a b c d e f]."""
+    a, b, c, d, e, f = m
+    A, B, C, D, E, F = n
+    return [a * A + b * C, a * B + b * D, c * A + d * C, c * B + d * D, e * A + f * C + E, e * B + f * D + F]
+
+
+_CONTENT_TOKEN = re.compile(rb"\((?:\\.|[^\\()]|\((?:\\.|[^\\()])*\))*\)|<[0-9A-Fa-f\s]*>|<<|>>|\[|\]|"
+                            rb"/[^\s/<>\[\]()]+|[^\s/<>\[\]()]+")
+
+
+def _window_draws(content: bytes, wanted: set[bytes]) -> list[tuple[bytes, list[float]]]:
+    """(name, CTM) of each "/name Do" in a content stream, for the wanted names."""
+    out, stack, ctm, operands = [], [], [1, 0, 0, 1, 0, 0], []
+    for t in _CONTENT_TOKEN.findall(content):
+        if t == b"q":
+            stack.append(ctm)
+        elif t == b"Q":
+            ctm = stack.pop() if stack else ctm
+        elif t == b"cm" and len(operands) >= 6:
+            ctm = _mul([float(x) for x in operands[-6:]], ctm)
+        elif t == b"Do" and operands and operands[-1][1:] in wanted:
+            out.append((operands[-1][1:], ctm))
+        elif t in (b"BI",):
+            raise _Unsupported("inline image in a page with a window")
+        if re.fullmatch(rb"[-+]?\d*\.?\d+|/[^\s/<>\[\]()]+", t):
+            operands.append(t)
+        elif t not in (b"[", b"]"):
+            operands = []
+    return out
+
+
+def _windows(pf: _PdfFile) -> tuple[dict[int, bytes], dict[int, list[tuple[int, int, tuple]]]]:
+    """Window forms {object: dictionary} and, per page (1-based), the
+    windows drawn on it: (window object, copied page object, box in
+    pdftotext coordinates x0, y0, x1, y1)."""
+    forms: dict[int, bytes] = {}
+    per_page: dict[int, list] = {}
+    for pno, (pd, res) in enumerate(pf.pages(), 1):
+        xobjects = pf.names(pf.entry(pf.resolve(res), b"XObject") if res else None)
+        candidates = {}
+        for name, num in xobjects.items():
+            d, stream = pf.obj(num)
+            if not re.search(rb"/Subtype\s*/Form", d) or stream is None:
+                continue
+            m = re.fullmatch(rb"\s*(?:q\s+)?/([^\s/<>\[\]()]+)\s+Do\s*(?:Q\s*)?", stream)
+            inner = pf.names(pf.entry(pf.resolve(pf.entry(d, b"Resources") or b"<<>>"), b"XObject"))
+            if m and m.group(1) in inner and re.search(rb"/Subtype\s*/Form", pf.obj(inner[m.group(1)])[0]):
+                candidates[name] = (num, d, inner[m.group(1)])
+        if not candidates:
+            continue
+        contents = pf.entry(pd, b"Contents") or b""
+        stream = b"\n".join(pf.obj(int(r.group(1)))[1] or b"" for r in re.finditer(pf.REF, contents))
+        mb = _numbers(pf.entry(pd, b"CropBox") or pf.entry(pd, b"MediaBox"))
+        rotate = _numbers(pf.entry(pd, b"Rotate"))
+        if len(mb) != 4 or rotate and rotate[0] % 360:
+            raise _Unsupported("page box or rotation not understood")
+        for name, ctm in _window_draws(stream, set(candidates)):
+            num, d, inner = candidates[name]
+            x0, y0, x1, y1 = _numbers(pf.entry(d, b"BBox"))
+            mat = _numbers(pf.entry(d, b"Matrix")) or [1, 0, 0, 1, 0, 0]
+            full = _mul(mat, ctm)
+            pts = [(x * full[0] + y * full[2] + full[4], x * full[1] + y * full[3] + full[5])
+                   for x in (x0, x1) for y in (y0, y1)]
+            xs, ys = [p[0] - mb[0] for p in pts], [mb[3] - p[1] for p in pts]   # top-left origin
+            forms[num] = d
+            per_page.setdefault(pno, []).append((num, inner, (min(xs), min(ys), max(xs), max(ys))))
+    return forms, per_page
+
+
+def _page_words(pages: list[BBoxPage], pno: int, box=None) -> list[str]:
+    out = []
+    for b in pages[pno - 1].blocks:
+        for ln in b.lines:
+            for x0, y0, x1, y1, t in ln.words:
+                if not t.strip():
+                    continue
+                cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+                if box is None or box[0] - 1 <= cx <= box[2] + 1 and box[1] - 1 <= cy <= box[3] + 1:
+                    out.append(t)
+    return out
+
+
+import contextlib  # noqa: E402
+
+
+def _without_forms(data: bytes, pf: _PdfFile, forms: dict[int, bytes]) -> bytes:
+    """The PDF with the given Form XObjects replaced by empty ones (same
+    /BBox), appended as an incremental update."""
+    size = int(re.search(rb"/Size\s+(\d+)", pf.trailer).group(1))
+    out = bytearray(data if data.endswith(b"\n") else data + b"\n")
+    offsets = {}
+    for num, d in sorted(forms.items()):
+        bbox = pf.entry(d, b"BBox").decode("latin-1")
+        offsets[num] = len(out)
+        out += (f"{num} 0 obj\n<</Type/XObject/Subtype/Form/BBox{bbox}/Length 0>>\n"
+                f"stream\n\nendstream\nendobj\n").encode("latin-1")
+    xref = len(out)
+    out += b"xref\n" + b"".join(f"{n} 1\n{o:010d} 00000 n \n".encode() for n, o in sorted(offsets.items()))
+    keep = b"".join(b"/" + k + b" " + v for k in (b"Root", b"Info", b"ID")
+                    if (v := pf.entry(pf.trailer, k)) is not None)
+    prev = re.search(rb"startxref\s+(\d+)\s+%%EOF\s*$", data).group(1)
+    out += b"trailer\n<</Size %d %s/Prev %s>>\nstartxref\n%d\n%%%%EOF\n" % (size, keep, prev, xref)
+    return bytes(out)
+
+
+@contextlib.contextmanager
+def visible_pdf(pdf: str):
+    """Yields (path, notes): the PDF itself, or a temporary copy with the
+    page copies drawn through windows emptied (see above); notes says what
+    was set aside. A window whose own text changes without it shows text:
+    it is kept."""
+    import os
+    import tempfile
+    data = open(pdf, "rb").read()
+    try:
+        pf = _PdfFile(data)
+        forms, per_page = _windows(pf)
+    except (_Unsupported, ValueError, IndexError, AttributeError, TypeError):
+        forms, per_page = {}, {}
+    if not forms:
+        yield pdf, []
+        return
+    with tempfile.TemporaryDirectory(prefix="visible-") as tmp:
+        path = os.path.join(tmp, os.path.basename(pdf))
+        before = read_bbox(pdf)
+        while True:
+            with open(path, "wb") as f:
+                f.write(_without_forms(data, pf, forms))
+            after = read_bbox(path)
+            if len(before) != len(after):
+                raise ConvertError("visible copy: page count changed")
+            showing = {num for pno, wins in per_page.items() for num, _, box in wins if num in forms
+                       and sorted(_page_words(before, pno, box)) != sorted(_page_words(after, pno, box))}
+            if not showing:
+                break
+            forms = {n: d for n, d in forms.items() if n not in showing}
+            if not forms:
+                yield pdf, []
+                return
+        hidden = {p: len(_page_words(before, p)) - len(_page_words(after, p))
+                  for p, wins in per_page.items() if any(w[0] in forms for w in wins)}
+        if not any(hidden.values()):
+            yield pdf, []
+            return
+        notes = []
+        for num in sorted(forms):
+            pages = sorted(p for p, wins in per_page.items() if any(w[0] == num for w in wins))
+            inner = sorted({w[1] for p in pages for w in per_page[p] if w[0] == num})
+            box = next(w[2] for w in per_page[pages[0]] if w[0] == num)
+            notes.append(f"{_page_ranges(pages)}: a copy of another page (object {', '.join(map(str, inner))}) "
+                         f"is drawn through a {box[2] - box[0]:.0f}x{box[3] - box[1]:.0f} pt window at "
+                         f"x {box[0]:.0f}-{box[2]:.0f}, y {box[1]:.0f}-{box[3]:.0f} (object {num}): only "
+                         "the window shows, the text inside it is the same without it; the rest of "
+                         "that page's text is hidden: set aside")
+        notes.append("hidden words set aside (pdftotext words, original minus visible copy): "
+                     + ", ".join(f"p{p}: {n}" for p, n in sorted(hidden.items()))
+                     + f"; total {sum(hidden.values())}")
+        yield path, notes
+
+
+def _page_ranges(pages: list[int]) -> str:
+    pages, out = sorted(pages), []
+    for p in pages:
+        if out and p == out[-1][1] + 1:
+            out[-1][1] = p
+        else:
+            out.append([p, p])
+    return "pages " + ", ".join(f"{a}" if a == b else f"{a}-{b}" for a, b in out)
+
+
 def main(convert, verify_fn, doc_name: str, argv=None, default_output="out.rst") -> int:
     """Shared command line: PDF -o OUT.rst [--report R] [--verify-only RST]."""
     import argparse
@@ -861,18 +1212,22 @@ def main(convert, verify_fn, doc_name: str, argv=None, default_output="out.rst")
     report: list[str] = []
     try:
         report.append("extract : " + pdftotext_version())
-        if args.verify_only:
-            rst = open(args.verify_only, encoding="utf-8").read()
-        else:
-            rst = convert(args.pdf, report)
-            with open(args.output, "w", encoding="utf-8", newline="\n") as f:
-                f.write(rst)
-            report.insert(0, f"convert : wrote {args.output} ({rst.count(chr(10))} lines)")
-        raw = run(["pdftotext", "-enc", "UTF-8", args.pdf, "-"])
-        report.append("verify  :")
-        import inspect
-        extra = {"pdf": args.pdf} if "pdf" in inspect.signature(verify_fn).parameters else {}
-        ok = verify_fn(rst, raw, report, **extra)
+        # hidden page copies (see visible_pdf) are set aside for both the
+        # conversion and the verification
+        with visible_pdf(args.pdf) as (pdf, hidden):
+            report += ["hidden  : " + n for n in hidden]
+            if args.verify_only:
+                rst = open(args.verify_only, encoding="utf-8").read()
+            else:
+                rst = convert(pdf, report)
+                with open(args.output, "w", encoding="utf-8", newline="\n") as f:
+                    f.write(rst)
+                report.insert(0, f"convert : wrote {args.output} ({rst.count(chr(10))} lines)")
+            raw = run(["pdftotext", "-enc", "UTF-8", pdf, "-"])
+            report.append("verify  :")
+            import inspect
+            extra = {"pdf": pdf} if "pdf" in inspect.signature(verify_fn).parameters else {}
+            ok = verify_fn(rst, raw, report, **extra)
     except ConvertError as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
