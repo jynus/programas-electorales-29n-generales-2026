@@ -23,6 +23,8 @@ Steps
         word fails. Text hidden by a copy of another page drawn through a
         small window (pdftotext prints it all) is set aside first, as the
         converters do it (``visible_pdf`` in pdf2rst_common.py), and reported.
+        A PDF word glued from two printed copies ("22.": a boxed "2" over the
+        label "2.") may match an RST word plus a word of an RST comment.
      b. hyphen review: ``pdftotext -layout`` keeps the line-end hyphens that
         the default mode silently drops; joins that look like real hyphens
         (number ranges, compounds hyphenated elsewhere) become warnings.
@@ -296,6 +298,18 @@ class Pool:
                 best = [(ri, ti + q) for q in range(n)]
         return best
 
+    def after_comment(self, word: str, comments: collections.Counter):
+        """A PDF word made of a word kept in an RST comment and this word,
+        glued: "22." (a boxed "2" over the label "2."); the comment word is
+        used up."""
+        for ri, r in enumerate(self.runs):
+            for ti, t in enumerate(r):
+                if self.free(ri, ti) and len(t) > len(word) and t.endswith(word) \
+                        and comments[t[:-len(word)]] > 0:
+                    comments[t[:-len(word)]] -= 1
+                    return [(ri, ti)]
+        return None
+
     def find_free(self, token: str):
         return next(((ri, ti) for ri, ti in self.index.get(token, []) if self.free(ri, ti)), None)
 
@@ -523,10 +537,14 @@ def diff_words(a: list[str], b: list[str], counts: collections.Counter):
     return in_place, deleted, inserted
 
 
-def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections.Counter) -> list[str]:
+def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections.Counter,
+                         comments: collections.Counter = None) -> list[str]:
     """Every RST word not in place must take a distinct unused PDF word: a
-    moved run, a word de-hyphenated across furniture, or a word re-assembled
-    from pieces. Returns the RST words nothing accounts for."""
+    moved run, a word de-hyphenated across furniture, a word re-assembled
+    from pieces, or a PDF word glued to a copy the RST keeps in a comment
+    ("22." = "2", a boxed number in a comment, + "2."; comments: the words
+    of the RST comments still unclaimed, used up as they are claimed).
+    Returns the RST words nothing accounts for."""
     unexplained = []
     for j, B in inserted:
         k = 0
@@ -549,6 +567,10 @@ def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections
                     hit = pool.drop_cap(w)
                     if hit:
                         counts["words re-assembled from a drop cap"] += 1
+                    elif comments:
+                        hit = pool.after_comment(w, comments)
+                        if hit:
+                            counts["words glued in the PDF to a copy kept in an RST comment"] += 1
             if hit:
                 pool.take(hit)
             else:
@@ -558,12 +580,17 @@ def account_for_inserted(pool: Pool, inserted, b: list[str], counts: collections
     return unexplained
 
 
-def claim_comment_words(pool: Pool, comment_texts: list[str]) -> tuple[list[str], int]:
+def comment_words(comment_texts: list[str]) -> collections.Counter:
+    return collections.Counter(w for c in comment_texts for w in c.split() if not PAGE_NUMBER.fullmatch(w))
+
+
+def claim_comment_words(pool: Pool, comment_texts: list[str],
+                        comments: collections.Counter = None) -> tuple[list[str], int]:
     """Unused PDF words kept in RST comments (not rendered, but not lost).
     Returns (the runs still unaccounted for, words found in comments)."""
     in_comments = 0
-    comments = collections.Counter(w for c in comment_texts for w in c.split()
-                                   if not PAGE_NUMBER.fullmatch(w))
+    if comments is None:
+        comments = comment_words(comment_texts)
     for ri, r in enumerate(pool.runs):
         for ti, t in enumerate(r):
             if pool.free(ri, ti) and comments[t] > 0:
@@ -624,13 +651,19 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     # first, so moved text cannot borrow them (a "48" turned into "24").
     comment_texts = rst_comments(open(rst_path, encoding="utf-8").read())
     in_comments = 0
+    numbers = collections.Counter()       # numbers in comments that claimed nothing
     for tok in (t for c in comment_texts for t in c.split() if PAGE_NUMBER.fullmatch(t)):
         hit = pool.find_free(tok)
         if hit:
             pool.take([hit])
             in_comments += 1
-    unexplained = account_for_inserted(pool, inserted, b, counts)
-    omitted, more = claim_comment_words(pool, comment_texts)
+        else:
+            numbers[tok] += 1
+    comments = comment_words(comment_texts)
+    glue = comments + numbers             # what a glued PDF word may take its head from
+    unexplained = account_for_inserted(pool, inserted, b, counts, glue)
+    comments = collections.Counter({w: min(n, glue[w]) for w, n in comments.items()})
+    omitted, more = claim_comment_words(pool, comment_texts, comments)
     in_comments += more
     if in_comments:
         counts["words kept in RST comments"] = in_comments

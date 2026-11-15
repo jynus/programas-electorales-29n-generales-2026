@@ -109,6 +109,15 @@
 		"sha256sum": "cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe"
 	},
 	{
+		"party": "psoe",
+		"name": "Partido Socialista Obrero Español (PSOE)",
+		"title": "La fuerza de la gente.",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf",
+		"sha256sum": "e9c8341339538b550641b6ddb1c3fdfeef7fda6a8a1a4be9e8d6a44cbc229bf5"
+	},
+	{
 		"party": "salf",
 		"name": "Se Acabó La Fiesta (SALF)",
 		"title": "Contrato electoral",
