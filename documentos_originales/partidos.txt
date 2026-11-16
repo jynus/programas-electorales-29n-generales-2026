@@ -1,7 +1,3 @@
-Partidos nacionales pendientes
-------------------------------
-frente_amplio [pendiente] https://frenteamplio.info/programa/
-
 Partidos regionales pendientes
 ------------------------------
 junts [pendiente] https://demojunts.cat/actualitat/noticies/

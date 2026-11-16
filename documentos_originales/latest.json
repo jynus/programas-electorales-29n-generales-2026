@@ -36,6 +36,7 @@
 		"language": "ca",
 		"version": 1,
 		"program_url": "https://frontvalencia.org/programa-compromis-front-valencia.pdf",
+		"file": "programa-compromis-front-valencia.pdf",
 		"sha256sum": "37b569d6ac31a21a8f972dcfd5be3740c32f50fe1c6f3e87c9a1f68027ee6b55"
 	},
 	{
@@ -45,6 +46,7 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://democracia21.es/docs/espana-limpia-democracia21.pdf",
+		"file": "espana-limpia-democracia21.pdf",
 		"note": "No es un programa electoral dedicado a las elecciones del 29N.",
 		"sha256sum": "bfa89b7218cd6a76d0eff86a1f6aad0a2e8c7c14a5d88f18ea002658bab4e1de"
 	},
@@ -65,7 +67,18 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf",
+		"file": "Programa_1IMP.pdf",
 		"sha256sum": "def48f491e28aff00d8e1e659c4704bcf8da3e5d2276fe81c947311da7621745"
+	},
+	{
+		"party": "frente_amplio",
+		"name": "Frente Amplio",
+		"title": "Un Programa como una Casa",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
+		"file": "ProgramaFrenteAmplio.pdf",
+		"sha256sum": "df6e4d967a3a41386656273c32c2df3edc6681b6ee047b190b2ebb91f1a36f04"
 	},
 	{
 		"party": "frente_obrero",
@@ -94,6 +107,7 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf",
+		"file": "PE_GENERALES_29N26.pdf",
 		"sha256sum": "6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d"
 	},
 	{
@@ -154,6 +168,7 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf",
+		"file": "PROGRAMAPSOE29N26.pdf",
 		"sha256sum": "e9c8341339538b550641b6ddb1c3fdfeef7fda6a8a1a4be9e8d6a44cbc229bf5"
 	},
 	{
@@ -173,6 +188,7 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://soriaya.org/wp-content/uploads/2026/11/ProgramaGenerales_26.pdf",
+		"file": "ProgramaGenerales_26.pdf",
 		"sha256sum": "042e8da39561d2008db48e78a6b72fb9309f334038a1d0af67791ceb983c3e9d"
 	},
 	{
@@ -182,6 +198,7 @@
 		"language": "es",
 		"version": 1,
 		"program_url": "https://teruelexiste.info/wp-content/uploads/2026/11/Programa_Teruel_Existe_Completo_29N.pdf",
+		"file": "Programa_Teruel_Existe_Completo_29N.pdf",
 		"sha256sum": "f93342d6c9d0f17eaa53fa68ff714bfa0981ca9c10605401b71801cf1870e190"
 	},
 	{

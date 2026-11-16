@@ -3,11 +3,12 @@ pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
 Used by salf, partido_humanista, pnv, por_un_mundo_mas_justo, frente_obrero,
 iustitia_europa, vox, pacma, teruel_existe, soria_ya, psoe,
-compromis_front_valencia, democracia21 and feministas_al_congreso (the whole
-engine: extraction with fonts, RST writing, verification and the command
-line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
-RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``);
-podemos-html2rst.py uses ``verify_blocks`` and the RST helpers.
+compromis_front_valencia, democracia21, feministas_al_congreso and
+frente_amplio (the whole engine: extraction with fonts, RST writing,
+verification and the command line), and in part by bng, erc and
+coalicion_canaria (``read_bbox``, ``run``, RST escaping/wrapping,
+``pandoc_read``; erc also ``inline`` and ``main``); podemos-html2rst.py uses
+``verify_blocks`` and the RST helpers.
 build.py uses the pandoc reader (``pandoc_ast``/``ast_text``), the
 ``pdftotext -layout`` evidence of real line-end hyphens
 (``layout_hyphen_breaks``) and ``visible_pdf`` (text hidden by a page copy
@@ -737,11 +738,15 @@ def raw_units(raw: str, join_u2010=True) -> list[str]:
 
 def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
                   hyphen_breaks: list[tuple[str, str]] = (), strip_start: str | tuple = "",
-                  skip_unreadable: bool = False, leaders: bool = False) -> bool:
+                  skip_unreadable: bool = False, leaders: bool = False,
+                  block_end_hyphens: bool = False) -> bool:
     """For documents whose reading order the converter rebuilds: the RST text
     (whitespace aside) must be exactly the lines of plain pdftotext, each
     used once and kept whole, in any order. Nothing is set aside: running
-    headers and footers are kept in RST comments."""
+    headers and footers are kept in RST comments. With block_end_hyphens, a
+    hyphenated word cut where a text block ends (at a page break: plain
+    pdftotext joins only the lines inside a block) is joined: a line ending
+    in a letter and "-" counts without the "-"."""
     ok = True
 
     def fail(msg):
@@ -771,6 +776,11 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
         set_aside.append((glyph, n))
     for glyph, n in sorted(set_aside, key=lambda g: glyphs.index(g[0])):
         report.append(f"  set aside: {glyph!r} starting a line (RST list markers instead): {n}")
+    if block_end_hyphens:
+        cut = [i for i, u in enumerate(units) if re.search(r"[^\W\d_]-$", u)]
+        for i in cut:
+            units[i] = units[i][:-1]
+        report.append(f"  hyphens of words cut at the end of a text block, joined: {len(cut)}")
     if leaders:
         report.append(f"  set aside: table-of-contents dot leaders: {n_leaders}")
     if skip_unreadable:          # glyphs of a font without Unicode mapping: control characters only

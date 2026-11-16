@@ -11,6 +11,7 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 | Democracia 21 \* | [España Limpia](programas_electorales/democracia21.rst) | castellano | [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) ([fuente](https://democracia21.es/docs/espana-limpia-democracia21.pdf)) | 1 | 13 | 2.559 |
 | Esquerra Republicana (ERC) | [Pel país. Per la gent. Pel futur.](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 1 | 48 | 25.310 |
 | Feministas al Congreso | [Juntas hacemos historia](programas_electorales/feministas_al_congreso.rst) | castellano | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) ([fuente](https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf)) | 1 | 2 | 617 |
+| Frente Amplio | [Un Programa como una Casa](programas_electorales/frente_amplio.rst) | castellano | [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) ([fuente](https://frenteamplio.info/programa/)) | 1 | 151 | 48.902 |
 | Frente Obrero | [Recuperar España](programas_electorales/frente_obrero.rst) | castellano | [Programa.pdf](documentos_originales/Programa.pdf) ([fuente](https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf)) | 1 | 64 | 12.979 |
 | Iustitia Europa (IE) | [Contrato electoral](programas_electorales/iustitia_europa.rst) | castellano | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) ([fuente](https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf)) | 1 | 28 | 4.382 |
 | Partido Animalista Con el Medio Ambiente (PACMA) | [Vota por lo que crees](programas_electorales/pacma.rst) | castellano | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) ([fuente](https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf)) | 1 | 82 | 41.387 |
@@ -38,6 +39,7 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 | [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) | `bfa89b7218cd6a76d0eff86a1f6aad0a2e8c7c14a5d88f18ea002658bab4e1de` |
 | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04` |
 | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) | `def48f491e28aff00d8e1e659c4704bcf8da3e5d2276fe81c947311da7621745` |
+| [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) | `df6e4d967a3a41386656273c32c2df3edc6681b6ee047b190b2ebb91f1a36f04` |
 | [Programa.pdf](documentos_originales/Programa.pdf) | `7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282` |
 | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) | `03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd` |
 | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) | `6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d` |
