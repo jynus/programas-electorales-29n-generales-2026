@@ -2,10 +2,12 @@
 pdf2rst_common.py - shared code for the <party>-pdf2rst.py converters.
 
 Used by salf, partido_humanista, pnv, por_un_mundo_mas_justo, frente_obrero,
-iustitia_europa, vox, pacma, teruel_existe, soria_ya and psoe (the whole
+iustitia_europa, vox, pacma, teruel_existe, soria_ya, psoe,
+compromis_front_valencia, democracia21 and feministas_al_congreso (the whole
 engine: extraction with fonts, RST writing, verification and the command
 line), and in part by bng, erc and coalicion_canaria (``read_bbox``, ``run``,
-RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``).
+RST escaping/wrapping, ``pandoc_read``; erc also ``inline`` and ``main``);
+podemos-html2rst.py uses ``verify_blocks`` and the RST helpers.
 build.py uses the pandoc reader (``pandoc_ast``/``ast_text``), the
 ``pdftotext -layout`` evidence of real line-end hyphens
 (``layout_hyphen_breaks``) and ``visible_pdf`` (text hidden by a page copy

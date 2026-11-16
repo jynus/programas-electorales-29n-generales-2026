@@ -1,18 +1,22 @@
 # Programas electorales: elecciones generales del 29 de noviembre de 2026
 
-Programas electorales convertidos de su PDF original a reStructuredText, con el texto verificado frente al PDF.
+Programas electorales convertidos de su PDF original (o de su web, guardada en HTML, si el partido no publicó PDF) a reStructuredText, con el texto verificado frente al original.
 
-| Partido | Programa (RST) | Idioma | PDF original | Versión | Páginas | Palabras |
+| Partido | Programa (RST) | Idioma | Original | Versión | Páginas | Palabras |
 |---|---|---|---|---|---:|---:|
 | Adelante Andalucía | [Un programa para frenar a las derechas](programas_electorales/adelante_andalucia.rst) | castellano | [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) ([fuente](https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf)) | 1 | 134 | 31.742 |
 | Bloque Nacionalista Galego (BNG) | [Programa electoral](programas_electorales/bng.rst) | gallego | [26_bng_xerais_documentos_programa_electoral.pdf](documentos_originales/26_bng_xerais_documentos_programa_electoral.pdf) ([fuente](https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf)) | 1 | 91 | 25.684 |
 | Coalición Canaria y Municipalistas | [Defiende Canarias](programas_electorales/coalicion_canaria.rst) | castellano | [CCA-26-Programa_Electoral-29NOV.pdf](documentos_originales/CCA-26-Programa_Electoral-29NOV.pdf) ([fuente](https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf)) | 1 | 23 | 9.239 |
+| Compromís-Front Valencià | [Programa electoral 29N](programas_electorales/compromis_front_valencia.rst) | catalán | [programa-compromis-front-valencia.pdf](documentos_originales/programa-compromis-front-valencia.pdf) ([fuente](https://frontvalencia.org/programa-compromis-front-valencia.pdf)) | 1 | 64 | 16.744 |
+| Democracia 21 \* | [España Limpia](programas_electorales/democracia21.rst) | castellano | [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) ([fuente](https://democracia21.es/docs/espana-limpia-democracia21.pdf)) | 1 | 13 | 2.559 |
 | Esquerra Republicana (ERC) | [Pel país. Per la gent. Pel futur.](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 1 | 48 | 25.310 |
+| Feministas al Congreso | [Juntas hacemos historia](programas_electorales/feministas_al_congreso.rst) | castellano | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) ([fuente](https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf)) | 1 | 2 | 617 |
 | Frente Obrero | [Recuperar España](programas_electorales/frente_obrero.rst) | castellano | [Programa.pdf](documentos_originales/Programa.pdf) ([fuente](https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf)) | 1 | 64 | 12.979 |
 | Iustitia Europa (IE) | [Contrato electoral](programas_electorales/iustitia_europa.rst) | castellano | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) ([fuente](https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf)) | 1 | 28 | 4.382 |
 | Partido Animalista Con el Medio Ambiente (PACMA) | [Vota por lo que crees](programas_electorales/pacma.rst) | castellano | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) ([fuente](https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf)) | 1 | 82 | 41.387 |
 | Partido Humanista | [Elecciones Generales 2026](programas_electorales/partido_humanista.rst) | castellano | [Programa Generales 2026.pdf](documentos_originales/Programa%20Generales%202026.pdf) ([fuente](https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf)) | 1 | 31 | 7.875 |
 | EAJ-PNV | [Defendemos Euskadi](programas_electorales/pnv.rst) | castellano | [programa-electoral-29n.pdf](documentos_originales/programa-electoral-29n.pdf) ([fuente](https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n)) | 1 | 43 | 11.267 |
+| Podemos | [Paz, casa y trabajo.](programas_electorales/podemos.rst) | castellano | [pazcasaytrabajo.html](documentos_originales/pazcasaytrabajo.html) ([fuente](https://pazcasaytrabajo.es/)) | 1 | — | 244 |
 | Por un Mundo Más Justo (M+J) | [Si no es justo, cámbialo](programas_electorales/por_un_mundo_mas_justo.rst) | castellano | [Castellano.pdf](documentos_originales/Castellano.pdf) ([fuente](https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf)) | 1 | 95 | 19.687 |
 | Partido Popular (PP) | [Reconstrucción Nacional](programas_electorales/pp.rst) | castellano | [LA-RECONSTRUCCION-NACIONAL.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL.pdf) ([fuente](https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL.pdf)) | 1 | 82 | 23.599 |
 | Partido Socialista Obrero Español (PSOE) | [La fuerza de la gente.](programas_electorales/psoe.rst) | castellano | [PROGRAMAPSOE29N26.pdf](documentos_originales/PROGRAMAPSOE29N26.pdf) ([fuente](https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf)) | 1 | 114 | 36.163 |
@@ -21,6 +25,8 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | Teruel Existe | [Faltaría más.](programas_electorales/teruel_existe.rst) | castellano | [Programa_Teruel_Existe_Completo_29N.pdf](documentos_originales/Programa_Teruel_Existe_Completo_29N.pdf) ([fuente](https://teruelexiste.info/wp-content/uploads/2026/11/Programa_Teruel_Existe_Completo_29N.pdf)) | 1 | 15 | 6.016 |
 | VOX | [Es sentido común](programas_electorales/vox.rst) | castellano | [Programa-completo-A5-1.pdf](documentos_originales/Programa-completo-A5-1.pdf) ([fuente](https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf)) | 1 | 66 | 6.812 |
 
+\* No es un programa electoral dedicado a las elecciones del 29N.
+
 ## Sumas de verificación de los originales
 
 | Fichero | SHA-256 |
@@ -28,12 +34,16 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 | [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) | `223fcb661c92858f1425cdbf8d671673c89a23c5952cbc232fed02e49d2d4f0f` |
 | [26_bng_xerais_documentos_programa_electoral.pdf](documentos_originales/26_bng_xerais_documentos_programa_electoral.pdf) | `fd5aef260b9c66d030b57b7b0e18914c8ad79384e2c46b2346d9fb4f6514a97d` |
 | [CCA-26-Programa_Electoral-29NOV.pdf](documentos_originales/CCA-26-Programa_Electoral-29NOV.pdf) | `3c40c0a6e38d8dd80ae1061d94b614f4e3f1b6492ec8c801834fb497f337044e` |
+| [programa-compromis-front-valencia.pdf](documentos_originales/programa-compromis-front-valencia.pdf) | `37b569d6ac31a21a8f972dcfd5be3740c32f50fe1c6f3e87c9a1f68027ee6b55` |
+| [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) | `bfa89b7218cd6a76d0eff86a1f6aad0a2e8c7c14a5d88f18ea002658bab4e1de` |
 | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04` |
+| [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) | `def48f491e28aff00d8e1e659c4704bcf8da3e5d2276fe81c947311da7621745` |
 | [Programa.pdf](documentos_originales/Programa.pdf) | `7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282` |
 | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) | `03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd` |
 | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) | `6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d` |
 | [Programa Generales 2026.pdf](documentos_originales/Programa%20Generales%202026.pdf) | `c53ab576b0c57a091665795cb8676269b85cc6f9b7e22c9d65ce11d86502086f` |
 | [programa-electoral-29n.pdf](documentos_originales/programa-electoral-29n.pdf) | `5af7a5b6f67c26bad87ef6c3ca01ae38aa1f1d7d9029efb32fc52482de0c1314` |
+| [pazcasaytrabajo.html](documentos_originales/pazcasaytrabajo.html) | `2cc6f3c2d544375a8fae99b161ab859824eee4bf00f5e5b5da38aafca9e5b4ab` |
 | [Castellano.pdf](documentos_originales/Castellano.pdf) | `a3c7c807411d8565b310a9b566c6fa2cbe643e99c91f3f9f4e7d8712d949c613` |
 | [LA-RECONSTRUCCION-NACIONAL.pdf](documentos_originales/LA-RECONSTRUCCION-NACIONAL.pdf) | `cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe` |
 | [PROGRAMAPSOE29N26.pdf](documentos_originales/PROGRAMAPSOE29N26.pdf) | `e9c8341339538b550641b6ddb1c3fdfeef7fda6a8a1a4be9e8d6a44cbc229bf5` |
@@ -44,10 +54,10 @@ Programas electorales convertidos de su PDF original a reStructuredText, con el 
 
 ## Cómo se generan
 
-Todo se regenera con `python3 scripts/build.py`, que lee `documentos_originales/latest.json`, comprueba el SHA-256 de cada PDF (también frente a `documentos_originales/SHA256SUM.txt`), ejecuta `scripts/<partido>-pdf2rst.py` y verifica el resultado antes de escribir `programas_electorales/` y este README:
+Todo se regenera con `python3 scripts/build.py`, que lee `documentos_originales/latest.json`, comprueba el SHA-256 de cada original (también frente a `documentos_originales/SHA256SUM.txt`), ejecuta `scripts/<partido>-pdf2rst.py` (`<partido>-html2rst.py` para una web) y verifica el resultado antes de escribir `programas_electorales/` y este README:
 
-* cada conversor compara su RST con el texto del PDF y falla ante cualquier texto añadido, omitido o alterado;
-* una comprobación independiente lee el RST con pandoc y exige que cada palabra proceda del texto del PDF (`pdftotext`); solo se permiten cambios de espacios, unión de palabras cortadas a final de línea, bloques movidos sin cambios y la omisión de elementos de página (números de página, cabeceras y pies);
+* cada conversor compara su RST con el texto del original y falla ante cualquier texto añadido, omitido o alterado;
+* una comprobación independiente lee el RST con pandoc y exige que cada palabra proceda del texto del PDF (`pdftotext`); solo se permiten cambios de espacios, unión de palabras cortadas a final de línea, bloques movidos sin cambios y la omisión de elementos de página (números de página, cabeceras y pies); en una web, el texto de los elementos que forman el programa, tal como lo lee un lector de pantalla, debe coincidir carácter a carácter con el del RST;
 * `python3 scripts/build.py --check` falla si algún fichero de `programas_electorales/` no coincide con lo que se genera a partir de los originales.
 
 Este fichero se genera automáticamente; no lo edites a mano.

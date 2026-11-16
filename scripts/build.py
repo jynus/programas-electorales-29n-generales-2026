@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 """
 build.py - Rebuild every electoral programme of the repository from its
-original PDF, verify the result and regenerate README.md.
+original document (a PDF; a web page saved as HTML when a party published no
+PDF), verify the result and regenerate README.md.
 
 Steps
 -----
 1. Read ``documentos_originales/latest.json``: one entry per party and
    language (party id, full name, programme title, language, version,
-   program_url, sha256sum, optionally file), processed in order of party id.
+   program_url, sha256sum, optionally file and note -- shown in the README
+   after an asterisk, e.g. that a document is not a programme written for
+   this election --; for an HTML original, html_ids: the ids of the page
+   elements that hold the programme), processed in order of party id.
 2. Check the SHA-256 of every original PDF against latest.json and, when it
    exists, ``documentos_originales/SHA256SUM.txt`` (both must agree).
-3. Run ``scripts/<party>-pdf2rst.py PDF -o OUT.rst`` for every entry. Each
-   converter carries its own document-specific verification and must exit 0.
+3. Run ``scripts/<party>-pdf2rst.py PDF -o OUT.rst`` (``<party>-html2rst.py``
+   for an HTML original) for every entry. Each converter carries its own
+   document-specific verification and must exit 0.
 4. Run checks that do not depend on the converters' code:
      a. independent text check: pandoc parses the RST and its words are
         compared with the plain ``pdftotext`` output of the PDF. Allowed:
@@ -25,6 +30,10 @@ Steps
         converters do it (``visible_pdf`` in pdf2rst_common.py), and reported.
         A PDF word glued from two printed copies ("22.": a boxed "2" over the
         label "2.") may match an RST word plus a word of an RST comment.
+        For an HTML original, pandoc also reads the page: the text of the
+        elements in html_ids, without what is marked aria-hidden="true" (a
+        copy drawn for the eye; the text for screen readers is kept), must be
+        the RST's text, character for character, in order (whitespace aside).
      b. hyphen review: ``pdftotext -layout`` keeps the line-end hyphens that
         the default mode silently drops; joins that look like real hyphens
         (number ranges, compounds hyphenated elsewhere) become warnings.
@@ -119,9 +128,15 @@ class Source:
     version: object
     url: str
     sha256: str
-    pdf: str              # path relative to ROOT
+    pdf: str              # original document (PDF, or HTML), path relative to ROOT
     script: str           # path relative to ROOT
     rst: str              # final path relative to ROOT
+    html_ids: tuple = ()  # HTML original: ids of the elements that hold the programme
+    note: str = ""        # shown in the README after an asterisk
+
+    @property
+    def is_html(self) -> bool:
+        return self.pdf.lower().endswith((".html", ".htm"))
 
 
 @dataclass
@@ -155,7 +170,8 @@ def load_manifest(only: list[str] | None) -> list[Source]:
     """Entries of latest.json, sorted by party id and language. One entry per
     party and language; a party with several languages gets one document per
     language ("<party>-<language>.rst", converter "<party>-<language>-pdf2rst.py"
-    if it exists, otherwise the party's "<party>-pdf2rst.py")."""
+    if it exists, otherwise the party's "<party>-pdf2rst.py"; "html2rst" for
+    an HTML original)."""
     path = absp(rel(SOURCES_DIR, MANIFEST))
     try:
         entries = json.load(open(path, encoding="utf-8"))
@@ -185,19 +201,29 @@ def load_manifest(only: list[str] | None) -> list[Source]:
             raise InputError(f"{party}: different names in {MANIFEST} ({names[party]!r}, {e['name']!r})")
         if not re.fullmatch(r"[0-9a-f]{64}", e["sha256sum"].lower()):
             raise InputError(f"{party}: sha256sum is not a SHA-256 hex digest")
+        if "note" in e and not (isinstance(e["note"], str) and e["note"].strip()):
+            raise InputError(f"{party}: note must be a non-empty string")
+        name = e.get("file") or os.path.basename(e["program_url"].split("?")[0])
+        if name.lower().endswith((".html", ".htm")) and not (
+                isinstance(e.get("html_ids"), list) and e["html_ids"]
+                and all(isinstance(x, str) and x for x in e["html_ids"])):
+            raise InputError(f"{party}: an HTML original needs html_ids (the ids of the elements "
+                             "that hold the programme)")
     per_party = collections.Counter(e["party"] for e in entries)
     sources = []
     for e in sorted(entries, key=lambda e: (e["party"], e["language"])):
         party, lang = e["party"], e["language"]
         doc = party if per_party[party] == 1 else f"{party}-{lang}"
-        script = rel(SCRIPTS_DIR, f"{doc}-pdf2rst.py")
-        if not os.path.isfile(absp(script)):
-            script = rel(SCRIPTS_DIR, f"{party}-pdf2rst.py")
         pdf_name = e.get("file") or os.path.basename(e["program_url"].split("?")[0])
+        kind = "html2rst" if pdf_name.lower().endswith((".html", ".htm")) else "pdf2rst"
+        script = rel(SCRIPTS_DIR, f"{doc}-{kind}.py")
+        if not os.path.isfile(absp(script)):
+            script = rel(SCRIPTS_DIR, f"{party}-{kind}.py")
         sources.append(Source(
             party=party, name=e["name"], title=e["title"], language=lang, doc=doc,
             version=e["version"], url=e["program_url"], sha256=e["sha256sum"].lower(),
-            pdf=rel(SOURCES_DIR, pdf_name), script=script, rst=rel(OUTPUT_DIR, f"{doc}.rst")))
+            pdf=rel(SOURCES_DIR, pdf_name), script=script, rst=rel(OUTPUT_DIR, f"{doc}.rst"),
+            html_ids=tuple(e.get("html_ids") or ()), note=e.get("note", "").strip()))
     if only:
         unknown = set(only) - {s.party for s in sources} - {s.doc for s in sources}
         if unknown:
@@ -706,6 +732,76 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
 
 
 # --------------------------------------------------------------------------- 4b. hyphen review
+def html_text(html_path: str, ids: tuple) -> str:
+    """What pandoc reads in the page's elements with those ids, in page order,
+    leaving out the elements marked aria-hidden="true"; whitespace removed."""
+    doc = json.loads(subprocess.run(["pandoc", "-f", "html", "-t", "json", absp(html_path)],
+                                    capture_output=True, text=True, check=True).stdout)
+    found = {}
+
+    def attr_of(node):
+        t, c = node.get("t"), node.get("c")
+        if t in ("Div", "Span", "Link", "Image", "Code", "CodeBlock", "Figure", "Table"):
+            return c[0]
+        if t == "Header":
+            return c[1]
+        return None
+
+    def strings(x, out):
+        if isinstance(x, dict):
+            a = attr_of(x)
+            if a and ["aria-hidden", "true"] in [list(kv) for kv in a[2]]:
+                return
+            if x.get("t") == "Str":
+                out.append(x["c"])
+            elif x.get("t") in ("Code",):
+                out.append(x["c"][1])
+            else:
+                strings(x.get("c"), out)
+        elif isinstance(x, list):
+            for y in x:
+                strings(y, out)
+
+    def find(x):
+        if isinstance(x, dict):
+            a = attr_of(x)
+            if a and a[0] in ids and a[0] not in found:
+                out = []
+                strings(x, out)
+                found[a[0]] = "".join("".join(out).split())
+                return
+            find(x.get("c"))
+        elif isinstance(x, list):
+            for y in x:
+                find(y)
+
+    find(doc["blocks"])
+    missing = [i for i in ids if i not in found]
+    if missing:
+        raise RuntimeError(f"independent check: elements not in the page: {', '.join(missing)}")
+    return "".join(found[i] for i in ids)
+
+
+def independent_check_html(src: Source, rst_path: str, res: Result) -> list[str]:
+    report = []
+    ref = html_text(src.pdf, src.html_ids)
+    b = pandoc_words(pandoc_document(rst_path))
+    res.words = len(b)
+    got = "".join(b)
+    report.append(f"page text (pandoc -f html; elements {', '.join(src.html_ids)}; "
+                  f"aria-hidden left out): {len(ref)} characters")
+    report.append(f"RST words (pandoc): {len(b)}, {len(got)} characters")
+    if got == ref:
+        report.append("  identical text (whitespace aside), in the same order")
+        res.notes.append(f"{len(b)} words, identical to the page's text")
+    else:
+        k = next((i for i, (x, y) in enumerate(zip(ref, got)) if x != y), min(len(ref), len(got)))
+        res.fail(f"independent check: the RST differs from the page's text at character {k}: "
+                 f"page {ref[max(0, k - 30):k + 30]!r}, RST {got[max(0, k - 30):k + 30]!r}")
+        report.append("  DIFFERENT")
+    return report
+
+
 def hyphen_review(pdf: str, rst_path: str, res: Result) -> list[str]:
     layout = subprocess.run(["pdftotext", "-layout", "-enc", "UTF-8", absp(pdf), "-"],
                             capture_output=True, check=True).stdout.decode("utf-8")
@@ -743,12 +839,15 @@ def process(src: Source, workdir: str, check_only: bool) -> Result:
             res.warnings.append("converter: " + line.strip())
 
     try:
-        # text hidden by a page copy drawn through a window (C.visible_pdf):
-        # set aside here too, from the same visible copy, and reported
-        with C.visible_pdf(absp(src.pdf)) as (pdf, hidden):
-            report += ["", "INDEPENDENT TEXT CHECK"] + [f"  hidden text: {n}" for n in hidden]
-            report += independent_check(pdf, res.tmp_rst, res)
-            report += ["", "HYPHEN REVIEW"] + hyphen_review(pdf, res.tmp_rst, res)
+        if src.is_html:
+            report += ["", "INDEPENDENT TEXT CHECK"] + independent_check_html(src, res.tmp_rst, res)
+        else:
+            # text hidden by a page copy drawn through a window (C.visible_pdf):
+            # set aside here too, from the same visible copy, and reported
+            with C.visible_pdf(absp(src.pdf)) as (pdf, hidden):
+                report += ["", "INDEPENDENT TEXT CHECK"] + [f"  hidden text: {n}" for n in hidden]
+                report += independent_check(pdf, res.tmp_rst, res)
+                report += ["", "HYPHEN REVIEW"] + hyphen_review(pdf, res.tmp_rst, res)
     except (RuntimeError, subprocess.CalledProcessError) as e:
         res.fail(str(e))
 
@@ -766,9 +865,10 @@ def process(src: Source, workdir: str, check_only: bool) -> Result:
         report += ["", f"DIFFERENCES WITH THE EXISTING {src.rst} ({len(diff)} diff lines)"] + diff[:200]
     if check_only and res.status != "unchanged":
         res.fail(f"{src.rst} is {'missing' if res.status == 'new' else 'out of date or edited by hand'}")
-    pages = subprocess.run(["pdfinfo", absp(src.pdf)], capture_output=True, text=True).stdout
-    m = re.search(r"^Pages:\s+(\d+)", pages, re.M)
-    res.pages = int(m.group(1)) if m else 0
+    if not src.is_html:           # a web page has no pages: "—" in the README
+        pages = subprocess.run(["pdfinfo", absp(src.pdf)], capture_output=True, text=True).stdout
+        m = re.search(r"^Pages:\s+(\d+)", pages, re.M)
+        res.pages = int(m.group(1)) if m else 0
     res.log += "\n\n" + "\n".join(report) + "\n"
     return res
 
@@ -783,16 +883,21 @@ def render_readme(results: list[Result]) -> str:
     lines = [
         "# Programas electorales: elecciones generales del 29 de noviembre de 2026",
         "",
-        "Programas electorales convertidos de su PDF original a reStructuredText, "
-        "con el texto verificado frente al PDF.",
+        "Programas electorales convertidos de su PDF original (o de su web, guardada "
+        "en HTML, si el partido no publicó PDF) a reStructuredText, con el texto "
+        "verificado frente al original.",
         "",
-        "| Partido | Programa (RST) | Idioma | PDF original | Versión | Páginas | Palabras |",
+        "| Partido | Programa (RST) | Idioma | Original | Versión | Páginas | Palabras |",
         "|---|---|---|---|---|---:|---:|",
     ]
+    marks = {}                    # note -> "*", "**", ... in order of appearance
+    for r in results:
+        if r.src.note:
+            marks.setdefault(r.src.note, "\\*" * (len(marks) + 1))
     for r in results:
         s = r.src
         lines.append("| " + " | ".join([
-            s.name,
+            s.name + (f" {marks[s.note]}" if s.note else ""),
             md_link(s.title, s.rst),                                # programme title -> its .rst
             LANGUAGE_NAMES.get(s.language, s.language),
             f"{md_link(os.path.basename(s.pdf), s.pdf)} ([fuente]({s.url}))",
@@ -800,6 +905,10 @@ def render_readme(results: list[Result]) -> str:
             str(r.pages or "—"),
             f"{r.words:,}".replace(",", "."),
         ]) + " |")
+    if marks:
+        lines.append("")
+        lines += [f"{m} {note}  " for note, m in marks.items()]
+        lines[-1] = lines[-1].rstrip()
     lines += [
         "",
         "## Sumas de verificación de los originales",
@@ -814,16 +923,19 @@ def render_readme(results: list[Result]) -> str:
         "## Cómo se generan",
         "",
         f"Todo se regenera con `python3 {SCRIPTS_DIR}/build.py`, que lee `{SOURCES_DIR}/{MANIFEST}`, "
-        f"comprueba el SHA-256 de cada PDF (también frente a `{SOURCES_DIR}/{CHECKSUMS}`), "
-        f"ejecuta `{SCRIPTS_DIR}/<partido>-pdf2rst.py` y verifica el resultado antes de "
+        f"comprueba el SHA-256 de cada original (también frente a `{SOURCES_DIR}/{CHECKSUMS}`), "
+        f"ejecuta `{SCRIPTS_DIR}/<partido>-pdf2rst.py` (`<partido>-html2rst.py` para una web) "
+        "y verifica el resultado antes de "
         f"escribir `{OUTPUT_DIR}/` y este README:",
         "",
-        "* cada conversor compara su RST con el texto del PDF y falla ante cualquier "
+        "* cada conversor compara su RST con el texto del original y falla ante cualquier "
         "texto añadido, omitido o alterado;",
         "* una comprobación independiente lee el RST con pandoc y exige que cada palabra "
         "proceda del texto del PDF (`pdftotext`); solo se permiten cambios de espacios, "
         "unión de palabras cortadas a final de línea, bloques movidos sin cambios y la "
-        "omisión de elementos de página (números de página, cabeceras y pies);",
+        "omisión de elementos de página (números de página, cabeceras y pies); en una web, "
+        "el texto de los elementos que forman el programa, tal como lo lee un lector de "
+        "pantalla, debe coincidir carácter a carácter con el del RST;",
         f"* `python3 {SCRIPTS_DIR}/build.py --check` falla si algún fichero de "
         f"`{OUTPUT_DIR}/` no coincide con lo que se genera a partir de los originales.",
         "",
