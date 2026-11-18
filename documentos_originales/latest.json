@@ -51,6 +51,16 @@
 		"sha256sum": "bfa89b7218cd6a76d0eff86a1f6aad0a2e8c7c14a5d88f18ea002658bab4e1de"
 	},
 	{
+		"party": "eh_bildu",
+		"name": "EH Bildu",
+		"title": "Posible egin. Garantía y derechos",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-CAS.pdf",
+		"file": "PROGRAMA-CAS.pdf",
+		"sha256sum": "ceb655c9c8ebb036a15fa7829865d6e2d178525eb7db92629d702ac5e8d16047"
+	},
+	{
 		"party": "erc",
 		"name": "Esquerra Republicana (ERC)",
 		"title": "Pel país. Per la gent. Pel futur.",
@@ -135,11 +145,10 @@
 		"name": "Podemos",
 		"title": "Paz, casa y trabajo.",
 		"language": "es",
-		"version": 1,
-		"program_url": "https://pazcasaytrabajo.es/",
-		"file": "pazcasaytrabajo.html",
-		"html_ids": ["hero-title", "contenidos"],
-		"sha256sum": "2cc6f3c2d544375a8fae99b161ab859824eee4bf00f5e5b5da38aafca9e5b4ab"
+		"version": 2,
+		"program_url": "https://pazcasaytrabajo.es/programa-electoral/programa-electoral-paz-casa-y-trabajo.pdf",
+		"file": "programa-electoral-paz-casa-y-trabajo.pdf",
+		"sha256sum": "086211fb272f0eeceddfa630796e58e5f4910e81efb0385a43b563a2e3f097fb"
 	},
 	{
 		"party": "por_un_mundo_mas_justo",

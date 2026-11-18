@@ -50,8 +50,10 @@ WRAP = 79
 TERMINAL = tuple(".:;!?…)»”\"")      # a paragraph ending in one of these is complete
 # Table-of-contents dot leaders: 4+ dots ("PREÀMBUL........5"; an ellipsis has
 # 3), or 3 dots between a space and the page number ending the line, where a
-# long entry left room for no more ("veterinaria social ...19").
-DOT_LEADER = re.compile(r"\.{4,}|(?<= )\.{3}(?=\d+[ \t]*$)", re.M)
+# long entry left room for no more ("veterinaria social ...19"), or 4+ leader
+# glyphs that the font maps to no character (pdftotext prints U+FFFD: "Contención
+# de precios y carestía de la vida	���������8").
+DOT_LEADER = re.compile(r"\.{4,}|(?<= )\.{3}(?=\d+[ \t]*$)|�{4,}", re.M)
 
 
 class ConvertError(RuntimeError):
@@ -708,6 +710,28 @@ def verify(rst: str, raw: str, furniture: Furniture, report: list[str],
         report.append(f"  pandoc reads the same {len(pw)} words"
                       + (f" ({sum(flags)} more are in RST comments)" if any(flags) else ""))
     return ok
+
+
+def split_glued_page_numbers(raw: str) -> tuple[str, int]:
+    """Plain pdftotext may read a page's last text block and its page number
+    as one flow: when the last line ends in a hyphen, it joins the two
+    ("dificul-" + "10" -> "dificul10"). Undo exactly that join: on a page with
+    no line of its own for its number (its position in the PDF), a last line
+    that ends in a letter followed by that number gets the hyphen and the
+    number back as two lines. Returns (text, pages fixed)."""
+    pages = raw.split("\f")
+    n = 0
+    for i, page in enumerate(pages):
+        num = str(i + 1)
+        lines = page.split("\n")
+        if any(ln.strip() == num for ln in lines):
+            continue
+        last = max((k for k, ln in enumerate(lines) if ln.strip()), default=None)
+        if last is not None and re.search(rf"[^\W\d_]{num}$", lines[last].rstrip()):
+            lines[last] = lines[last].rstrip()[:-len(num)] + "-\n" + num
+            pages[i] = "\n".join(lines)
+            n += 1
+    return "\f".join(pages), n
 
 
 def layout_hyphen_breaks(pdf: str) -> list[tuple[str, str]]:
