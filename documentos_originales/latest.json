@@ -151,6 +151,16 @@
 		"sha256sum": "5af7a5b6f67c26bad87ef6c3ca01ae38aa1f1d7d9029efb32fc52482de0c1314"
 	},
 	{
+		"party": "pnv",
+		"name": "EAJ-PNV",
+		"title": "Euskadi zaindu",
+		"language": "eu",
+		"version": 1,
+		"program_url": "https://www.eaj-pnv.eus/eu/adjuntos-agiriak/21765/pdf/hauteskunde-programa-a29",
+		"file": "hauteskunde-programa-a29.pdf",
+		"sha256sum": "ffb73272dd7648e5d43afcd9e699e6351dfb573945245b72e0cdb512303dc55b"
+	},
+	{
 		"party": "podemos",
 		"name": "Podemos",
 		"title": "Paz, casa y trabajo.",

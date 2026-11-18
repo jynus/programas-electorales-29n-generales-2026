@@ -4,13 +4,22 @@ pnv-pdf2rst.py - Convert the EAJ-PNV programme "Programa Elecciones
 Generales 2026 - Defendemos Euskadi" (PDF) to reStructuredText, repeatably,
 and verify that no text was altered, omitted or added.
 
+One converter for both language editions (castellano,
+programa-electoral-29n.pdf -> pnv-es.rst; euskera,
+hauteskunde-programa-a29.pdf -> pnv-eu.rst): same layout, so only the few
+words that mark the special pages change (LABELS: "ÍNDICE" / "AURKIBIDEA",
+"CINCO COMPROMISOS" / "BOST KONPROMEZU", "COMPROMISO 1" / "1. KONPROMEZUA",
+"EN ESTE CAPÍTULO" / "ATAL HONETAN"). The cover is bilingual and the same in
+both.
+
 1. Extract with poppler-utils (``pdftotext -bbox-layout`` for text and
    positions, ``pdftohtml -xml`` for fonts; see pdf2rst_common.py).
 2. Write RST:
      * cover -> title (Spanish) and subtitle (Basque)
      * ÍNDICE and "Cinco compromisos" -> tables (entries paired with their
        page numbers, which plain pdftotext prints as a separate column)
-     * chapter openers (01 COMPROMISO 1 ...) and page titles -> level 1;
+     * chapter openers (01 COMPROMISO 1 / 1. KONPROMEZUA ...) and page
+       titles -> level 1;
        "1.1 ..." sections -> level 2; green proposal groups -> level 3
      * numbered proposals ("01 ...") -> bullet lists, the number in bold
      * lead and body paragraphs re-flowed and joined across page breaks;
@@ -21,8 +30,9 @@ and verify that no text was altered, omitted or added.
    each used once and whole (only the index and box pages change order);
    and pandoc reads the same words, without warnings.
 
-Usage:  python3 pnv-pdf2rst.py programa-electoral-29n.pdf -o pnv.rst [--report R]
-        python3 pnv-pdf2rst.py programa-electoral-29n.pdf --verify-only pnv.rst
+Usage:  python3 pnv-pdf2rst.py programa-electoral-29n.pdf -o pnv-es.rst [--report R]
+        python3 pnv-pdf2rst.py hauteskunde-programa-a29.pdf -o pnv-eu.rst
+        python3 pnv-pdf2rst.py programa-electoral-29n.pdf --verify-only pnv-es.rst
 """
 import os
 import re
@@ -32,6 +42,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pdf2rst_common as C  # noqa: E402
 
 GREEN, WHITE, BODY, LEAD = "#0d724c", "#ffffff", "#111717", "#2a3030"
+# The words that mark the special pages, in castellano and in euskera.
+LABELS = {
+    "index": ("ÍNDICE", "AURKIBIDEA"),
+    "commitments": ("CINCO COMPROMISOS", "BOST KONPROMEZU"),
+    "in_chapter": ("EN ESTE CAPÍTULO", "ATAL HONETAN"),
+}
+CHAPTER_LABEL = re.compile(r"COMPROMISO \d+|\d+\. KONPROMEZUA")
 
 
 def line_block(page, line):
@@ -69,14 +86,19 @@ def page_index(bs):
     rest = [b for b in bs if b not in used]
     left = [line_block(b.page, l) for b in rest if b.x0 < 400 for l in b.lines]
     right = [line_block(b.page, l) for b in rest if b.x0 >= 400 for l in b.lines]
-    rows = []
-    for l in left:
-        r = min(right, key=lambda r: abs(r.y0 - l.y0))
-        if abs(r.y0 - l.y0) > 4:
-            raise C.ConvertError(f"index entry without page: {l.text!r}")
+    rows, entry = [], []
+    for l in sorted(left, key=lambda l: l.y0):
+        entry.append(l)              # an entry may wrap: its page number is beside its last line
+        r = min(right, key=lambda r: abs(r.y0 - l.y0), default=None)
+        if r is None or abs(r.y0 - l.y0) > 4:
+            continue
         right.remove(r)
-        chapter = l.h > 12
-        rows.append([("**%s**" if chapter else "%s") % C.esc_start(C.esc_inline(l.text)), C.esc_inline(r.text)])
+        chapter = entry[0].h > 12
+        text = " ".join(e.text for e in entry)
+        rows.append([("**%s**" if chapter else "%s") % C.esc_start(C.esc_inline(text)), C.esc_inline(r.text)])
+        entry = []
+    if entry:
+        raise C.ConvertError(f"index entry without page: {' '.join(e.text for e in entry)!r}")
     if right:
         raise C.ConvertError(f"index page numbers without entry: {[r.text for r in right]}")
     return out + C.list_table(rows, widths=[90, 10])
@@ -100,10 +122,10 @@ def page_commitments(bs):
 def page_opener(bs):
     """Chapter opener: 01 / COMPROMISO 1 / TITLE / tagline / EN ESTE CAPÍTULO + list."""
     big = next(b for b in bs if b.h > 100)
-    label = next(b for b in bs if b.text.startswith("COMPROMISO"))
+    label = next(b for b in bs if CHAPTER_LABEL.fullmatch(b.text))
     title = next(b for b in bs if 30 < b.h < 100)
     tag = [b for b in bs if b.font.name.startswith("Playfair")]
-    inchap = [b for b in bs if b.text == "EN ESTE CAPÍTULO"]
+    inchap = [b for b in bs if b.text in LABELS["in_chapter"]]
     out = C.heading(title.text, "=")
     out += C.wrap(f"**{C.esc_inline(big.text)}** {C.esc_inline(label.text)}") + [""]
     for b in tag:
@@ -203,9 +225,9 @@ def convert(pdf, report):
         special = None
         if p == 1:
             special = page_cover(body)
-        elif any(b.text == "ÍNDICE" and b.h > 35 for b in body):
+        elif any(b.text in LABELS["index"] and b.h > 35 for b in body):
             special = page_index(body)
-        elif "CINCO COMPROMISOS" in texts:
+        elif any(label in texts for label in LABELS["commitments"]):
             special = page_commitments(body)
         elif any(b.h > 100 for b in body):
             special = page_opener(body)
@@ -229,4 +251,4 @@ def verify(rst, raw, report):
 
 
 if __name__ == "__main__":
-    sys.exit(C.main(convert, verify, "the EAJ-PNV programme"))
+    sys.exit(C.main(convert, verify, "the EAJ-PNV programme", default_output="pnv-es.rst"))
