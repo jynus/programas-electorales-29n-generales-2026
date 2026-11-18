@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-eh_bildu-pdf2rst.py - Convert the EH Bildu programme "Posible egin. Garantía y
-derechos" (PDF, InDesign, A4) to reStructuredText, repeatably, and verify that
-no text was altered, omitted or added.
+eh_bildu-pdf2rst.py - Convert the EH Bildu programme "Posible egin." (subtitle
+"Garantía y derechos"; PDF, InDesign, A4) to reStructuredText, repeatably, and
+verify that no text was altered, omitted or added.
 
-One converter for every language edition of the programme (castellano,
-euskera): it reads only fonts and positions, never the words, so the same
-layout in another language converts the same way. build.py runs it for
-"eh_bildu.rst" while there is one edition, and for "eh_bildu-es.rst",
-"eh_bildu-eu.rst"... when latest.json lists several (a converter named
+One converter for both language editions of the programme (castellano,
+PROGRAMA-CAS.pdf -> eh_bildu-es.rst; euskera, PROGRAMA-EUS.pdf ->
+eh_bildu-eu.rst): it reads only fonts and positions, never the words, so the
+same layout converts the same way in either language. build.py runs it for
+every eh_bildu entry of latest.json (a converter named
 "eh_bildu-<language>-pdf2rst.py" would take precedence; there is none).
 
 1. Extract with poppler-utils (``pdftotext -bbox-layout`` for text and
@@ -16,9 +16,9 @@ layout in another language converts the same way. build.py runs it for
    block is a paragraph or a point; a hyphen at a line end inside a block is
    joined like plain pdftotext joins it (also across a page break).
 2. Write RST:
-     * the cover (the small title "Garantía y derechos" and the big vertical
-       "programa"; "POSIBLE EGIN." and the logos are images) -> document
-       title and subtitle
+     * the cover (the big vertical "programa" and the subtitle "Garantía y
+       derechos", in castellano in both editions; the title "POSIBLE EGIN."
+       and the logos are images) -> document title and subtitle
      * the index ("Índice", big) -> a bold paragraph and a table (entry |
        page), entries joined line by line, without the dot leaders (some
        printed with a leader glyph that has no Unicode mapping: pdftotext
@@ -38,8 +38,9 @@ layout in another language converts the same way. build.py runs it for
    is joined (plain pdftotext leaves its hyphen: it joins only the lines
    inside a block). pandoc must read the same words, without warnings.
 
-Usage:  python3 eh_bildu-pdf2rst.py PROGRAMA-CAS.pdf -o eh_bildu.rst
-        python3 eh_bildu-pdf2rst.py PROGRAMA-CAS.pdf --verify-only eh_bildu.rst
+Usage:  python3 eh_bildu-pdf2rst.py PROGRAMA-CAS.pdf -o eh_bildu-es.rst
+        python3 eh_bildu-pdf2rst.py PROGRAMA-EUS.pdf -o eh_bildu-eu.rst
+        python3 eh_bildu-pdf2rst.py PROGRAMA-EUS.pdf --verify-only eh_bildu-eu.rst
 """
 import collections
 import os
@@ -226,8 +227,8 @@ def convert(pdf, report):
     big = [b for b in pages[cover] if b.font.size > 100]
     small = [b for b in pages[cover] if b not in big]
     if len(big) != 1 or len(small) != 1:
-        raise C.ConvertError("cover: title and the big 'programa' not found")
-    w.emit(heading(small[0].text, "#", over=True) + heading(big[0].text, "*", over=True))
+        raise C.ConvertError("cover: the big 'programa' and the subtitle not found")
+    w.emit(heading(big[0].text, "#", over=True) + heading(small[0].text, "*", over=True))
     ip = [p for p in pages if p != cover and pages[p]
           and all(is_furniture(b) or b.font.size == 28 or all(INDEX_ENTRY.fullmatch(C.Block(p, [ln]).text)
                                                                for ln in b.lines) for b in pages[p])]
@@ -260,4 +261,4 @@ def verify(rst, raw, report):
 
 
 if __name__ == "__main__":
-    sys.exit(C.main(convert, verify, "the EH Bildu programme", default_output="eh_bildu.rst"))
+    sys.exit(C.main(convert, verify, "the EH Bildu programme", default_output="eh_bildu-es.rst"))

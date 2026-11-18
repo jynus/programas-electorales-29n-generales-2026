@@ -53,12 +53,22 @@
 	{
 		"party": "eh_bildu",
 		"name": "EH Bildu",
-		"title": "Posible egin. Garantía y derechos",
+		"title": "Posible egin.",
 		"language": "es",
 		"version": 1,
 		"program_url": "https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-CAS.pdf",
 		"file": "PROGRAMA-CAS.pdf",
 		"sha256sum": "ceb655c9c8ebb036a15fa7829865d6e2d178525eb7db92629d702ac5e8d16047"
+	},
+	{
+		"party": "eh_bildu",
+		"name": "EH Bildu",
+		"title": "Posible egin.",
+		"language": "eu",
+		"version": 1,
+		"program_url": "https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-EUS.pdf",
+		"file": "PROGRAMA-EUS.pdf",
+		"sha256sum": "69bce4b5e5bf5f003c4f3d5e3e4558c89483bf182ce021fc3daa56e03509c190"
 	},
 	{
 		"party": "erc",
