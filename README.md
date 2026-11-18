@@ -4,16 +4,16 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 
 | Partido | Programa (RST) | Idioma | Original | Versión | Páginas | Palabras |
 |---|---|---|---|---|---:|---:|
-| Adelante Andalucía | [Un programa para frenar a las derechas](programas_electorales/adelante_andalucia.rst) | castellano | [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) ([fuente](https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf)) | 1 | 134 | 31.742 |
+| Adelante Andalucía | [Un programa para frenar a las derechas](programas_electorales/adelante_andalucia.rst) | castellano | [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) ([fuente](https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf)) | 2 | 134 | 31.800 |
 | Bloque Nacionalista Galego (BNG) | [Programa electoral](programas_electorales/bng.rst) | gallego | [26_bng_xerais_documentos_programa_electoral.pdf](documentos_originales/26_bng_xerais_documentos_programa_electoral.pdf) ([fuente](https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf)) | 1 | 91 | 25.684 |
 | Coalición Canaria y Municipalistas | [Defiende Canarias](programas_electorales/coalicion_canaria.rst) | castellano | [CCA-26-Programa_Electoral-29NOV.pdf](documentos_originales/CCA-26-Programa_Electoral-29NOV.pdf) ([fuente](https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf)) | 1 | 23 | 9.239 |
 | Compromís-Front Valencià | [Programa electoral 29N](programas_electorales/compromis_front_valencia.rst) | catalán | [programa-compromis-front-valencia.pdf](documentos_originales/programa-compromis-front-valencia.pdf) ([fuente](https://frontvalencia.org/programa-compromis-front-valencia.pdf)) | 1 | 64 | 16.744 |
 | Democracia 21 \* | [España Limpia](programas_electorales/democracia21.rst) | castellano | [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) ([fuente](https://democracia21.es/docs/espana-limpia-democracia21.pdf)) | 1 | 13 | 2.559 |
 | EH Bildu | [Posible egin.](programas_electorales/eh_bildu-es.rst) | castellano | [PROGRAMA-CAS.pdf](documentos_originales/PROGRAMA-CAS.pdf) ([fuente](https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-CAS.pdf)) | 1 | 30 | 11.817 |
 | EH Bildu | [Posible egin.](programas_electorales/eh_bildu-eu.rst) | euskera | [PROGRAMA-EUS.pdf](documentos_originales/PROGRAMA-EUS.pdf) ([fuente](https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-EUS.pdf)) | 1 | 30 | 8.175 |
-| Esquerra Republicana (ERC) | [Pel país. Per la gent. Pel futur.](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 1 | 48 | 25.310 |
+| Esquerra Republicana (ERC) | [Pel país. Per la gent. Pel futur.](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 2 | 48 | 25.307 |
 | Feministas al Congreso | [Juntas hacemos historia](programas_electorales/feministas_al_congreso.rst) | castellano | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) ([fuente](https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf)) | 1 | 2 | 617 |
-| Frente Amplio | [Un Programa como una Casa](programas_electorales/frente_amplio.rst) | castellano | [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) ([fuente](https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf)) | 1 | 151 | 48.902 |
+| Frente Amplio | [Un Programa como una Casa](programas_electorales/frente_amplio.rst) | castellano | [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) ([fuente](https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf)) | 2 | 151 | 48.994 |
 | Frente Obrero | [Recuperar España](programas_electorales/frente_obrero.rst) | castellano | [Programa.pdf](documentos_originales/Programa.pdf) ([fuente](https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf)) | 1 | 64 | 12.979 |
 | Iustitia Europa (IE) | [Contrato electoral](programas_electorales/iustitia_europa.rst) | castellano | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) ([fuente](https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf)) | 1 | 28 | 4.382 |
 | Partido Animalista Con el Medio Ambiente (PACMA) | [Vota por lo que crees](programas_electorales/pacma.rst) | castellano | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) ([fuente](https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf)) | 1 | 82 | 41.387 |
@@ -35,16 +35,16 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 
 | Fichero | SHA-256 |
 |---|---|
-| [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) | `223fcb661c92858f1425cdbf8d671673c89a23c5952cbc232fed02e49d2d4f0f` |
+| [programa-29n-adelante-andalucia.pdf](documentos_originales/programa-29n-adelante-andalucia.pdf) | `9edf2c74216c3d68319355de782e979307f2bad8b545ea3cffb53c2113065494` |
 | [26_bng_xerais_documentos_programa_electoral.pdf](documentos_originales/26_bng_xerais_documentos_programa_electoral.pdf) | `fd5aef260b9c66d030b57b7b0e18914c8ad79384e2c46b2346d9fb4f6514a97d` |
 | [CCA-26-Programa_Electoral-29NOV.pdf](documentos_originales/CCA-26-Programa_Electoral-29NOV.pdf) | `3c40c0a6e38d8dd80ae1061d94b614f4e3f1b6492ec8c801834fb497f337044e` |
 | [programa-compromis-front-valencia.pdf](documentos_originales/programa-compromis-front-valencia.pdf) | `37b569d6ac31a21a8f972dcfd5be3740c32f50fe1c6f3e87c9a1f68027ee6b55` |
 | [espana-limpia-democracia21.pdf](documentos_originales/espana-limpia-democracia21.pdf) | `bfa89b7218cd6a76d0eff86a1f6aad0a2e8c7c14a5d88f18ea002658bab4e1de` |
 | [PROGRAMA-CAS.pdf](documentos_originales/PROGRAMA-CAS.pdf) | `ceb655c9c8ebb036a15fa7829865d6e2d178525eb7db92629d702ac5e8d16047` |
 | [PROGRAMA-EUS.pdf](documentos_originales/PROGRAMA-EUS.pdf) | `69bce4b5e5bf5f003c4f3d5e3e4558c89483bf182ce021fc3daa56e03509c190` |
-| [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04` |
+| [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `f0b6d8e0bf7fc6a75206ac4a6b0b7e0e31745b147fae86d341916562d6a433fd` |
 | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) | `def48f491e28aff00d8e1e659c4704bcf8da3e5d2276fe81c947311da7621745` |
-| [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) | `df6e4d967a3a41386656273c32c2df3edc6681b6ee047b190b2ebb91f1a36f04` |
+| [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) | `516c5c6caaa04d0bd6f28770a49ae312f79ff3ebcf48967db66adc4ce2335424` |
 | [Programa.pdf](documentos_originales/Programa.pdf) | `7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282` |
 | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) | `03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd` |
 | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) | `6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d` |

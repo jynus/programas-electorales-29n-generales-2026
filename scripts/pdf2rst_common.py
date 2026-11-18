@@ -823,12 +823,19 @@ def verify_blocks(rst: str, raw: str, report: list[str], join_u2010=True,
         if rst_form in S and pdf_form in flat_raw and rst_form not in flat_raw:
             S = S.replace(rst_form, pdf_form, 1)
             kept.append(rst_form)
-        elif rst_form in S and sum(u.count(pdf_form) for u in units) == 1:
+        elif rst_form in S:
             # the hyphenated form is also printed inside a line elsewhere: put
-            # the hyphen back on the PDF side, where the glued form is unique
-            k = next(i for i, u in enumerate(units) if pdf_form in u)
-            units[k] = units[k].replace(pdf_form, rst_form)
-            kept.append(rst_form)
+            # the hyphen back on the PDF side, where the glued form is unique.
+            # Lines compare without spaces, so two words ("bizi proiektua")
+            # also read as the glued form: then only a line that has it as
+            # printed, without a space, counts.
+            glued = [i for i, u in enumerate(units) if pdf_form in u]
+            if len(glued) > 1:
+                printed = {"".join(ln.split()): ln for ln in re.split(r"[\n\f]", raw)}
+                glued = [i for i in glued if pdf_form in printed.get(units[i], "")]
+            if len(glued) == 1 and units[glued[0]].count(pdf_form) == 1:
+                units[glued[0]] = units[glued[0]].replace(pdf_form, rst_form)
+                kept.append(rst_form)
     if hyphen_breaks:
         report.append(f"  real hyphens kept at line ends (plain pdftotext drops them): {len(kept)}")
         report += [f"    {k[:90]}" for k in kept]

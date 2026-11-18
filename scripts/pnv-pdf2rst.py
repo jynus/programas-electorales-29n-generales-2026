@@ -26,9 +26,13 @@ both.
        bold and italics kept
      * running header and footer (with the page number) -> RST comments
        (kept, not rendered), so nothing of the PDF is dropped
+   The text is not hyphenated (the castellano edition has no hyphen at a
+   line end): a hyphen ending a line is real ("bizi-" + "proiektua", a
+   Basque compound) and stays.
 3. Verify against plain pdftotext: the RST text is exactly the PDF's lines,
    each used once and whole (only the index and box pages change order);
-   and pandoc reads the same words, without warnings.
+   the line-end hyphens that plain pdftotext drops are checked against
+   ``pdftotext -layout``; and pandoc reads the same words, without warnings.
 
 Usage:  python3 pnv-pdf2rst.py programa-electoral-29n.pdf -o pnv-es.rst [--report R]
         python3 pnv-pdf2rst.py hauteskunde-programa-a29.pdf -o pnv-eu.rst
@@ -51,8 +55,16 @@ LABELS = {
 CHAPTER_LABEL = re.compile(r"COMPROMISO \d+|\d+\. KONPROMEZUA")
 
 
+class Block(C.Block):
+    """A text block whose line-end hyphens stay: the programme is not
+    hyphenated, so "bizi-" + "proiektua" is "bizi-proiektua"."""
+
+    def chars(self, keep_hyphens=True):
+        return super().chars(keep_hyphens)
+
+
 def line_block(page, line):
-    return C.Block(page, [line])
+    return Block(page, [line])
 
 
 def comment(blocks):
@@ -210,7 +222,7 @@ def flow(pages_bs, out, counts):
 
 
 def convert(pdf, report):
-    blocks = C.extract(pdf)
+    blocks = [Block(b.page, b.lines, b.index, b.role, b.data) for b in C.extract(pdf)]
     pages = {}
     for b in blocks:
         pages.setdefault(b.page, []).append(b)
@@ -246,8 +258,9 @@ def convert(pdf, report):
     return "\n".join(out) + "\n"
 
 
-def verify(rst, raw, report):
-    return C.verify_blocks(rst, raw, report, join_u2010=False)
+def verify(rst, raw, report, pdf=None):
+    breaks = C.layout_hyphen_breaks(pdf) if pdf else []
+    return C.verify_blocks(rst, raw, report, join_u2010=False, hyphen_breaks=breaks)
 
 
 if __name__ == "__main__":

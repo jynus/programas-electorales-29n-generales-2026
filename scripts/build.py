@@ -29,7 +29,10 @@ Steps
         small window (pdftotext prints it all) is set aside first, as the
         converters do it (``visible_pdf`` in pdf2rst_common.py), and reported.
         A PDF word glued from two printed copies ("22.": a boxed "2" over the
-        label "2.") may match an RST word plus a word of an RST comment.
+        label "2.") may match an RST word plus a word of an RST comment. A
+        page number that pdftotext glued to the page's last line when that
+        line ends in a hyphen ("dificul-" + "10" -> "dificul10") is split
+        again first (``split_glued_page_numbers`` in pdf2rst_common.py).
         For an HTML original, pandoc also reads the page: the text of the
         elements in html_ids, without what is marked aria-hidden="true" (a
         copy drawn for the eye; the text for screen readers is kept), must be
@@ -527,15 +530,19 @@ def is_furniture(run: str, shape: collections.Counter, running: list[re.Pattern]
     return len(run.split()) <= 6 and bool(re.search(r"(?:^|\s)\d{1,3}(?:\s|$)", run))
 
 
-def reference_text(pdf: str) -> tuple[str, int, int]:
+def reference_text(pdf: str) -> tuple[str, int, int, int]:
     """Plain pdftotext, with TOC dot leaders (C.DOT_LEADER: "PREÀMBUL........5",
-    4+ dots; an ellipsis has 3) set aside and U+2010 layout hyphens at line ends
-    joined. Returns (text, leaders removed, hyphens joined)."""
+    4+ dots; an ellipsis has 3) set aside, U+2010 layout hyphens at line ends
+    joined and page numbers that pdftotext glued to a last line cut by a
+    hyphen split again (C.split_glued_page_numbers: "dificul10" ->
+    "dificul-" / "10"). Returns (text, leaders removed, hyphens joined,
+    page numbers split)."""
     ref = subprocess.run(["pdftotext", "-enc", "UTF-8", absp(pdf), "-"],
                          capture_output=True, check=True).stdout.decode("utf-8")
     ref, n_leaders = C.DOT_LEADER.subn(" ", ref)
     ref, n_u2010 = re.subn("\u2010[ \t]*\n", "", ref)
-    return ref, n_leaders, n_u2010
+    ref, n_pages = C.split_glued_page_numbers(ref)
+    return ref, n_leaders, n_u2010, n_pages
 
 
 def diff_words(a: list[str], b: list[str], counts: collections.Counter):
@@ -659,7 +666,7 @@ def not_furniture(omitted: list[str], ref: str) -> list[str]:
 
 def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     report = []
-    ref, n_leaders, n_u2010 = reference_text(pdf)
+    ref, n_leaders, n_u2010, n_pages = reference_text(pdf)
     doc = pandoc_document(rst_path)
     a, b = ref.split(), pandoc_words(doc)
     res.words = len(b)
@@ -701,6 +708,8 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
         report.append(f"  table-of-contents dot leaders set aside: {n_leaders}")
     if n_u2010:
         report.append(f"  layout hyphens (U+2010) joined at line ends: {n_u2010}")
+    if n_pages:
+        report.append(f"  page numbers glued by pdftotext to a hyphenated last line, split again: {n_pages}")
     if n_unreadable:
         report.append(f"  unreadable glyphs set aside (font without Unicode mapping): {n_unreadable} words")
     for k in kept:

@@ -162,7 +162,7 @@ eginez. EAJ-PNVk behin baino gehiagotan erakutsi du Madrilen ahots propioa
 izateak aurrerapausoak dakartzala.
 
 Horretarako, erabakitzeko gaitasuna behar dugu. **Autogobernua defendatzea da
-zuzenzuzenean eragiten digun horri buruz erabakitzeko ahalmenari eustea**.
+zuzen-zuzenean eragiten digun horri buruz erabakitzeko ahalmenari eustea**.
 Horregatik, Gernikako Estatutua osorik betetzea erreklamatzen jarraituko dugu,
 Euskal Ekonomia Ituna defendatuz eta Euskadiren nazio aitortzaren alde lan
 eginez. Tresna gehiago nahi ditugu gure arazoei erantzun ahal izateko, gure
@@ -284,7 +284,7 @@ eskuduntzak errespetatuz. Erabakiek ekarri beharko dituzte etxebizitza gehiago,
 diru-sarrera hobeak eta benetako aukerak.
 
 Hona hemen gure KONPROMEZUa: etorkizuna ez dadila hitz hutsa izan, eta Euskadin
-biziproiektua egitea berton bizi eta lan egiten dutenen eskura egon dadila
+bizi-proiektua egitea berton bizi eta lan egiten dutenen eskura egon dadila
 berriz.
 
 **GURE KONPROMEZUAK**
@@ -322,7 +322,7 @@ ALOKAIRUA ARAUTZEA ETA GEHIEGIKERIAK SAIHESTEA
   bizitegi-alokairuaren merkatuari etxebizitzarik ken ez diezaioten.
 
 * **05** Etxebizitza garestitzen duten eta alokairua eta erosketa oztopatzen
-  duten espekulaziopraktikak murriztea.
+  duten espekulazio-praktikak murriztea.
 
 BERMEAK ETA BIZITEGI-BABESA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -471,7 +471,7 @@ HEZKUNTZA-EREDUA ETA GAITASUNAK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * **01 Euskadiren hezkuntza-eskumenak babestea**, euskal erakundeei dagozkien
-  erabakieremuetan Estatuaren interferentziak saihestuz.
+  erabaki-eremuetan Estatuaren interferentziak saihestuz.
 
 * **02** Haurren eta nerabeen eskubideak eta aukera-berdintasuna bermatuko
   dituen hezkuntza inklusiboa, eleanitza eta kulturartekoa sustatzea.
@@ -649,7 +649,7 @@ KOOPERATIBAK ETA NAZIOARTEKOTZEA
 
 * **07 Euskal enpresei nazioartekotzeko ematen zaien laguntza areagotzea**,
   merkatu berrietara sartzea, esportazioak eta hornitzaileak dibertsifikatzea
-  eta Europako industriaproiektuetan parte hartzea erraztuz.
+  eta Europako industria-proiektuetan parte hartzea erraztuz.
 
 2.2 Ekintzailetzan ari direnei, enplegua sortzen dutenei eta gure negozioak bizirik mantentzen dituztenei babesa ematea
 -----------------------------------------------------------------------------------------------------------------------
@@ -715,7 +715,7 @@ SARE ELEKTRIKOAK ETA PLANGINTZA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * **01** Euskadiko sare elektrikoetako inbertsioak azkartzea, industria
-  berrietarako, enpresazabalkuntzetarako, elektrifikaziorako eta
+  berrietarako, enpresa-zabalkuntzetarako, elektrifikaziorako eta
   bizitegi-eskarirako gaitasun nahikoa bermatuz.
 
 * **02 Estatuko energia-plangintza eta Energiaren eta Klimaren Plan Nazional
@@ -891,7 +891,7 @@ ARRANTZA-POLITIKA ETA KUOTAK
 
 * **08** Euskal ontzidiaren bideragarritasuna bermatuko duen Arrantza Politika
   Erkidearen berrikuspena bultzatzea, Europako finantzaketa nahikoa eta
-  espezifikoarekin, araudiegonkortasunarekin eta irizpide zientifiko eta
+  espezifikoarekin, araudi-egonkortasunarekin eta irizpide zientifiko eta
   sozioekonomikoetan oinarritutako erabakiekin eta arrantza-sektorearen
   parte-hartzearekin.
 
@@ -987,7 +987,7 @@ SALGAIAK ETA TRENBIDE-LOGISTIKA
   trenbide-lotura estrategiko gisa sendotuz.
 
 * **09** Bilboko hegoaldeko trenbide-saihesbidea lehentasunez egingo dela
-  ziurtatzea, hiriinguruneetako salgaien trafikoa murrizteko, Bilboko
+  ziurtatzea, hiri-inguruneetako salgaien trafikoa murrizteko, Bilboko
   Portuarekiko lotura hobetzeko eta bidaiari-zerbitzuetarako edukiera
   askatzeko.
 
@@ -1000,7 +1000,7 @@ SALGAIAK ETA TRENBIDE-LOGISTIKA
   azpiegitura gisa.
 
 * **11 Bilboko eta Pasaiako portuen eta Lezo-Gaintxurizketako nodo
-  logistikoaren trenbideloturak garatzea**, Europako sarearekiko
+  logistikoaren trenbide-loturak garatzea**, Europako sarearekiko
   elkarreragingarritasunean aurrera eginez.
 
 AIREPORTUAK
@@ -1048,7 +1048,7 @@ MUGIKORTASUN ELEKTRIKOA ETA ERREPIDEKO GARRAIOA
 **Euskadik azpiegiturak amaituta behar ditu, mantentze lan egokiarekin eta ondo
 kudeatuta. Ez dugu onartuko Estatuak hartu dituen KONPROMEZUak datarik gabeko
 iragarpen bihurtzea. KONPROMEZUak bete daitezela exijituko dugu, inbertsioak
-eta egutegiak zehatzmehatz jasota.**
+eta egutegiak zehatz-mehatz jasota.**
 
 2.7 Jarduera ekonomikoari mesede egingo dion fiskalitatea, inbertitzeko aukerak emango dituena
 ----------------------------------------------------------------------------------------------
@@ -1098,7 +1098,7 @@ INBERTSIO PUBLIKOA ETA FINANTZA ETA FISKALITATE-AUTONOMIA
   eskudunek zerga horietan araugintza-gaitasun handiagoa izan dezaten eskatzea,
   Europar Batasunak ezarritako harmonizazio-mugen barruan, fiskalitatea
   Euskadiko errealitate ekonomikora hobeto egokitzeko,
-  industrialehiakortasunari laguntzeko eta enpresen eta kontsumitzaileen
+  industria-lehiakortasunari laguntzeko eta enpresen eta kontsumitzaileen
   beharrei erantzuteko.
 
 .. Euskadi zaindu 21
@@ -1180,7 +1180,7 @@ EUROPAKO ETA NAZIOARTEKO POLIZIA-LANKIDETZA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * **02** Ertzaintzaren parte-hartze zuzena eta eraginkorra ziurtatzea Europako
-  polizialankidetzarako mekanismoetan, haren gaitasun operatiboa mugatzen duen
+  polizia-lankidetzarako mekanismoetan, haren gaitasun operatiboa mugatzen duen
   bitartekaritzarik gabe.
 
 * **03** Ertzaintzak Europako polizia-datu-baseetarako elkarrekiko sarbide osoa
@@ -1242,7 +1242,7 @@ BAIMENAK, LEGEZKO BIDEAK ETA ENPLEGUA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * **06** Euskadiren kudeaketa-gaitasuna handitzea bizileku- eta
-  lan-prozeduretan, izapidetzeepeak murrizteko eta herrialdeko lan- eta
+  lan-prozeduretan, izapidetze-epeak murrizteko eta herrialdeko lan- eta
   gizarte-beharrei erantzuteko.
 
 * **07** Migraziorako bide legal, seguru eta ordenatuak sustatzea, kudeaketa
@@ -1304,7 +1304,7 @@ BERDINTASUNA ETA SEXU- ETA UGALKETA-ESKUBIDEAK
   lanbide-esperientziaren aintzatespena bermatuz.
 
 * **04 Emakumeen sexu- eta ugalketa-eskubideen erabilera eraginkorra
-  babestea**, osasunzerbitzuetarako sarbide libre eta segurua bermatuz.
+  babestea**, osasun-zerbitzuetarako sarbide libre eta segurua bermatuz.
 
 * **05 Herritarren Segurtasunari buruzko Legea aldatzea, haurdunaldia
   borondatez eteten den zentroen inguruan gutxienez 150 metroko
@@ -1319,7 +1319,7 @@ INDARKERIA MATXISTA ETA BABES JUDIZIALA
   digitalaren, ekonomikoaren eta biktimen babesaren arloan.
 
 * **07** Indarkeria bikarioa behar bezala aitortu eta definituko duen araudia
-  bultzatzea, babeseta arreta-sistemetan prebentzioa eta tratamendua bermatuz.
+  bultzatzea, babes-eta arreta-sistemetan prebentzioa eta tratamendua bermatuz.
 
 * **08 Epailetzak eta Fiskaltzak genero-ikuspegiaren inguruan duten
   derrigorrezko prestakuntza indartzea**, aplikazio-egutegien eta aldizkako
@@ -1381,7 +1381,7 @@ PRAKTIKA DISKRIMINATZAILEEN DEBEKUA ETA DOKUMENTAZIOA
 
 * **06** 4/2023 Legearen 50. artikuluaren erregelamendu bidezko garapena
   ziurtatzea, prozedura argiak bermatuz Espainian emandako dokumentazioa trans
-  atzerritarren generoidentitatera egokitzeko.
+  atzerritarren genero-identitatera egokitzeko.
 
 3.5 Atzerapausorik gabeko giza eskubideak eta askatasunak
 ---------------------------------------------------------
@@ -1561,7 +1561,7 @@ GIZARTE SEGURANTZAREN KUDEAKETA
 
 * **09** Gizarte Segurantzaren araubide ekonomikoaren kudeaketa Euskadira
   transferituko dela ziurtatzea, Gernikako Estatutuaren arabera, sistemaren
-  izaera bateratua eta elkartasunprintzipioa errespetatuz.
+  izaera bateratua eta elkartasun-printzipioa errespetatuz.
 
 4.2 Behar dugunean erantzungo duen osasun publikoa
 --------------------------------------------------
@@ -1598,7 +1598,7 @@ SENDAGAIAK, IKERKETA ETA TRATAMENDUAK
 
 * **04** Eusko Jaurlaritzaren eta Nafarroako Gobernuaren partaidetza iraunkorra
   ziurtatzea sendagaien prezioak baimendu, erregistratu eta finkatzeaz
-  arduratzen diren estatuorganoetan, eta dagozkien osasun-sistemen beharrak
+  arduratzen diren estatu-organoetan, eta dagozkien osasun-sistemen beharrak
   txertatuz erabakiak hartzerakoan.
 
 * **05** Gaixotasun arraroak eta neurodegeneratiboak, Alzheimerra barne,
@@ -1613,7 +1613,7 @@ KONPETENTZIA ETA BALDINTZA PROFESIONALAK
 
 * **07 Euskadiri oraindik transferitu gabe dauden osasun-transferentziak
   gauzatzea**, bereziki osasun-prestakuntza espezializatuan, plazen
-  egiaztapenean, lan-ezintasunen osasunkontrolean eta kanpo-osasunean.
+  egiaztapenean, lan-ezintasunen osasun-kontrolean eta kanpo-osasunean.
 
 * **08** Osasun-lanbideen Estatutu Markoaren erreforma profesionalekin,
   sindikatuekin eta autonomia-erkidegoekin negozia dadin sustatzea,
@@ -1728,7 +1728,7 @@ KALTE-ORDAINEN FISKALITATEA
 * **03 Pertsona Fisikoen Errentaren gaineko Zergari buruzko 35/2006 Legea
   aldatzea, Amiantoaren Biktimentzako Konpentsazio Funtsak aitortutako
   kalte-ordainak zergapetzetik salbuetsita daudela aitortzeko**, eragindako
-  pertsonek dagokien kalteordainaren zati bat gal ez dezaten.
+  pertsonek dagokien kalte-ordainaren zati bat gal ez dezaten.
 
 FINANTZAKETA ETA EPEAK
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1924,7 +1924,7 @@ EKONOMIA ITUNA
   aldatzea sustatuz.
 
 * **02** Estatuko zerga- eta aurrekontu-erreformek Ekonomia Ituna, Euskadiren
-  finantzaautonomia eta Estatuarekiko harremanetarako eta koordinaziorako
+  finantza-autonomia eta Estatuarekiko harremanetarako eta koordinaziorako
   berezko mekanismoak errespetatzen dituztela ziurtatzea.
 
 ITUN POLITIKOA: NAZIO AITORTZA, ALDEBIKOTASUNA ETA BERMEAK
@@ -1956,7 +1956,7 @@ ANTOLAKETA ETA GOBERNU JUDIZIALA
 
 * **01** Beharrezko erreformak bultzatzea, antolamendu judiziala Euskal
   Autonomia Erkidegoko Auzitegi Nagusian burutu dadin; bertan agortu daitezen
-  prozesu-instantziak, kasazioerrekurtsoak edo azken auzialdia barne, Auzitegi
+  prozesu-instantziak, kasazio-errekurtsoak edo azken auzialdia barne, Auzitegi
   Gorenarentzat gordetako jurisdikzioa izan ezik.
 
 .. Euskadi zaindu 39
@@ -1964,7 +1964,7 @@ ANTOLAKETA ETA GOBERNU JUDIZIALA
 .. HAUTESKUNDE OROKORREN PROGRAMA 2026 HEMEN ERABAKI. HAN ENTZUNARAZI
 
 * **02** Euskal Justizia Kontseiluaren sorrera sustatzea, Euskadin Botere
-  Judizialaren gobernueginkizunak betetzeko gaitasuna izango duena, esparru
+  Judizialaren gobernu-eginkizunak betetzeko gaitasuna izango duena, esparru
   juridiko berriak esleitzen dizkionak.
 
 POLIZIA JUDIZIALA
@@ -2058,7 +2058,7 @@ LEHENTASUN EKONOMIKOAK ETA LANKIDETZA ATLANTIKOA
   teknologiko, energetiko eta klimatikoei erantzuteko gai izango dena.
 
 * **06** Makroeskualde Atlantiko Europarra sortzen laguntzea, trenbide- eta
-  energiaazpiegituretan, industrian, digitalizazioan, arrantzan, ekonomia
+  energia-azpiegituretan, industrian, digitalizazioan, arrantzan, ekonomia
   urdinean, jasangarritasunean eta Erresuma Batuarekiko harremanetan lankidetza
   indartzeko.
 

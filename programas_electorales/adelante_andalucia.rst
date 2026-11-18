@@ -4276,13 +4276,17 @@ también dé empleo en los pueblos.
   *Porque el sistema actual paga toda la electricidad al precio de la fuente
   más cara.*
 
-- **407 Ni un euro a los fósiles**
+- **407 Ni un euro a los fósiles, ni basurero nuclear**
 
   Fin de las subvenciones a combustibles fósiles y nuclear, moratoria de
-  hidrocarburos y Andalucía libre de fracking.
+  hidrocarburos y Andalucía libre de fracking. Cierre ordenado de El Cabril: un
+  plan estatal de clausura del almacén de residuos radiactivos de Hornachuelos,
+  en zona Red Natura 2000 y con riesgo sísmico, y un nuevo Plan General de
+  Residuos Radiactivos que no convierta Andalucía en el basurero nuclear del
+  Estado.
 
-  *Porque no tiene sentido subvencionar lo que nos está llevando a la crisis
-  climática.*
+  *Porque Andalucía no puede seguir pagando la crisis climática ni cargando con
+  los residuos nucleares de todo el Estado.*
 
 - **408 Doñana sin gas**
 
@@ -4290,17 +4294,17 @@ también dé empleo en los pueblos.
 
   *Porque almacenar gas bajo Doñana es un riesgo inaceptable.*
 
-- **409 El calor también cuesta**
-
-  El bono social térmico cubrirá la refrigeración y no solo la calefacción.
-
-  *Porque en Andalucía el calor ya es tan peligroso como el frío.*
-
 .. 05
 
 .. 82 ÍNDICE LAS 29 DEL 29N
 
 .. 05 BIENES COMUNES · 5.1 CLIMA Y ENERGÍA
+
+- **409 El calor también cuesta**
+
+  El bono social térmico cubrirá la refrigeración y no solo la calefacción.
+
+  *Porque en Andalucía el calor ya es tan peligroso como el frío.*
 
 - **410 Moratoria a los grandes centros de datos**
 
@@ -6708,7 +6712,8 @@ el Estrecho como mar protegido (**425**).
   *Porque la N-502 es peligrosa en ese tramo.*
 
 También en este programa: la Mezquita, de titularidad y gestión pública
-(**505**); auditoría tras Adamuz (**380**).
+(**505**); auditoría tras Adamuz (**380**); cierre ordenado de El Cabril
+(**407**).
 
 .. 12
 
@@ -7161,5 +7166,5 @@ El programa completo, con buscador, y cada propuesta lista para compartir.
 .. PROGRAMA ELECTORAL GENERALES 29N
 
 Programa electoral de Adelante Andalucía para las elecciones generales del 29
-de noviembre de 2026. Versión del 2026-11-10. Tipografías: Fraunces y Work Sans
+de noviembre de 2026. Versión del 2026-11-16. Tipografías: Fraunces y Work Sans
 (SIL Open Font License), Clash Display (ITF Free Font License).

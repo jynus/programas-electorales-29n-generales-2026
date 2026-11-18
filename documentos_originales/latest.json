@@ -4,10 +4,10 @@
 		"name": "Adelante Andalucía",
 		"title": "Un programa para frenar a las derechas",
 		"language": "es",
-		"version": 1,
+		"version": 2,
 		"program_url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
 		"file": "programa-29n-adelante-andalucia.pdf",
-		"sha256sum": "223fcb661c92858f1425cdbf8d671673c89a23c5952cbc232fed02e49d2d4f0f"
+		"sha256sum": "9edf2c74216c3d68319355de782e979307f2bad8b545ea3cffb53c2113065494"
 	},
 	{
 		"party": "bng",
@@ -75,10 +75,10 @@
 		"name": "Esquerra Republicana (ERC)",
 		"title": "Pel país. Per la gent. Pel futur.",
 		"language": "ca",
-		"version": 1,
+		"version": 2,
 		"program_url": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
 		"file": "e2026-programa.pdf",
-		"sha256sum": "61728d162a6e88d492d44a0b0994effb31f9e4abb85ebf8aea715d870a9b2e04"
+		"sha256sum": "f0b6d8e0bf7fc6a75206ac4a6b0b7e0e31745b147fae86d341916562d6a433fd"
 	},
 	{
 		"party": "feministas_al_congreso",
@@ -95,10 +95,10 @@
 		"name": "Frente Amplio",
 		"title": "Un Programa como una Casa",
 		"language": "es",
-		"version": 1,
+		"version": 2,
 		"program_url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
 		"file": "ProgramaFrenteAmplio.pdf",
-		"sha256sum": "df6e4d967a3a41386656273c32c2df3edc6681b6ee047b190b2ebb91f1a36f04"
+		"sha256sum": "516c5c6caaa04d0bd6f28770a49ae312f79ff3ebcf48967db66adc4ce2335424"
 	},
 	{
 		"party": "frente_obrero",

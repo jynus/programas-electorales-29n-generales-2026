@@ -1656,9 +1656,10 @@ Sistema universitario, UNED y universidades privadas
 Financiación y modernización del sector público cultural
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Suelo de inversión pública del 0,2 % del PIB: Garantizaremos por ley una
-  asignación presupuestaria mínima continuada destinada a la cultura de al
-  menos el 0,2 % del PIB estatal.
+* Inversión en cultura del 2 % del gasto público: Alcanzaremos durante la
+  legislatura el objetivo de destinar a cultura el 2 % del gasto total del
+  conjunto de las administraciones públicas, tal y como recomienda la Unión
+  Europea.
 
 * Ley del Sistema Público de la Cultura: Desarrollaremos el mandato del
   artículo 149.2 de la Constitución, estableciendo las responsabilidades del
@@ -2474,6 +2475,12 @@ Subir los salarios y mejorar las condiciones de trabajo
   reglas de fijación del SMI imponiendo la prohibición explícita de que pueda
   ser absorbido o compensado mediante complementos o pluses salariales.
 
+* Cláusulas de revisión salarial ligadas al IPC: Modificaremos el Estatuto de
+  los Trabajadores para que los convenios colectivos incluyan obligatoriamente
+  cláusulas de revisión salarial que preserven el poder adquisitivo. Cuando el
+  convenio no las prevea, las retribuciones pactadas se revisarán de forma
+  subsidiaria conforme al IPC: si suben los precios, suben los salarios.
+
 * Observatorio de Márgenes Empresariales y cláusulas de revisión: Envío de la
   información del Observatorio de Márgenes Empresariales (adaptada por sector y
   territorio) a las mesas de negociación de los convenios y obligatoriedad de
@@ -2555,6 +2562,8 @@ Tiempo de trabajo, registro de jornada digital y jornada continua
   sobre digitalización de 2020, con comisiones paritarias de algoritmos en los
   convenios.
 
+.. 58 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+
 Despido, contratación y protección a los trabajadores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2563,8 +2572,6 @@ Despido, contratación y protección a los trabajadores
   disuada de los despidos injustificados, en línea con el artículo 24 de la
   Carta Social Europea revisada y con lo concluido por el Comité Europeo de
   Derechos Sociales sobre el sistema español de indemnización tasada.
-
-.. 58 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 * Autorización previa y compensación por despido tecnológico: Recuperaremos la
   autorización administrativa previa para despidos colectivos (o devolución de
@@ -2610,6 +2617,8 @@ Protección por desempleo e inserción laboral
   discontinuas, y desplegaremos el Plan de Empleo Garantizado priorizando
   parados de larga duración y jóvenes.
 
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 59
+
 * Estableceremos como objetivo central de la política económica que la tasa de
   paro converja con la media europea y que existan suficientes empleos
   disponibles para las personas que deseen trabajar. A pesar de que la reforma
@@ -2620,8 +2629,6 @@ Protección por desempleo e inserción laboral
   que se sitúa en el 7 %, y alcanzar una tasa de empleo superior al 70 %. Es
   posible, si se pone en marcha una estrategia integrada de políticas
   económicas y políticas de empleo orientadas plenamente a este objetivo.
-
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 59
 
 * Estableceremos el día 25 de cada mes como fecha de abono de las prestaciones
   y los subsidios por desempleo, equiparándola a la fecha habitual de pago de
@@ -2663,6 +2670,8 @@ Prevención de riesgos psicosociales, salud laboral y mutuas
   sanitaria, con un máximo de 3 días consecutivos y un total de 6 días al año,
   como permiso remunerado.
 
+.. 60 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+
 * Control exclusivo de bajas por la sanidad pública: Garantizaremos por ley que
   las altas, bajas y confirmaciones por contingencias comunes correspondan en
   exclusiva a la sanidad pública, rechazando ampliar competencias a las mutuas.
@@ -2675,8 +2684,6 @@ Prevención de riesgos psicosociales, salud laboral y mutuas
 * Garantizaremos que las prestaciones por accidente de trabajo y enfermedad
   profesional sean suficientes y adecuadas al salario real de la persona
   trabajadora.
-
-.. 60 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 * Reforzaremos el control público de las mutuas, con transparencia sobre sus
   resultados, revisión pública de las altas en contingencias profesionales y
@@ -2710,6 +2717,8 @@ Teletrabajo, formación, prácticas y trabajo del hogar
 Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 61
+
 * Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público,
   prohibiendo la compensación mediante horas extraordinarias y exigiendo la
   subida proporcional del salario hora en contratos a tiempo parcial.
@@ -2721,8 +2730,6 @@ Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial
   uso del tiempo marcado por las necesidades sociales y colectivas que haga
   realidad, con carácter general, el principio de adaptación del trabajo a la
   persona.
-
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 61
 
 4.2. Precios asequibles y control de márgenes
 ---------------------------------------------
@@ -2765,6 +2772,8 @@ Sector energético, carburantes y reforma del sistema eléctrico
   internacional, junto con la limitación legal de los márgenes en la
   distribución de carburantes.
 
+.. 62 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+
 * Auditoría pública de costes de generación eléctrica: Ejecutaremos una
   auditoría pública sobre los costes reales de cada una de las tecnologías de
   generación eléctrica en España para fijar retribuciones basadas en costes
@@ -2775,8 +2784,6 @@ Sector energético, carburantes y reforma del sistema eléctrico
   hidroeléctrica del sistema marginalista de fijación de precios, fijando un
   precio máximo retributivo para ambas y eliminando los beneficios caídos del
   cielo (windfall profits).
-
-.. 62 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 Supervisión de mercados, fiscalización por la CNMC y protección de las personas consumidoras
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2822,6 +2829,8 @@ Blindaje constitucional del carácter público de las pensiones, de su revaloriz
   significativamente su rango normativo y garantizando su aplicabilidad
   inmediata sin necesidad de convocar elecciones.
 
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 63
+
 Reducir edad de jubilación y eliminar la penalización por jubilación anticipada a quienes han cotizado más de 40 años
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2832,8 +2841,6 @@ Reducir edad de jubilación y eliminar la penalización por jubilación anticipa
   su especial penosidad. Construcción, limpieza, ayuda a domicilio, camareras
   de piso y la pesca deben poder acceder a los 60 años por su especial esfuerzo
   físico y el elevado riesgo de siniestralidad.
-
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 63
 
 * Eliminaremos los coeficientes reductores en las jubilaciones anticipadas de
   quienes han cotizado más de 40 años y tienen que acogerse a la misma de
@@ -4366,18 +4373,17 @@ Creación de la Banca Pública Estatal
 
 * Transposición del IVA franquiciado y régimen simplificado: Transpondremos de
   inmediato la directiva europea del IVA franquiciado para autónomos y pequeñas
-  empresas. Aquellos que facturen menos de 85.000 euros anuales quedarán
-  exentos de liquidaciones periódicas y solo tendrán que presentar una
-  declaración informativa anual. Estableceremos además un régimen de cotización
-  adecuado y una tributación simplificada para autónomos y socios
-  cooperativistas de rentas bajas.
+  empresas. Aquellos que facturen menos de 85.000 euros anuales podrán optar
+  por quedar exentos de liquidaciones periódicas y presentar una única
+  declaración informativa anual en lugar de las trimestrales. Estableceremos
+  además una tributación simplificada para autónomos y socios cooperativistas
+  de rentas bajas.
 
-* Apoyaremos a las personas trabajadoras autónomas en situación de bajos
-  ingresos con un régimen específico de cotización. Cuando los ingresos reales
-  percibidos por la persona trabajadora autónoma sean inferiores al SMI anual
-  por causas objetivas, tales como las condiciones del mercado o el inicio de
-  actividad, se podrá acoger a una cotización fija bonificada sin pérdida de
-  derechos de protección.
+* Tarifa plana mientras se ingrese menos del SMI: Vincularemos la tarifa plana
+  de 88 euros a los ingresos y no al tiempo. Hoy se pierde a los dos años; la
+  mantendremos mientras los ingresos reales de la persona trabajadora autónoma
+  sean inferiores al SMI anual, sin pérdida de derechos de protección, para que
+  nadie empiece a pagar más antes de que su negocio sea sólido.
 
 * Plena efectividad del IVA de caja: Haremos plenamente operativo el régimen
   del IVA de caja, impidiendo de forma efectiva que las grandes empresas
@@ -4386,7 +4392,10 @@ Creación de la Banca Pública Estatal
 * Ventanilla única, digitalización y acompañamiento: Reforzaremos la ventanilla
   única administrativa y aceleraremos la digitalización para reducir trabas y
   trámites burocráticos, ofreciendo servicios públicos de acompañamiento para
-  la modernización de pequeñas y medianas empresas.
+  la modernización de pequeñas y medianas empresas. Unificaremos las ayudas a
+  pymes y autónomos en una convocatoria única, con plazos máximos de resolución
+  breves. Crearemos un Kit Digital para la economía social basado en software
+  libre.
 
 * Pondremos en marcha un Plan Nacional de Adopción de Inteligencia Artificial y
   tecnologías digitales para pymes, autónomos y entidades de la economía
@@ -4422,9 +4431,8 @@ Creación de la Banca Pública Estatal
   frente a subidas abusivas en los alquileres de locales y frenar la
   especulación inmobiliaria. Garantizaremos contratos mínimos de 5 años, un
   límite legal a las subidas anuales y el derecho a la renovación del contrato
-  (con indemnización por expulsión para especulación). En zonas tensionadas por
-  el turismo, los grandes tenedores deberán sujetarse a un índice de precios de
-  referencia.
+  (con indemnización por expulsión para especulación). En zonas tensionadas,
+  los grandes tenedores deberán sujetarse a un índice de precios de referencia.
 
 8.2. Energía a precios justos
 -----------------------------
