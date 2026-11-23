@@ -405,13 +405,37 @@ class Pool:
 def keep_line_end_hyphens(pdf_words: list[str], rst_words: list[str], breaks):
     """Plain pdftotext drops a hyphen printed at a line end ("promueve-un-" +
     "dialogo" -> "promueve-undialogo") even when it is real; pdftotext -layout
-    shows it. A PDF word not in the RST takes the hyphen back only where
-    -layout prints it, and only if the result is an RST word or the start of
-    one (a URL also broken at the next line: the rest must then match as
-    whitespace re-segmentation)."""
+    and the lines' positions show it (C.layout_hyphen_breaks,
+    C.line_hyphen_breaks). A PDF word not in the RST takes the hyphen back
+    only where the PDF prints it, and only if the result is an RST word or the
+    start of one (a URL also broken at the next line: the rest must then
+    match as whitespace re-segmentation). A dash with a space before it
+    ("Act -" / "DSA)") is put back as a word of its own, between the two
+    words it stood between, if the RST has it there. And a word that ends
+    with a hyphen at the end of a text block, where plain pdftotext does not
+    join ("coordinar-" / "lo"), is joined to a word that follows it closely
+    (the next block may come first) if that makes an RST word that the
+    other word alone is not."""
     vocab = set(rst_words)
     out, kept = [], []
-    for w in pdf_words:
+    spaced = {(left.split()[0], right) for left, right in breaks if " " in left}
+    breaks = [(left, right) for left, right in breaks if " " not in left]
+    pdf_words = list(pdf_words)
+    i = 0
+    while i < len(pdf_words):
+        w = pdf_words[i]
+        if w not in vocab and w.endswith("-"):
+            # the next block may come later in pdftotext's order (another column first): look on
+            j = next((j for j in range(i + 1, min(i + 500, len(pdf_words)))
+                      if w + pdf_words[j] in vocab and pdf_words[j] not in vocab), None)
+            if j is not None:
+                kept.append(w + pdf_words[j])
+                out.append(w + pdf_words.pop(j))
+                i += 1
+                continue
+        if out and (out[-1], w) in spaced and "-" in vocab:
+            kept.append(f"{out[-1]} - {w}")
+            out.append("-")
         if w not in vocab:
             for left, right in breaks:
                 joined = left[:-1] + right
@@ -422,6 +446,7 @@ def keep_line_end_hyphens(pdf_words: list[str], rst_words: list[str], breaks):
                         w = cand
                         break
         out.append(w)
+        i += 1
     return out, kept
 
 
@@ -674,7 +699,7 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     # no text to compare; set aside and reported
     n_unreadable = sum(1 for t in a if all(unicodedata.category(c) == "Cc" for c in t))
     a = [t for t in a if not all(unicodedata.category(c) == "Cc" for c in t)]
-    a, kept = keep_line_end_hyphens(a, b, C.layout_hyphen_breaks(absp(pdf)))
+    a, kept = keep_line_end_hyphens(a, b, C.layout_hyphen_breaks(absp(pdf)) + C.line_hyphen_breaks(absp(pdf)))
     a, glued = split_glued(a, b)
     counts = collections.Counter()
     in_place, deleted, inserted = diff_words(a, b, counts)
@@ -713,7 +738,7 @@ def independent_check(pdf: str, rst_path: str, res: Result) -> list[str]:
     if n_unreadable:
         report.append(f"  unreadable glyphs set aside (font without Unicode mapping): {n_unreadable} words")
     for k in kept:
-        report.append(f"  real hyphen kept at a line end (pdftotext -layout prints it): {k[:120]}")
+        report.append(f"  real hyphen kept at a line end (the PDF prints it): {k[:120]}")
     for g, pieces in glued:
         report.append(f"  glued PDF word split: {g} -> {' '.join(pieces)}")
     for k_, v in sorted(counts.items()):

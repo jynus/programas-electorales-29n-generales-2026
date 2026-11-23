@@ -121,6 +121,26 @@
 		"sha256sum": "03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd"
 	},
 	{
+		"party": "junts",
+		"name": "Junts per Catalunya (Junts)",
+		"title": "Catalunya al centre",
+		"language": "ca",
+		"version": 1,
+		"program_url": "https://www.tualcentre.cat/app/uploads/2026/11/PROGRAMA-ELECTORAL_JUNTS_29N.pdf",
+		"file": "PROGRAMA-ELECTORAL_JUNTS_29N.pdf",
+		"sha256sum": "cde2c5f3f30b66c72dd4f4bae3d22e9f6bc3e0ee4362da72f9e32e85129374b6"
+	},
+	{
+		"party": "nuevo_extremenismo",
+		"name": "Nuevo Extremeñismo",
+		"title": "150 medidas para que se escuche a Extremadura en Madrid",
+		"language": "es",
+		"version": 1,
+		"program_url": "https://www.nuevoext.es/descargas/Programa-Electoral-Generales-29N.pdf",
+		"file": "Programa-Electoral-Generales-29N.pdf",
+		"sha256sum": "0b5a461b91f77885dde09595ff7ee31430323004e24bd0c69add0dafe1a8887a"
+	},
+	{
 		"party": "pacma",
 		"name": "Partido Animalista Con el Medio Ambiente (PACMA)",
 		"title": "Vota por lo que crees",

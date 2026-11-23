@@ -747,6 +747,24 @@ def layout_hyphen_breaks(pdf: str) -> list[tuple[str, str]]:
     return out
 
 
+def line_hyphen_breaks(pdf: str) -> list[tuple[str, str]]:
+    """Words printed with a hyphen at the end of a line inside a text block,
+    from the lines' positions (``pdftotext -bbox-layout``): plain pdftotext
+    drops that hyphen and glues the halves. Unlike ``layout_hyphen_breaks``
+    this also finds them in the left column of a two-column page, where
+    ``pdftotext -layout`` puts the right column on the same row. A dash with
+    a space before it ("Services Act -" / "DSA)") is given with the word
+    before it: ("Act -", "DSA)")."""
+    out = []
+    for b in extract(pdf):
+        for a, nxt in zip(b.lines, b.lines[1:]):
+            words = a.text.split()
+            if a.text.endswith("-") and nxt.text.split():
+                left = " ".join(words[-2:]) if words[-1] == "-" and len(words) > 1 else words[-1]
+                out.append((left, nxt.text.split()[0]))
+    return out
+
+
 def raw_units(raw: str, join_u2010=True) -> list[str]:
     """Lines of plain pdftotext, each as a whitespace-free string; U+2010
     layout hyphens at line ends joined to the next line."""
