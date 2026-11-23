@@ -34,10 +34,10 @@
 		"name": "Compromís-Front Valencià",
 		"title": "Programa electoral 29N",
 		"language": "ca",
-		"version": 1,
+		"version": 2,
 		"program_url": "https://frontvalencia.org/programa-compromis-front-valencia.pdf",
 		"file": "programa-compromis-front-valencia.pdf",
-		"sha256sum": "37b569d6ac31a21a8f972dcfd5be3740c32f50fe1c6f3e87c9a1f68027ee6b55"
+		"sha256sum": "b62b06d43821397fbf7d6f65f992e13e44087c9e042808fbbc171b3f83ff212b"
 	},
 	{
 		"party": "democracia21",
@@ -105,10 +105,10 @@
 		"name": "Frente Obrero",
 		"title": "Recuperar España",
 		"language": "es",
-		"version": 1,
-		"program_url": "https://frenteobrero.es/wp-content/uploads/2026/10/Programa.pdf",
-		"file": "Programa.pdf",
-		"sha256sum": "7b9f423f2c1ada187b6f42ed8dbf4e025356254d7a6b81830e114b818ef2e282"
+		"version": 2,
+		"program_url": "https://frenteobrero.es/documentos/programa-frente-obrero.pdf",
+		"file": "programa-frente-obrero.pdf",
+		"sha256sum": "385da7b35a3ddc67e75a6600cb7222c4db3e3537fe0b42f88944365804df2a11"
 	},
 	{
 		"party": "iustitia_europa",

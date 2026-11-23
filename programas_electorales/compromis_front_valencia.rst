@@ -1,17 +1,11 @@
-######################
-PROGRAMA ELECTORAL 29N
-######################
-
-************************
-COMPROMÍS-FRONT VALENCIÀ
-************************
+**ÍNDEX**
 
 .. list-table::
    :widths: 90 10
 
-   * - **0\. INTRODUCCIÓ**
+   * - **0.- INTRODUCCIÓ**
      - 3
-   * - **1\. UNA VIDA SEGURA: HABITATGE, SALARIS I PENSIONS**
+   * - **1.- UNA VIDA SEGURA: HABITATGE, SALARIS I PENSIONS**
      - 4
    * - HABITATGE
      - 4
@@ -20,111 +14,114 @@ COMPROMÍS-FRONT VALENCIÀ
    * - PERSONES AUTÒNOMES
      - 7
    * - PENSIONS
+     - 7
+   * - **2.-SERVEIS PÚBLICS PER A CUIDAR I PROTEGIR**
      - 8
-   * - **2\. SERVEIS PÚBLICS PER A CUIDAR I PROTEGIR**
-     - 9
    * - SANITAT
-     - 9
+     - 8
    * - SALUT PÚBLICA
      - 9
    * - EDUCACIÓ
-     - 10
+     - 9
    * - SERVEIS SOCIALS, SISTEMES DE CURES I INCLUSIÓ SOCIAL
-     - 11
+     - 10
    * - MOBILITAT SOSTENIBLE
-     - 12
+     - 11
    * - CULTURA
-     - 14
+     - 12
    * - ESPORT
-     - 15
+     - 14
    * - OCI EDUCATIU
-     - 16
+     - 14
    * - MODEL COMUNICATIU I DRETS DIGITALS
-     - 16
+     - 14
    * - UNIVERSITATS
-     - 17
-   * - **3\. DEMOCRATITZACIÓ DE L’ECONOMIA**
-     - 18
+     - 15
+   * - **3.- DEMOCRATITZACIÓ DE L’ECONOMIA**
+     - 16
    * - FISCALITAT
-     - 18
+     - 16
    * - COMERÇ
-     - 19
+     - 17
    * - INDÚSTRIA I EMPRESA
-     - 20
+     - 18
    * - CIÈNCIA I INNOVACIÓ
-     - 21
+     - 19
    * - AGRICULTURA I PESCA
-     - 22
+     - 20
    * - DRETS DE LES PERSONES CONSUMIDORES
-     - 25
+     - 22
    * - TURISME
-     - 26
-   * - **4\. UN TERRITORI HABITABLE I RESILIENT**
-     - 28
+     - 23
+   * - **4.- UN TERRITORI HABITABLE I RESILIENT**
+     - 24
    * - MEDI AMBIENT I BIODIVERSITAT
-     - 28
+     - 24
    * - ENERGIA
-     - 29
+     - 25
    * - AIGUA
-     - 31
+     - 27
    * - TERRITORI
-     - 32
+     - 27
    * - MODEL DE CIUTAT I URBANISME
-     - 33
+     - 28
    * - RESPOSTA A LES EMERGÈNCIES
-     - 35
-   * - **5\. MÉS DEMOCRÀCIA, MÉS DRETS, MÉS LLIBERTATS**
-     - 37
+     - 30
+   * - **5.- MÉS DEMOCRÀCIA, MÉS DRETS, MÉS LLIBERTATS**
+     - 32
    * - ADMINISTRACIÓ PÚBLICA
-     - 37
+     - 32
    * - TRANSPARÈNCIA I PARTICIPACIÓ
-     - 39
+     - 34
    * - ANTICORRUPCIÓ I QUALITAT DEMOCRÀTICA
-     - 40
+     - 35
    * - JUSTÍCIA I SEGURETAT CIUTADANA
-     - 41
+     - 35
    * - MEMÒRIA DEMOCRÀTICA
-     - 43
+     - 37
    * - DRETS LINGÜÍSTICS
-     - 44
+     - 37
    * - LAÏCISME
-     - 44
+     - 38
    * - DRETS ANIMALS
-     - 45
+     - 39
    * - INFÀNCIA
-     - 46
+     - 40
    * - PERSONES MAJORS
-     - 47
+     - 40
    * - FAMÍLIES
-     - 47
+     - 40
    * - JOVENTUT
-     - 48
+     - 41
    * - IGUALTAT DE TRACTE
-     - 51
+     - 44
    * - FEMINISME
-     - 51
+     - 44
    * - LLUITA CONTRA LES VIOLÈNCIES MASCLISTES
-     - 53
+     - 46
    * - DRETS LGTBIQ+
-     - 55
-   * - **6\. UN PAÍS AMB VEU PRÒPIA I RECURSOS SUFICIENTS**
-     - 57
+     - 47
+   * - **6.- UN PAÍS AMB VEU PRÒPIA I RECURSOS SUFICIENTS**
+     - 49
    * - MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
-     - 57
+     - 49
    * - MODEL D’ESTAT
-     - 59
+     - 51
    * - MUNICIPALISME
-     - 60
-   * - **7\. COMPROMÍS AMB LA PAU I LA DIGNITAT HUMANA**
-     - 61
+     - 52
+   * - **7.- COMPROMÍS AMB LA PAU I LA DIGNITAT HUMANA**
+     - 53
    * - POLÍTICA EXTERIOR I DEFENSA
-     - 61
+     - 53
    * - DRETS HUMANS I LEGALITAT INTERNACIONAL
-     - 63
+     - 54
    * - UNIÓ EUROPEA
-     - 63
+     - 54
    * - SOLIDARITAT GLOBAL I MIGRACIÓ
-     - 64
+     - 55
+
+
+.. 1 2
 
 0\. INTRODUCCIÓ
 ===============
@@ -147,6 +144,8 @@ valdre.
 El teu vot serà útil per posar a triar un grup de representants que treballen a
 favor de les persones, la vida, la terra. La coalició Compromís-Front Valencià
 posarà en valor el teu vot.
+
+.. 3
 
 1\. UNA VIDA SEGURA: HABITATGE, SALARIS I PENSIONS
 ==================================================
@@ -184,21 +183,23 @@ HABITATGE
   infractores seran sancionades amb multes de fins al 10% dels seus beneficis
   mundials.
 
-- Donarem competències als Ajuntaments perquè puguen declarar zones
-  tensionades, d’acord amb la Llei estatal de Vivienda, als seus municipis per
-  impulsar el control efectiu de preus de lloguer.
+- Donarem competències als ajuntaments perquè puguen declarar zones tensionades
+  als municipis, d’acord amb la Llei estatal de Vivienda, per impulsar el
+  control efectiu de preus de lloguer.
 
-- Exercirem, en cas de venda de promocions antigues d’habitatges de protecció
-  oficial, a través de les Administracions competents el dret de tanteig,
-  llevat que la transmissió siga entre particulars per a finalitat exclusiva
-  d’habitatge habitual.
+- Exercirem el dret de tanteig en cas de venda de promocions antigues
+  d’habitatges de protecció oficial, i a través de les Administracions
+  competents, tret que la transmissió siga entre particulars per a finalitat
+  exclusiva d’habitatge habitual.
+
+.. 4
 
 - Abolirem els privilegis fiscals de les SOCIMIS i les EDAV com a vehicles
   d’especulació financera.
 
 - Crearem el Registre Estatal d’Arrendaments Urbans obligatori que permeta
   controlar en temps real els preus i detectar pràctiques fraudulentes,
-  incloent els lloguers de temporada i d’habitacions.
+  incloent-hi els lloguers de temporada i d’habitacions.
 
 - Reforçarem els requisits d’habitabilitat per a poder llogar una vivenda amb
   millors condicions de confort, espai i temperatura.
@@ -208,17 +209,17 @@ HABITATGE
   la tercera propietat s’augmentarà un 200%.
 
 - Augmentarem l’Impost de Béns Immobles a aquells propietaris que tinguen més
-  de 2 habitatges. De manera progressiva a partir del tercer habitatge, per a
-  penalitzar l’acaparament d’habitatges en poques mans i per a millorar el
+  de dos habitatges, i de manera progressiva a partir del tercer habitatge, per
+  a penalitzar l’acaparament d’habitatges en poques mans i per a millorar el
   finançament dels ajuntaments.
 
 - Impulsarem la mobilització d’estalvis privats per a augmentar la inversió en
   habitatge a través de la creació d’un Fons d’Inversió Estatal que capte
-  18.000M€ destinats a programes d’habitatge assequible i donant remuneració a
-  xicotets estalviadors.
+  18.000M€ destinats a programes d’habitatge assequible, tot donant remuneració
+  a xicotets estalviadors.
 
-- Desenvoluparem una enquesta que determine el nombre real d'habitatges buits
-  permetent així aplicar als ajuntaments recàrrecs de l'IBI.
+- Desenvoluparem una enquesta que determine el nombre real d'habitatges buits,
+  de manera que es permeta aplicar als ajuntaments recàrrecs de l'IBI.
 
 - Mobilitzarem habitatges buits fent que Casa 47 i les empreses públiques
   d’àmbit autonòmic actuen d’intermediàries entre propietàries i demandants
@@ -236,6 +237,8 @@ HABITATGE
 - Prohibirem legalment els desnonaments sense alternativa habitacional,
   especialment als desnonaments promoguts per grans tenidors i fons d’inversió.
 
+.. 5
+
 SALARIS I CONDICIONS LABORALS
 -----------------------------
 
@@ -250,10 +253,10 @@ SALARIS I CONDICIONS LABORALS
   automàtiques durant la ultraactivitat dels convenis.
 
 - Reduirem un 50% els diumenges o festius laborables i restringirem les Zones
-  de Gran Afluència Turística, reformant la Llei d’horaris comercials.
+  de Gran Afluència Turística, tot reformant la Llei d’horaris comercials.
 
-- Modificarem la normativa laboral sobre acomiadaments recuperant els salaris
-  de tramitació (en el cas d’acomiadament improcedent indemnitzat) i la
+- Modificarem la normativa laboral sobre acomiadaments per recuperar els
+  salaris de tramitació (en el cas d’acomiadament improcedent indemnitzat) i la
   indemnització de 45 dies per any treballat.
 
 - Aprofundirem en la flexibilitat horària, el teletreball i la desconnexió
@@ -276,16 +279,18 @@ SALARIS I CONDICIONS LABORALS
   contractació, les hores extraordinàries no declarades i els incompliments de
   la jornada laboral màxima.
 
+.. 6
+
 PERSONES AUTÒNOMES
 ------------------
 
-- Millorarem la protecció social de les persones autònomes fent que per accedir
-  a la prestació per cessament d’activitat només hagen d’acreditar un any de
-  pèrdues.
+- Millorarem la protecció social de les persones autònomes, de manera que per
+  accedir a la prestació per cessament d’activitat només hagen d’acreditar un
+  any de pèrdues.
 
-- Modificarem la regulació de l'Impost sobre Activitats Econòmiques, per a
-  transposar de forma immediata la directiva europea sobre l’IVA franquiciat a
-  aquelles persones autònomes que facturen menys de 85.000 euros anuals.
+- Transposarem immediatament la directiva sobre l’IVA franquiciat a aquelles
+  persones autònomes que facturen menys de 85.000€ anuals i eliminarem càrrega
+  burocràtica a xicotets autònoms.
 
 - Bonificarem la totalitat de la quota de la Seguretat Social des del primer
   dia de baixa per malalties greus, i no a partir dels 60 dies, com succeeix
@@ -295,9 +300,10 @@ PERSONES AUTÒNOMES
   reincorporació progressiva o intermitent.
 
 - Defensarem l'eliminació progressiva del sistema d'estimació objectiva
-  (sistema de mòduls), implantant un període transitori, durant el qual aquest
-  model s'anirà substituint progressivament per un nou règim fiscal d'Estimació
-  Directa Especial, fins la seua eliminació definitiva en un període de 3 anys.
+  (sistema de mòduls), tot implantant un període transitori, durant el qual
+  aquest model s'anirà substituint progressivament per un nou règim fiscal
+  d'Estimació Directa Especial, fins la seua eliminació definitiva en un
+  període de 3 anys.
 
 - Impulsarem una reducció dels tràmits administratius, que poden arribar a
   llastrar el funcionament de micropimes i persones treballadores i autonòmes
@@ -324,8 +330,10 @@ PENSIONS
 - Assegurarem el manteniment del poder adquisitiu de les pensions, garantint
   constitucionalment la seua revaloració conforme al cost de la vida.
 
+.. 7
+
 - Suprimirem tota desgravació fiscal als plans de pensions privats per evitar
-  la competència amb el sistema públic de pensions .
+  la competència amb el sistema públic de pensions.
 
 - Eliminarem els avantatges fiscals de PIAS (pla individual d'estalvi
   sistemàtic) i SIALP (assegurança individual d'estalvi a llarg termini),
@@ -335,10 +343,10 @@ PENSIONS
 - Promourem una compensació fora de l’actual procediment de l’IRPF per a
   aquelles persones pensionistes que van tributar doblement per aportacions a
   mutualitats laborals obligatòries abans de 1979, a les quals l’AEAT no pot
-  compensar-les amb devolucions degut a que, pels seus baixos ingressos no
-  se’ls han practicat retencions.
+  compensar-les amb devolucions degut a que pels seus baixos ingressos no se’ls
+  han practicat retencions.
 
-- Augmentarem les pensions no contributives fins els 800€
+- Augmentarem les pensions no contributives fins els 800€.
 
 2\. SERVEIS PÚBLICS PER A CUIDAR I PROTEGIR
 ===========================================
@@ -355,7 +363,7 @@ SANITAT
 
 - Reforçarem l’atenció primària, la salut comunitària i la prevenció, fixant
   per llei bàsica un finançament mínim així com unes ràtios poblacionals i
-  llistes d’espera màxims, i millorant la continuïtat assistencial.
+  llistes d’espera màxims, tot millorant la continuïtat assistencial.
 
 - Aprovarem un Pacte estatal per la salut mental amb finançament suficient per
   a ampliar les plantilles de professionals, millorar l’accés a l’atenció
@@ -372,29 +380,31 @@ SANITAT
 - Inclourem en el catàleg del Sistema Nacional de Salut les especialitats i
   prestacions d’oftalmologia, podologia, nutrició, odontologia i estomatologia.
 
+.. 8
+
 SALUT PÚBLICA
 -------------
 
 - Crearem una indústria farmacèutica pública per a investigar, produir i
   comercialitzar medicaments essencials, genèrics i productes sanitaris
-  estratègics, d’ús hospitalari i per a tractaments de malalties rares, reduint
-  així la dependència de les multinacionals farmacèutiques.
+  estratègics, d’ús hospitalari i per a tractaments de malalties rares, de
+  manera que es reduïsca la dependència de les multinacionals farmacèutiques.
 
 - Promourem avaluacions d’impacte en salut per a les grans infraestructures,
   els projectes industrials i les normes que puguen afectar la salut de la
   població.
 
-- Ampliarem les mesures per a lluitar contra el tabaquisme, incloent la
+- Ampliarem les mesures per a lluitar contra el tabaquisme, tot incloent-hi la
   prohibició de fumar en terrasses i platges.
 
-- Prohibirem la venda de begudes energètiques a persones menors de 16 anys
+- Prohibirem la venda de begudes energètiques a persones menors de 16 anys.
 
 EDUCACIÓ
 --------
 
-- Exigirem recursos per a una educació pública de qualitat, amb millora de la
-  inclusió i de les condicions d’aprenentatge, augmentant la inversió educativa
-  estatal i les transferències a les comunitats autònomes, amb l’objectiu
+- Exigirem recursos per a una educació pública de qualitat, per millorar la
+  inclusió i les condicions d’aprenentatge, amb l’augment de la inversió
+  educativa estatal i les transferències a les comunitats autònomes, per tal
   d’avançar cap a una inversió educativa equivalent al 7% del PIB estatal.
 
 - Prohibirem la cessió de sòl públic per a la construcció de centres educatius
@@ -409,8 +419,8 @@ EDUCACIÓ
   professorat.
 
 - Reformarem la Llei Orgànica d’Educació perquè el menjador escolar siga
-  reconeguda com a part dels programes educatius essencials, establint així la
-  gratuïtat i universalitat del servei.
+  reconegut com a part dels programes educatius essencials, tot establint així
+  la gratuïtat i universalitat del servei.
 
 - Defensarem finançament i acords per ampliar les places i l’oferta territorial
   en la formació professional pública.
@@ -421,6 +431,8 @@ EDUCACIÓ
 
 - Reforçarem l’atenció a la diversitat, l’orientació educativa i els recursos
   per a l’alumnat amb necessitats específiques de suport.
+
+.. 9
 
 - Desenvoluparem protocols específics contra l’assetjament escolar, la
   violència digital i la difusió no consentida d'imatges íntimes.
@@ -455,9 +467,9 @@ SERVEIS SOCIALS, SISTEMES DE CURES I INCLUSIÓ SOCIAL
   majors i dependents en els seus propis entorns amb suport adequat, atenció
   sanitària i serveis comunitaris.
 
-- Aprovarem un Estatut de les Persones Cuidadores que done reconega la seua
-  dedicació continuada establint drets i garanties sociolaborals, econòmiques i
-  de protecció social.
+- Aprovarem un Estatut de les Persones Cuidadores que reconega la seua
+  dedicació continuada, tot establint drets i garanties sociolaborals,
+  econòmiques i de protecció social.
 
 - Desenvoluparem una política pública de cures que repartisca la
   responsabilitat entre les institucions, les empreses, els homes i les dones,
@@ -470,6 +482,8 @@ SERVEIS SOCIALS, SISTEMES DE CURES I INCLUSIÓ SOCIAL
 - Reformarem l’Ingrés Mínim Vital per a incloure noves situacions de
   vulnerabilitat, millorar la seua cobertura, agilitzar procediments i millorar
   la compatibilitat amb altres prestacions.
+
+.. 10
 
 MOBILITAT SOSTENIBLE
 --------------------
@@ -487,15 +501,16 @@ MOBILITAT SOSTENIBLE
   metropolitanes.
 
 - Accelerarem l’execució del Corredor Mediterrani i les connexions ferroviàries
-  de mercaderies, amb calendari, pressupost i rendició de comptes, prioritzant
-  actuacions que amplien la capacitat, les connexions i la fiabilitat.
+  de mercaderies, amb calendari, pressupost i rendició de comptes, amb la
+  priorització d’actuacions que amplien la capacitat, les connexions i la
+  fiabilitat.
 
 - Revisarem les actuacions del corredor Cantàbric-Mediterrani perquè responguen
   a les necessitats del territori i a criteris de sostenibilitat.
 
-- Insistirem en les inversions estatals en carreteres, negociant una dotació
-  suficient per a noves infraestructures necessàries i per al manteniment de la
-  xarxa existent, amb major presència i control públics.
+- Insistirem en les inversions estatals en carreteres, tot negociant una
+  dotació suficient per a noves infraestructures necessàries i per al
+  manteniment de la xarxa existent, amb major presència i control públics.
 
 - Exigirem la paralització dels projectes de grans infraestructures i
   ampliacions que no estiguen justificades des del punt de vista d’impacte
@@ -505,12 +520,12 @@ MOBILITAT SOSTENIBLE
 - Posarem el focus en una millora integral del transport públic al sud del País
   Valencià.
 
-- Impulsarem una reestructuració completa de l’empresa pública ADIF, revertint
-  la seua privatització encoberta mitjançant subcontractes, augmentant el
-  personal propi i incrementant ostensiblement la inversió en manteniment i
-  millora de la xarxa ferroviària.
+- Impulsarem una reestructuració completa de l’empresa pública ADIF, de manera
+  que se’n revertisca la privatització encoberta mitjançant subcontractes,
+  s’augmente el personal propi i s’incremente ostensiblement la inversió en
+  manteniment i millora de la xarxa ferroviària.
 
-- Racionalitzarem l’alta velocitat liberalitzada, apostant pel transport de
+- Racionalitzarem l’alta velocitat liberalitzada, tot apostant pel transport de
   mercaderies, per a lluitar contra el canvi climàtic.
 
 - Incorporarem als programes estatals de mobilitat els desplaçaments per
@@ -522,9 +537,12 @@ MOBILITAT SOSTENIBLE
 - Desenvoluparem la Llei 9/2025 de Mobilitat Sostenible, amb l’objectiu
   d’aconseguir la neutralitat climàtica al 2050.
 
-- Impulsarem el pes dels corredors ferroviaris de mercaderies, enfront de la
-  carretera, posant en valor la seua sostenibilitat mediambiental, millorant la
-  seua productivitat i la connexió amb els ports i centres logístics.
+.. 11
+
+- Impulsarem el pes dels corredors ferroviaris de mercaderies, per davant de la
+  carretera, tot posant en valor la seua sostenibilitat mediambiental, així com
+  millorant la seua productivitat i la connexió amb els ports i centres
+  logístics.
 
 - Limitarem, de manera efectiva, els vols nacionals quan existisca una
   alternativa ferroviària competitiva amb una duració inferior a les 2 hores i
@@ -537,9 +555,8 @@ MOBILITAT SOSTENIBLE
   millors condicions de treball.
 
 - Implementarem mesures específiques per a garantir que la mobilitat sostenible
-  arribe realment al medi rural (estant degudament adaptades a la pròpia
-  idiosincràsia d'aquests territoris), així com fomentar la mobilitat elèctrica
-  en tot el territori.
+  arribe realment al medi rural, i fomentarem la mobilitat elèctrica en tot el
+  territori.
 
 - Defensarem un model de gestió aeroportuària que prioritze l’interés general,
   la salut pública i la qualitat de vida de les poblacions afectades, per
@@ -574,6 +591,8 @@ CULTURA
   Belles Arts de València, el Museu de Sant Pius V, les societats musicals i
   altres institucions culturals valencianes.
 
+.. 12
+
 - Impulsarem la recuperació i rehabilitació del patrimoni històric valencià,
   incloent-hi el castell de Sagunt, la Cova del Bolomor, la Murta i altres
   espais patrimonials que necessiten actuacions de conservació.
@@ -594,7 +613,7 @@ CULTURA
   persones amb menys recursos i l’extensió del Bo Cultural Jove a la població
   de 16 a 30 anys.
 
-- Millorarem les condicions laborals del sector cultural i audiovisual,
+- Millorarem les condicions laborals del sector cultural i audiovisual, tot
   afavorint l’estabilitat, la remuneració justa i la protecció dels drets de
   les persones treballadores.
 
@@ -613,13 +632,17 @@ CULTURA
   els usos educatius i culturals sense ànim de lucre, amb les garanties
   necessàries.
 
-- Recuperarem la Llei del Cine i de la Cultura Audiovisual, que es va quedar
-  pendent en la passada legislatura.
+- Recuperarem la Llei del Cine i de la Cultura Audiovisual, la qual es va
+  quedar pendent en la passada legislatura.
 
-- Finançarem la restauració del Teatre Principal de València per a que s’ubique
-  allí una subseu de l’Institut Nacional d’Arts Escèniques i de la Música.
+- Finançarem la restauració del Teatre Principal de València.
 
 - Reforçarem la presència de la creació en valencià a l’Instituto Cervantes.
+
+.. 13
+
+- Ubicarem una subseu de l’Institut Nacional d’Arts Escèniques i de la Música a
+  València.
 
 - Crearem un pla per a redirigir els ingressos dels macroesdeveniments per al
   finançament de sales independents i festivals xicotets i rurals.
@@ -631,9 +654,9 @@ ESPORT
   prescripció d’exercici físic als centres de salut.
 
 - Establirem com a condició indispensable la residència fiscal a l’estat perquè
-  esportistes beneficiar-se d’ajudes públiques i obligarem a tributar a Espanya
-  pels ingressos obtinguts en exercici de funcions de representació
-  internacional com campionats.
+  esportistes beneficiar-se d’ajudes públiques, i obligarem a tributar a
+  Espanya pels ingressos obtinguts en exercici de funcions de representació
+  internacional com ara campionats.
 
 - Promocionarem programes per afavorir especialment la preparació d’esportistes
   d’elit, compatibilitzant l’activitat dins de la Universitat.
@@ -641,7 +664,7 @@ ESPORT
 OCI EDUCATIU
 ------------
 
-- Mantindrem i augmentarem el Pla Coresponsables per a ampliar l’oferta
+- Mantindrem i augmentarem el Pla Corresponsables per a ampliar l’oferta
   d’extraescolars universals i serveis de cures professionals a la infància.
 
 - Impulsarem suport estatal a espais culturals, esportius i de trobada
@@ -665,6 +688,8 @@ MODEL COMUNICATIU I DRETS DIGITALS
 - Elaborarem un Estatut de la Informació per a protegir els i les professionals
   del sector i instaurarem un codi deontològic que acabe amb les informacions
   falses i contemple greus sancions a qui desinforme.
+
+.. 14
 
 - Posarem en marxa el Consell Estatal de Mitjans Audiovisuals (CEMA) com a
   òrgan regulador, supervisor i sancionador del sector.
@@ -695,8 +720,8 @@ UNIVERSITATS
   social de la inversió pública.
 
 - Millorarem el sistema estatal de beques i garantirem que les beques
-  universitàries es resolguen i s’ingressen a principi de curs, evitant que les
-  dificultats econòmiques impedisquen continuar els estudis.
+  universitàries es resolguen i s’ingressen a principi de curs, per tal
+  d’evitar que les dificultats econòmiques impedisquen continuar els estudis.
 
 - Posarem en marxa un nou sistema de taxes universitàries perquè qui menys
   recursos té pague menys.
@@ -710,6 +735,8 @@ UNIVERSITATS
 
 - Dissenyarem una carrera investigadora integral i amb contractació estable que
   prenga en consideració totes les etapes en la recerca.
+
+.. 15
 
 - Dignificarem la situació del personal professor d’universitat.
 
@@ -733,35 +760,35 @@ FISCALITAT
   d’immobles per tal de que tributen sobre el valor fixat pel l’Índex
   d’Habitatges Estatal.
 
-- Lluitarem contra el frau fiscal, incrementant les plantilles de l’AEAT.
+- Lluitarem contra el frau fiscal amb l’increment de les plantilles de l’AEAT.
 
 - Eliminarem els avantatges de les grans empreses en relació amb les PIMES.
 
 - Crearem un impost sobre el benefici de les empreses oligopolístiques.
 
 - Eliminarem els privilegis de les rendes financeres respecte de les del
-  treball, fent-les idènticament progressives.
+  treball, TOT fent-les idènticament progressives.
 
 - Modificarem la fiscalitat de les rendes immobiliàries per tal de fer-la
   efectivament progressiva mitjançant l'eliminació de deduccions de les quals
   no gaudeixen les rendes del treball.
 
-- Reduirem la deducció per amortització d’immobles, des del 3% actual a l’1%
-  incrementant la recaptació de més de 465 milions d’euros.
+- Reduirem la deducció per amortització d’immobles, des del 3% actual a l’1%,
+  de manera que s’incrementarà la recaptació en més de 465 milions d’euros.
 
 - Rebaixarem la deducció per arrendament d’immobles destinats a habitatges des
-  de l’actual 50% fins a un màxim del 20%, condicionat a les rendes de lloguer
-  iguals o inferiors al 85 % del lloguer mitjà de la comunitat autònoma, i
-  eliminant-la per a rendes de lloguer iguals o superiors a la mitjana
-  autonòmica.
-
-- Implantarem una taxa de 2€ per pernoctació en habitatges d’ús turístics.
+  de l’actual 50% fins a un màxim del 20%, condicionada al fet que les rendes
+  de lloguer siguen iguals o inferiors al 85 % del lloguer mitjà de la
+  comunitat autònoma, i l’eliminarem per a rendes de lloguer iguals o superiors
+  a la mitjana autonòmica.
 
 - Simplificarem tributs per tal de reduir l’elusió fiscal.
 
 - Eliminarem els privilegis fiscals al sector l’aviació (combustible, IVA…) i
   destinarem els 6.000 milions anuals recaptats a reforçar el sector
   ferroviari.
+
+.. 16
 
 - Crearem un impost sobre l'emissió d'òxids de nitrogen a l'atmosfera per part
   de l'aviació comercial.
@@ -782,8 +809,8 @@ FISCALITAT
   pública.
 
 - Reformarem la llei d’hisendes locals per a introduir la progressivitat fiscal
-  en l’impost sobre els béns immobles, reconeixent els mateixos drets a les
-  famílies monoparentals i les nombroses.
+  en l’impost sobre els béns immobles, tot reconeixent els mateixos drets a les
+  famílies. monoparentals i les nombroses.
 
 COMERÇ
 ------
@@ -796,7 +823,7 @@ COMERÇ
   submergida en el sector comercial.
 
 - Crearem línies d'ajudes directes per a les pimes de comerços de consum
-  energètic intensiu, afavorint la reducció de consums i la transició cap a
+  energètic intensiu, tot afavorint la reducció de consums i la transició cap a
   energies netes.
 
 - Impulsarem la creació del Dia del Comerç de Proximitat com a dia especial de
@@ -811,7 +838,9 @@ COMERÇ
 - Promourem la creació d'Escoles Sectorials, com l'escola tècnica de vendes,
   des de les Administracions Públiques juntament amb les Associacions
   Empresarials, amb unes infraestructures adequades, dirigides a capacitar a
-  futurs professionals, i reforçar els coneixements i habilitats dels actuals.
+  futurs professionals i reforçar els coneixements i habilitats dels actuals.
+
+.. 17
 
 - Impulsarem línies d'ajudes a fons perdut i crèdits blans dirigits al comerç
   minorista per tal d’afavorir l’accés i la renovació d'elements tecnològics,
@@ -826,10 +855,10 @@ INDÚSTRIA I EMPRESA
 - Crearem una banca pública d’inversió i crèdit per a garantir l’accés al
   crèdit de les PIMES, les cooperatives, l’economia social i les famílies, i
   per orientar la inversió cap a la reindustrialització verda, l’habitatge
-  assequible, la innovació i la cohesió territorial que actuarà amb criteris de
-  transparència, rendició de comptes i compliment dels objectius socials i
-  ambientals, i es coordininarà amb l’ICO i les eines públiques existents per
-  evitar duplicitats.
+  assequible, la innovació i la cohesió territorial. Aquesta banca actuarà amb
+  criteris de transparència, rendició de comptes i compliment dels objectius
+  socials i ambientals, i es coordinarà amb l’ICO i les eines públiques
+  existents per evitar duplicitats.
 
 - Augmentarem la presència de l’estat en sectors estratègics a través de
   l’adquisició de participacions i accions en empreses o la creació d’empreses
@@ -838,12 +867,12 @@ INDÚSTRIA I EMPRESA
   de servei públic.
 
 - Defensarem una política industrial que perseguisca la reindustrialització del
-  país i la descarbonització de la indústria, com també reduir la dependència
-  externa, tan energètica com en el proveïment de productes. Per això crearem
-  fulls de ruta específics amb finançament dedicat per a protegir sectors com
-  la ceràmica, el calcer, les joguines o l’automoció potenciant la seua
-  transició cap a energies verdes, la digitalització i la millora de condicions
-  de treball.
+  país i la descarbonització de la indústria, com també la reducció de la
+  dependència externa, tan energètica com en el proveïment de productes. Per
+  això crearem fulls de ruta específics amb finançament dedicat per a protegir
+  sectors com la ceràmica, el calcer, les joguines o l’automoció potenciant la
+  seua transició cap a energies verdes, la digitalització i la millora de
+  condicions de treball.
 
 - Crearem les condicions per convertir-nos en un pol punter en la producció de
   tecnologies netes incloent bateries o dispositius de generació d’energies
@@ -858,6 +887,8 @@ INDÚSTRIA I EMPRESA
   arrepleguen informes de sostenibilitat que incloguen informació social i
   mediambiental.
 
+.. 18
+
 - Treballarem per a simplificar i agilitzar els processos de tramitació en les
   relacions de les pimes amb l’administració, sobretot a través d’eines
   telemàtiques i digitals.
@@ -867,8 +898,9 @@ INDÚSTRIA I EMPRESA
 
 - Ens oposarem a nous processos de concentració bancària, el resultat final de
   la qual és la pèrdua de llocs de treball, el desproveïment de serveis
-  bancaris en xicotetes poblacions, la pèrdua de competència en el mercat
-  bancari, en detriment d'empreses i particulars i la reducció del crèdit.
+  bancaris en xicotetes poblacions i la minva de la competència en el mercat
+  bancari, i que va en detriment d'empreses i particulars i que provoca la
+  reducció del crèdit.
 
 - Potenciarem i protegirem les cooperatives: completarem la reforma de la llei
   de cooperatives, actualitzarem el seu règim fiscal, ampliarem el diàleg
@@ -876,8 +908,8 @@ INDÚSTRIA I EMPRESA
   d’industrialització i prioritzarem empreses que creen arrelament territorial.
 
 - Facilitarem la creació de nous models d’empreses basades en l’economia social
-  i solidària, reconeixent societats públic-comunitàries per a desenvolupar
-  activitats empresarials d’interés comú
+  i solidària, tot reconeixent societats públic-comunitàries per a desenvolupar
+  activitats empresarials d’interés comú.
 
 CIÈNCIA I INNOVACIÓ
 -------------------
@@ -892,10 +924,10 @@ CIÈNCIA I INNOVACIÓ
   termes reals.
 
 - Proposarem la creació d'una carrera pública predictible per a personal
-  científic i investigador, eliminant l'actual sistema de contractes precaris
-  concatenats i creant una ruta professional estable, clara i homologable als
-  països més avançats, que reduïsca l'edat mitjana d'entrada a les places
-  fixes.
+  científic i investigador, tot eliminant l'actual sistema de contractes
+  precaris concatenats i crearem una ruta professional estable, clara i
+  homologable als països més avançats, que reduïsca l'edat mitjana d'entrada a
+  les places fixes.
 
 - Fomentarem un canvi normatiu que disminuisca la càrrega administrativa i
   burocràtica associada als projectes i centres d'investigació, sempre
@@ -908,8 +940,10 @@ CIÈNCIA I INNOVACIÓ
   dels investigadors i les investigadores, amb el propòsit de retindre talent i
   recuperar el que hem exportat a altres països en el passat recent.
 
+.. 19
+
 - Planificarem de manera estratègica l’expansió dels centres de dades amb
-  condicionants socials, energètics i hidràulics de forma de utilitzen aigües
+  condicionants socials, energètics i hídrics de forma de utilitzen aigües
   regenerades, energies renovables i que tributen pels beneficis generats de
   manera efectiva.
 
@@ -954,9 +988,11 @@ AGRICULTURA I PESCA
 
 - Revindicarem una PAC adaptada a l’agricultura mediterrània amb pressupost
   suficient, superació de referències històriques i règims simplificats fins a
-  5.000€ amb ajudes i ecorègims viables i prioritzarem per al cobrament de les
+  5.000€ amb ajudes i ecorègims viables, i prioritzarem per al cobrament de les
   PAC les persones professionals que assumeixen el risc empresarial, sense
   excloure qui exerceix una agricultura a temps parcial real.
+
+.. 20
 
 - Reforçarem la Llei de la cadena alimentària perquè els preus cobrisquen els
   costos efectius de producció. Impulsarem millores en la capacitat negociadora
@@ -981,9 +1017,9 @@ AGRICULTURA I PESCA
   agrària, inclosa la maquinària.
 
 - Ampliarem el control públic sobre la concentració empresarial i els marges de
-  les grans cadenes de distribució alimentària, exigint transparència en els
-  preus i els marges de cada fase de la cadena i actuant contra les pràctiques
-  abusives que perjudiquen les persones productores i consumidores.
+  les grans cadenes de distribució alimentària, tot exigint transparència en
+  els preus i els marges de cada fase de la cadena i actuant contra les
+  pràctiques abusives que perjudiquen les persones productores i consumidores.
 
 - Exigirem incorporar les necessitats reals de les explotacions a la
   planificació hidrològica i donar al reg agrari una consideració prioritària
@@ -999,12 +1035,14 @@ AGRICULTURA I PESCA
 - Exigirem reforçar la vigilància, la disponibilitat de vacunes i medicaments i
   el diagnòstic, amb plans previs als períodes de risc de contagis. Igualment,
   promourem la coordinació de la resposta davant malalties com la llengua
-  blava, Malaltia Hemorràgica Epizoòtica (EHE, per les seues sigles en
+  blava, malaltia hemorràgica epizoòtica (EHE, per les seues sigles en
   castellà) i malaltia de Newcastle i garantir informació clara al sector i
   recursos per a executar les mesures.
 
+.. 21
+
 - Promourem que les indicacions de benestar animal i les denominacions de
-  productes ramaders informen sense confusió, amb aplicació efectiva de les
+  productes ramaders informen sense confusió, amb l’aplicació efectiva de les
   normes i els calendaris corresponents.
 
 - Proposarem facilitar la compra pública amb criteris socials, ambientals i de
@@ -1020,16 +1058,16 @@ AGRICULTURA I PESCA
 
 - Mantindrem una postura ferma davant el Consell de la UE que ajude a la
   reconversió del sector pesquer que afavorisca una producció més sostenible
-  mantenint una distribució just dels dies de treball
+  mantenint una distribució just dels dies de treball.
 
 DRETS DE LES PERSONES CONSUMIDORES
 ----------------------------------
 
 - Impulsarem la transposició de la Directiva europea 2020/1828, per a regular
-  amb plenes garanties les accions de representació col·lectives, que permetrà
-  a les entitats legitimades (com a associacions de consumidors o organismes
-  públics) actuar en nom d'un grup de persones afectades per una mateixa
-  infracció per a defensar els seus interessos col·lectius.
+  amb plenes garanties les accions de representació col·lectives, la qual cosa
+  permetrà a les entitats legitimades (com ara associacions de consumidors o
+  organismes públics) actuar en nom d'un grup de persones afectades per una
+  mateixa infracció per a defensar els seus interessos col·lectius.
 
 - Promourem una legislació específica contra l'obsolescència programada, hui
   dia molt difusa (Directiva UE 2024/1799 del Dret a la Reparació, Reglament UE
@@ -1037,11 +1075,11 @@ DRETS DE LES PERSONES CONSUMIDORES
   Reial decret 110/2015 sobre residus d'aparells elèctrics i electrònic, etc.).
 
 - Limitarem i arribarem a prohibir que les administracions públiques contracten
-  amb empreses sancionades en ferma per cometre infraccions greus i molt greus,
-  així com que incomplisquen laudes o acords de mediació.
+  amb empreses sancionades en ferm per cometre infraccions greus i molt greus,
+  així com aquelles que incomplisquen laudes o acords de mediació.
 
 - Impulsarem major transparència i protecció en la contractació de serveis
-  bancaris, en empreses de telefonia i internet i en les factures de serveis
+  bancaris, empreses de telefonia i internet i en les factures de serveis
   energètics.
 
 - Reforçarem les mesures compensatòries per demores en el transport públic,
@@ -1049,7 +1087,9 @@ DRETS DE LES PERSONES CONSUMIDORES
 
 - Avançarem en l’extensió del 5G a tot el territori, incloses les zones rurals.
 
-- Lluitarem contra l’escletxa digital, garantint les cartes en paper a la
+.. 22
+
+- Lluitarem contra l’escletxa digital, tot garantint les cartes en paper a la
   restauració o el dret al pagament en efectiu.
 
 - Combatrem les tècniques de tarificació dinàmica i preus basats en perfils
@@ -1086,10 +1126,10 @@ TURISME
 - Corregirem la pressió i l'alça de preus ocasionada pel turisme amb la
   regulació dels apartaments turístics.
 
-- Fomentarem plans de mobilitat sostenible, prioritzant l'ús el ferrocarril
-  enfront de l'ús del lloguer de vehicles privats, els vols curts (excloent els
-  vols domèstics de la població insular) i jets privats. Regular l'arribada
-  massiva de creuers a les nostres costes.
+- Fomentarem plans de mobilitat sostenible, amb la priorització de l'ús del
+  ferrocarril per davant de l'ús del lloguer de vehicles privats, els vols
+  curts (excloent-hi els vols domèstics de la població insular) i els jets
+  privats. Regularem l'arribada massiva de creuers a les nostres costes.
 
 - Prioritzarem la protecció de la biodiversitat, la cerca de la neutralitat
   climàtica i l'adaptació a les conseqüències actuals i previstes del canvi
@@ -1098,14 +1138,15 @@ TURISME
 
 - Promocionarem la singularitat de cada territori, paisatge, cultura, llengua i
   patrimoni com un valor afegit per al turisme i com un dret per a la
-  ciutadania, evitant la gentrificació de les ciutats i l'expulsió de les
+  ciutadania, tot evitant la gentrificació de les ciutats i l'expulsió de les
   famílies dels seus barris.
+
+.. 23
 
 - Desenvoluparem plans integrals de dinamització de l'economia en els municipis
   altament dependents del sector turístic, especialment en zones on l'impacte
-  climàtic és més sever. És igualment necessari garantir el finançament públic
-  dels serveis públics tensionats per l'afluència de turistes nacionals o
-  estrangers.
+  climàtic és més sever. Garantirem el finançament públic dels serveis públics
+  tensionats per l'afluència de turistes nacionals o estrangers.
 
 - Destinarem tots els recursos de la promoció turística a la reconversió
   ecològica del teixit industrial i l’I+D+i.
@@ -1118,13 +1159,13 @@ MEDI AMBIENT I BIODIVERSITAT
 
 - Desenvoluparem el Pla Nacional de la Natura i promourem la modificació de la
   Llei 42/2007 amb la finalitat de frenar la pèrdua i recuperar ecosistemes
-  funcionals, biodiversos i resilients, complementant les polítiques de
+  funcionals, biodiversos i resilients, tot complementant les polítiques de
   conservació amb objectius ambiciosos de restauració ecològica en diferents
   escales espacials i temporals i finançament suficients i mecanismes de
   seguiment que permeten comprovar els resultats ecològics obtinguts.
 
 - Prioritzarem la recuperació dels espais protegits que pateixen processos
-  greus de deterioració i aconseguir que la seua protecció es reflectisca en
+  greus de deterioració amb l’objectiu que la seua protecció es reflectisca en
   millores comprovables de la biodiversitat, no únicament en l'augment de la
   superfície declarada.
 
@@ -1136,17 +1177,20 @@ MEDI AMBIENT I BIODIVERSITAT
   conservació de les espècies i els ecosistemes.
 
 - Garantirem la convivència entre la vida silvestre i les activitats humanes en
-  el medi natural, fomentant la coexistència entre les espècies silvestres i
-  les activitats econòmiques.
+  el medi natural, amb el foment de la coexistència entre les espècies
+  silvestres i les activitats econòmiques.
 
 - Establirem el “Marc Verd” com a principi rector de la nostra política que
   garantirà que qualsevol política, programa o projecte es sotmeta a un filtre
-  climàtic vinculant que impedixca iniciatives que comporten un augment en les
+  climàtic vinculant que impedisca iniciatives que comporten un augment en les
   emissions.
 
-- Garantirem una Transició Ecològica Justa posant en marxa protocols d’actuació
-  preferent i plans de formació, subsidi i reciclatge professional per a
-  col·lectius vulnerables i treballadors dels sectors descarbonitzats.
+- Garantirem una Transició Ecològica Justa amb la posada en marxa de protocols
+  d’actuació preferent i de plans de formació, subsidi i reciclatge
+  professional per a col·lectius vulnerables i treballadors dels sectors
+  descarbonitzats.
+
+.. 24
 
 - Posarem en marxa abans del final del primer any de legislatura Un Pla Estatal
   d’Emergència Per la Biodiversitat i Restauració d’Ecosistemes amb dotació
@@ -1164,8 +1208,8 @@ ENERGIA
 
 - Reduirem el pes del mercat marginalista i implementarem un model de
   remuneració regulat i estable, amb contractes a llarg termini a preu fix per
-  a les renovables, que traslladen a la ciutadania el baix cost real de
-  generar-les i acaben amb la volatilitat.
+  a les renovables, de manera que es trasllade a la ciutadania el baix cost
+  real de generar-les i s’acabe amb la volatilitat.
 
 - Traurem de la factura l’impost elèctric i els càrrecs de política energètica
   i els finançarem via Pressupostos Generals de l’Estat: així el seu
@@ -1179,7 +1223,7 @@ ENERGIA
   xarxes de distribució en els barris i les zones de nou desenvolupament.
 
 - Recuperarem progressivament la titularitat pública de les grans empreses
-  elèctriques, començant per les activitats estratègiques de generació i
+  elèctriques, tot començant per les activitats estratègiques de generació i
   comercialització, mitjançant adquisicions públiques que permeten reduir el
   poder dels oligopolis i democratitzar el control de l'energia.
 
@@ -1189,7 +1233,7 @@ ENERGIA
 
 - Crearem un dret de tanteig i retracte a favor de l’administració i de
   l’empresa pública d’energia en la compravenda de plantes fotovoltaiques entre
-  empreses, replicant el mecanisme que ja existeix contra la compra
+  empreses, tot replicant el mecanisme que ja existeix contra la compra
   especulativa d’habitatge per fons voltor.
 
 - Posarem en marxa un pla d’inversió anticipada en la xarxa elèctrica
@@ -1197,9 +1241,12 @@ ENERGIA
   residencials i revise els permisos especulatius que avui embussen les cues de
   connexió.
 
-- Assolirem el 100 % de titularitat pública de Red Eléctrica, recuperant el
-  control estatal sobre una infraestructura estratègica per a planificar el
-  sistema elèctric i garantir que funcione d'acord amb l'interés general.
+.. 25
+
+- Assolirem el 100 % de titularitat pública de Red Eléctrica, amb la
+  recuperació del control estatal sobre una infraestructura estratègica per a
+  planificar el sistema elèctric i garantir que funcione d'acord amb l'interés
+  general.
 
 - Desplegarem un pla per a electrificar els usos finals al transport, sector
   residencial, agrícola i industrial. Liderarem l’electrificació des de la
@@ -1219,15 +1266,11 @@ ENERGIA
 - Prohibirem els talls de subministrament i reformarem el bo social perquè siga
   realment progressiu i arribe a qui més ho necessita.
 
-- Durem l’Estat a tindre una majoria de com a mínim el 51% de Red Eléctrica,
-  per mantindre el control de l’operador del sistema i de la xarxa de transport
-  i garantir que els seus beneficis reverteixen en allò públic.
-
 - Separarem l’energia de la CNMC amb una nova Comissió Nacional de l’Energia,
-  desfent la fusió de 2013 que va diluir la supervisió del sector.
+  tot desfent la fusió de 2013 que va diluir la supervisió del sector.
 
 - Acompanyarem les comunitats autònomes en la definició de les seues zones
-  d’acceleració renovable i agilitzarem els permisos de les noves plantes,
+  d’acceleració renovable i agilitzarem els permisos de les noves plantes, tot
   prioritzant els sòls ja degradats o transformats i respectant els espais
   naturals protegits, sempre amb diàleg amb el territori i garantint el retorn
   de la riquesa a les comarques on s’instal·len.
@@ -1243,16 +1286,18 @@ ENERGIA
   reindustrialització verdes i protecció social.
 
 - Revisarem la Llei 7/2021 de Canvi Climàtic i Transició Energètica i ampliarem
-  els compromisos d’electrificació del sistema, fins al 100% en 2030, i
+  els compromisos d’electrificació del sistema, fins al 100% en 2030, aixi com
   d’abandonament dels combustibles fòssils amb l’horitzó 2040.
 
 - Millorarem el Pla Nacional d’Adaptació al Canvi Climàtic per fer front a les
   conseqüències del Canvi Climàtic i disminuir la vulnerabilitat del conjunt
   del territori estatal i aconseguir una societat i una economia més resilent.
 
-- Avaluarem el Pla Nacional Integrat d’Energia i Clima (PNIEC), com ferramenta
-  principal de les polítiques de prevenció, publicant els resultats de forma
-  comprensible i assumint nous objectius verificables
+.. 26
+
+- Avaluarem el Pla Nacional Integrat d’Energia i Clima (PNIEC), com a
+  ferramenta principal de les polítiques de prevenció, tot publicant els
+  resultats de forma comprensible i assumint nous objectius verificables.
 
 AIGUA
 -----
@@ -1297,6 +1342,8 @@ TERRITORI
   corredors ecològics i itineraris per a caminar i anar en bicicleta, amb la
   delimitació pública dels camins i de les lleres usurpades.
 
+.. 27
+
 - Crearem un fons estatal que remunere els municipis rurals pels serveis
   ambientals que donen a tot el país (aigua, boscos, biodiversitat i absorció
   de carboni), sobretot els que estan dins d’espais protegits.
@@ -1307,19 +1354,19 @@ TERRITORI
   per a aplicar-los.
 
 - Executarem amb pressupost i calendari un pla estatal contra la regressió de
-  la costa valenciana. Estes actuacions es fonamentaran en solucions basades en
-  la natura (dunes, aportació de sediment i retirada d’estructures que agreugen
-  l’erosió), i farà que els ports i els embassaments que retenen el sediment el
-  tornen a les platges i paguen la seua regeneració.
+  la costa valenciana amb actuacions basades en la natura (dunes, aportació de
+  sediment i retirada d’estructures que agreugen l’erosió), i amb l’objectiu
+  que els ports i els embassaments que retenen el sediment el tornen a les
+  platges.
 
 - Cap gran obra al litoral, siga portuària, urbanística o d’infraestructura, no
-  s’aprovarà sense una alternativa 0 i una avaluació que tinga en compte la
+  s’aprovarà sense una alternativa i una avaluació que tinga en compte la
   pujada del nivell del mar i l’erosió a 2045 i a 2100.
 
-- Revertirem la reforma de la Llei de Costes del PP de 2013, que va allargar
-  les concessions fins a 75 anys i va rebaixar la protecció del litoral, i
-  impedirem noves construccions en zones amenaçades per la pujada del nivell
-  del mar.
+- Revertirem la reforma de la Llei de Costes del PP de 2013, la qual va
+  allargar les concessions fins a 75 anys i va rebaixar la protecció del
+  litoral, i impedirem noves construccions en zones amenaçades per la pujada
+  del nivell del mar.
 
 - Protegirem les praderies de posidònia, que fixen la sorra i esmorteeixen els
   temporals, amb restriccions de fondeig i amb l’objectiu de protegir el 30%
@@ -1336,9 +1383,9 @@ MODEL DE CIUTAT I URBANISME
 
 - Crearem un programa estatal d’adaptació climàtica urbana, cofinançat amb les
   comunitats autònomes i els ajuntaments, per a renaturalitzar, plantar arbrat
-  i guanyar ombra i zones verdes. L’objectiu serà un 30% de cobertura arbòria a
-  tots els nuclis urbans en 2040, amb prioritat per als barris més vulnerables
-  i més exposats a l’illa de calor.
+  i guanyar ombra i zones verdes. L’objectiu serà assolir un 30% de cobertura
+  arbòria a tots els nuclis urbans en 2040, amb prioritat per als barris més
+  vulnerables i més exposats a l’illa de calor.
 
 - Reconeixerem per llei el confort climàtic com a dret social bàsic i
   finançarem una xarxa estatal de refugis climàtics, amb un mapa públic i
@@ -1350,6 +1397,8 @@ MODEL DE CIUTAT I URBANISME
   pla plurianual d’ajudes per a bioclimatitzar els més de 28.000 centres
   educatius i renaturalitzar els patis, oberts al barri com a refugis
   climàtics.
+
+.. 28
 
 - Reformarem la Llei del Sòl, d’acord amb les comunitats autònomes, amb nous
   estàndards de proximitat: no s’aprovarà cap nou desenvolupament residencial
@@ -1391,12 +1440,14 @@ MODEL DE CIUTAT I URBANISME
   àrees.
 
 - Finançarem un programa estatal perquè els ajuntaments instal·len punts de
-  recàrrega lenta en l’enllumenat públic, aprofitant la potència alliberada pel
-  canvi a LED, amb prioritat per als barris de menys renda i amb més habitatges
-  sense garatge. Promourem una tarifa pública de resident que acoste el preu de
-  la recàrrega al de la tarifa domèstica i que abaratisca la recàrrega en les
-  hores solars, perquè l’electrificació del transport no siga un privilegi de
-  qui té plaça d’aparcament.
+  recàrrega lenta en l’enllumenat públic, tot aprofitant la potència alliberada
+  pel canvi a LED, amb prioritat per als barris de menys renda i amb més
+  habitatges sense garatge. Promourem una tarifa pública de resident que acoste
+  el preu de la recàrrega al de la tarifa domèstica i que abaratisca la
+  recàrrega en les hores solars, perquè l’electrificació del transport no siga
+  un privilegi de qui té plaça d’aparcament.
+
+.. 29
 
 - Aprovarem una Estratègia Estatal de la Bicicleta centrada en els
   desplaçaments quotidians entre municipis, que finance xarxes ciclistes
@@ -1418,8 +1469,8 @@ MODEL DE CIUTAT I URBANISME
   puguen canviar de vehicle o passar al transport públic.
 
 - Aplicarem de forma estricta i com més prompte millor la normativa sobre
-  contaminació de l’aire i sobre soroll, modificant la legislació tenint com
-  objectiu els nivells recomanats per l’OMS
+  contaminació de l’aire i sobre soroll, tot modificant la legislació tenint
+  com objectiu els nivells recomanats per l’OMS.
 
 RESPOSTA A LES EMERGÈNCIES
 --------------------------
@@ -1436,8 +1487,8 @@ RESPOSTA A LES EMERGÈNCIES
   clar i amb protocols d’informació davant els avisos rojos.
 
 - Integrarem per llei el risc d’inundació i els escenaris climàtics en
-  l’ordenació del territori, impedint construir en zones inundables i executant
-  amb urgència el Pla Nacional d’Adaptació (PNACC).
+  l’ordenació del territori, tot impedint construir en zones inundables i
+  executant amb urgència el Pla Nacional d’Adaptació (PNACC).
 
 - Activarem la xarxa de refugis climàtics i les alertes sanitàries davant les
   onades de calor, i adaptarem les condicions laborals en els avisos taronja i
@@ -1446,6 +1497,8 @@ RESPOSTA A LES EMERGÈNCIES
 - Finançarem de manera estable la prevenció i la gestió forestal tot l’any i
   aprovarem un estatut estatal del bomber forestal que reconega la professió i
   millore les condicions laborals.
+
+.. 30
 
 - Crearem un fons estatal de reconstrucció i reformarem el Consorci de
   Compensació d’Assegurances perquè les víctimes de catàstrofes cobren ràpid i
@@ -1476,7 +1529,9 @@ RESPOSTA A LES EMERGÈNCIES
 
 - Reformarem els mecanismes de governança dels organismes de conca, per a
   garantir una participació efectiva de la Generalitat i dels ajuntaments en la
-  planificació hidrològica i la prevenció d’inundacions
+  planificació hidrològica i la prevenció d’inundacions.
+
+.. 31
 
 5\. MÉS DEMOCRÀCIA, MÉS DRETS, MÉS LLIBERTATS
 =============================================
@@ -1527,6 +1582,8 @@ ADMINISTRACIÓ PÚBLICA
   amb una anàlisi de les possibles responsabilitats sancionables econòmiques i
   legals de governs anteriors.
 
+.. 32
+
 - Fomentarem la «cultura de dades obertes» i publicació completa de la petjada
   administrativa: informes, esborranys o documents de treball.
 
@@ -1534,8 +1591,8 @@ ADMINISTRACIÓ PÚBLICA
   entre les responsabilitats de direcció política i les de gestió.
 
 - Promourem la preferència de la titularitat pública de la gestió, i la
-  rectificació de l'actual procés privatitzador, millorant-ne la gestió dels
-  instruments de Dret Públic (contractes públics, gestió pressupostària,
+  rectificació de l'actual procés privatitzador, tot millorant-ne la gestió
+  dels instruments de Dret Públic (contractes públics, gestió pressupostària,
   procediments administratius) i implantant mecanismes avaluadors de l'eficàcia
   de l'activitat administrativa i dels serveis públics, i de sistemes
   d'exigència de responsabilitats als gestors i gestores.
@@ -1552,9 +1609,9 @@ ADMINISTRACIÓ PÚBLICA
 
 - Crearem institucions formatives pròpies de les administracions, per tal
   d'assegurar la millora constant del nivell de coneixements dels funcionaris i
-  la seua possibilitat d'ascens correlatiu, per descarregar la Universitat de
-  la seua funció actual d'expenedora de títols quan els funcionaris necessiten
-  per progressar laboralment.
+  la seua possibilitat d'ascens correlatiu, per així descarregar la Universitat
+  de la seua funció actual d'expenedora de títols que els funcionaris
+  necessiten per progressar laboralment.
 
 - Proposarem garanties d'atenció presencial, accessibilitat i comunicacions
   clares en l'Administració de l'Estat. Defensarem les explicacions i la
@@ -1570,8 +1627,10 @@ ADMINISTRACIÓ PÚBLICA
   desenvolupar correctament les tasques de servei a la ciutadania i no premie
   els avantatges socioeconòmics.
 
-- Inclourem més perfils pràctics (com per exemple de Formació Professional) en
+- Inclourem més perfils pràctics, com per exemple de Formació Professional, en
   les Ofertes Públiques d’Ocupació.
+
+.. 33
 
 - Revisarem els procediments administratius i sobretot la informació disponible
   a la ciutadania perquè tots els tràmits siguen comprensibles i accessibles
@@ -1621,13 +1680,15 @@ TRANSPARÈNCIA I PARTICIPACIÓ
   i que les aportacions ciutadanes reben resposta.
 
 - Derogarem la llei franquista de secrets oficials i aprovarem una homologable
-  als estàndards europeus
+  als estàndards europeus.
+
+.. 34
 
 ANTICORRUPCIÓ I QUALITAT DEMOCRÀTICA
 ------------------------------------
 
 - Prohibirem que l'Administració pública es relacione mitjançant els paradisos
-  fiscals i amb empreses que en facen us, incloent el finançament i la
+  fiscals i amb empreses que en facen us, tot incloent-hi el finançament i la
   contractació pública.
 
 - Promourem la reforma del Tribunal de Cuentas per a garantir-ne la
@@ -1641,13 +1702,13 @@ ANTICORRUPCIÓ I QUALITAT DEMOCRÀTICA
   perquè siga de fàcil consulta, de forma gratuïta i en línia de la informació
   bàsica d'empreses i societats continguda en els registres mercantils.
 
-- Reformarem de la Oficina Independiente de Regulación y Supervisión de la
-  Contratación perquè garantisca la independència real i eficiència
+- Reformarem la Oficina Independiente de Regulación y Supervisión de la
+  Contratación perquè garantisca la independència real i l’eficiència
   administrativa. La Presidència i les Vocalies seran nomenades pel Congrés.
 
-- Crearem d'una figura de control ciutadà a les meses d'adjudicació de
-  contractes de regulació harmonitzada, on seran convidats membres d'entitats
-  socials o ciutadanes i ciutadans individuals, que podran observar-ne tot el
+- Crearem una figura de control ciutadà a les meses d'adjudicació de contractes
+  de regulació harmonitzada, on seran convidats membres d'entitats socials o
+  ciutadanes i ciutadans individuals, els quals podran observar-ne tot el
   procés i presentar-ne denúncia a l'organisme de control si s'escau.
 
 - Garantirem l'anonimat i protecció de les persones denunciants de casos de
@@ -1675,6 +1736,8 @@ JUSTÍCIA I SEGURETAT CIUTADANA
   poder presentar-se a exàmens selectius de naturalesa essencialment pràctica,
   en línia amb el sistema alemany.
 
+.. 35
+
 - Impulsarem mesures destinades a la preparació de les proves selectives de les
   persones que no tinguen recursos econòmics, tot i garantint els principis de
   publicitat, equitat i lliure concurrència.
@@ -1685,10 +1748,9 @@ JUSTÍCIA I SEGURETAT CIUTADANA
 - Incrementarem la lluita contra la violència de gènere, amb una major
   coordinació entre les OVD i la resta de recursos dels Lletrats de
   l'Administració de Justícia, personal judicial i la conselleria competent en
-  matèria de dones; col·laboració en la formació transversal en matèria de
-  gènere de jutges i fiscals; reforç de les unitats de valoració de l'Institut
-  de Medicina Legal; i la Integració del SIRAJ amb els sistemes de gestió
-  processal.
+  matèria de dones; augmentarem la formació transversal en matèria de gènere de
+  jutges i fiscals; reforçarem les unitats de valoració de l'Institut de
+  Medicina Legal; i integrarem el SIRAJ amb els sistemes de gestió processal.
 
 - Garantirem l’obligatorietat i avaluació de la formació especialitzada en
   matèria de gènere no només en les oposicions a Judicatura, Escola Judicial i
@@ -1696,12 +1758,12 @@ JUSTÍCIA I SEGURETAT CIUTADANA
   així com als jutges i jutgesses ja en actiu.
 
 - Impulsarem la institucionalització dels sistemes extrajudicials de resolució
-  de conflictes, com la mediació i l'arbitratge, per tal de reduir la càrrega
-  de treball dels jutges.
+  de conflictes, com ara la mediació i l'arbitratge, per tal de reduir la
+  càrrega de treball dels jutges.
 
-- Adequarem els mitjans materials i personals a les necessitats actuals,
+- Adequarem els mitjans materials i personals a les necessitats actuals, tot
   prioritzant-ne l'adscripció de recursos als funcionaris públics amb
-  competències en la lluita contra la corrupció, i reforç a les unitats de
+  competències en la lluita contra la corrupció, i el reforç a les unitats de
   suport de la Policia, de l'Agència Tributària i de la Intervenció dels òrgans
   judicials i fiscals.
 
@@ -1715,8 +1777,8 @@ JUSTÍCIA I SEGURETAT CIUTADANA
 
 - Garantirem que el Consejo General del Poder Judicial funcione amb
   independència i siga triat amb criteris de mèrit i capacitat tenint en compte
-  la sobirania del poble. Potenciació del caràcter col·legiat del CGPJ i
-  disminució de l'excessiu presidencialisme.
+  la sobirania del poble. Potenciarem el caràcter col·legiat del CGPJ i en
+  disminuirem l'excessiu presidencialisme.
 
 - Farem que l’elecció del Fiscal General de l'Estat es ratifique pel Congrés.
 
@@ -1727,6 +1789,8 @@ JUSTÍCIA I SEGURETAT CIUTADANA
   la qual sotmetre els seus autors a l'acció d'un tribunal ubicat a Madrid, en
   molts casos llunyà dels seus domicilis, suposa un factor addicional de càstig
   injustificat.
+
+.. 36
 
 - Derogarem la Llei de Protecció de la Seguretat Ciutadana, coneguda com a llei
   mordassa.
@@ -1754,14 +1818,14 @@ MEMÒRIA DEMOCRÀTICA
 
 - Promourem la investigació del total de diners incautats pel govern franquista
   després de 1936, que conformà el "Fons de paper moneda posat en circulació
-  per l'enemic" i determinació de les persones afectades per aquest fet.
+  per l'enemic" i deferminarem les persones afectades per aquest fet.
 
 - Modificarem la Llei de Memòra Democràtica per la qual es reconeixen i
   s'amplien drets i s'estableixen mesures a favor dels qui van patir persecució
   o violència durant la Guerra del 1936-1939 i la posterior dictadura, per tal
   que es reconeguen el paper moneda i altres signes confiscats pel règim
   franquista i es reconega el dret de reparació als particulars afectats per la
-  confiscació dels seus diners. Així com la recuperació dels béns dipositats a
+  confiscació dels seus diners, així com la recuperació dels béns dipositats a
   les caixes d'estalvis valencianes.
 
 DRETS LINGÜÍSTICS
@@ -1773,14 +1837,18 @@ DRETS LINGÜÍSTICS
 
 - Garantirem els drets lingüístics de les persones valencianoparlants en
   l'Administració de Justícia, i la promoció de l'ús i el coneixement del
-  valencià. Reforma de l'article 2.3 de LOPJ per garantir a la ciutadania
-  l'exercici del dret a utilitzar qualsevol de les llengües oficials de l'estat
-  espanyol en l'àmbit de l'Administració de Justícia. Cal que els magistrats,
-  membres del Ministeri Fiscal i funcionaris de l'Administració de Justícia
-  acrediten un coneixement de la llengua oficial pròpia del lloc on estiguen
-  servint, per tal de donar compliment a allò establert a l'article 120.2 de la
-  Constitució Espanyola, que prescriu que les actuacions judicials seran
-  predominantment orals.
+  valencià.
+
+  Reforma de l'article 231 de LOPJ per garantir a la ciutadania l'exercici del
+  dret a utilitzar qualsevol de les llengües oficials de l'estat espanyol en
+  l'àmbit de l'Administració de Justícia. Cal que els magistrats, membres del
+  Ministeri Fiscal i funcionaris de l'Administració de Justícia acrediten un
+  coneixement de la llengua oficial pròpia del lloc on estiguen servint, per
+  tal de donar compliment a allò establert a l'article 120.2 de la Constitució
+  Espanyola, que prescriu que les actuacions judicials seran predominantment
+  orals.
+
+.. 37
 
 - Treballarem per garantir l’oficialitat del valencià a les institucions de la
   Unió Europea.
@@ -1808,12 +1876,12 @@ LAÏCISME
 
 - Impulsarem la modificació de la normativa relativa a l'exempció dels impostos
   com ara l'IBI a l'Església catòlica i altres confessions religioses, així com
-  a les seues organitzacions i centres d'ensenyament i proselitisme religiós
-  així com a començar una campanya de cobrament de l'impost dels béns immobles
-  no destinats al culte en coordinació amb la FEMP.
+  a les seues organitzacions i centres d'ensenyament i proselitisme religiós.
+  Començarem una campanya de cobrament de l'impost dels béns immobles no
+  destinats al culte en coordinació amb la FEMP.
 
 - Garantirem mitjançant les reformes legals oportunes el caràcter laic que ha
-  de revestir l'escola pública, deixant l'educació confessional fora del
+  de revestir l'escola pública, tot deixant l'educació confessional fora del
   currículum i de l'àmbit escolar.
 
 - Modificarem l'apartat 3 de l'article 16 de la Constitució per eliminar la
@@ -1821,6 +1889,8 @@ LAÏCISME
 
 - Promourem la substitució de la condició aconfessionalitat de l'Estat per la
   condició de laïcisme.
+
+.. 38
 
 - Impulsarem reformes legislatives que tendisquen a assegurar la neutralitat
   dels poders públics estatals davant del fet religiós, tenint en compte
@@ -1862,7 +1932,9 @@ DRETS ANIMALS
 - Garantirem l’oferta d’opcions veganes i vegetarianes en els centres públics
   (escoles, hospitals, presons).
 
-- Eliminarem l’alimentació forçosa en les indústries ramaderes
+- Eliminarem l’alimentació forçosa en les indústries ramaderes.
+
+.. 39
 
 INFÀNCIA
 --------
@@ -1882,13 +1954,13 @@ INFÀNCIA
 - Impulsarem la modificació de la Llei Orgànica de Responsabilitat Penal del
   Menor, ja que representa un clar retrocés en oferir una resposta punitiva i
   vindicativa cada vegada més pròxima al dret penal de les persones adultes,
-  relegant els principis de reeducació i reinserció. Defensem un model de
+  tot relegant els principis de reeducació i reinserció. Defensarem un model de
   justícia penal progressista amb mitjans econòmics, materials i humans
   suficients inspirat en l'interès superior del i la menor, no adreçat a
   satisfer el populisme punitiu ni l'alarma social.
 
-- Promourem una Llei de protecció de la infància en entorns digitals,
-  treballant en paral·lel per una educació en l’ús responsable de les xarxes
+- Promourem una Llei de protecció de la infància en entorns digitals, tot
+  treballant en paral·lel per una educació en l’ús responsable de les xarxes.
 
 PERSONES MAJORS
 ---------------
@@ -1914,6 +1986,8 @@ FAMÍLIES
 
 - Implementarem l’ampliació de permisos per a famílies monoparentals, de manera
   que el total s’equipare a la suma de les famílies amb dos progenitors.
+
+.. 40
 
 - Implantarem progressivament la remuneració de les huit setmanes de permís per
   cura de fills i filles.
@@ -1951,7 +2025,7 @@ JOVENTUT
   cooperatives juvenils que generen ocupació estable.
 
 - Crearem una línia estatal de microcrèdits i finançament públic per a
-  projectes empresarials impulsats per joves .
+  projectes empresarials impulsats per joves.
 
 - Implantarem un Pla Estatal de beques de primer treball i formació laboral,
   així com per a investigadors.
@@ -1960,13 +2034,16 @@ JOVENTUT
   mercat per a joves que no ultrapassen un nivell màxim d’ingressos, mitjançant
   una borsa pública d’habitatges.
 
+.. 41
+
 - Fomentarem la creació de residències i allotjaments protegits a preus
   assequibles destinats a estudiants, treballadors joves i per a col·lectius
   joves amb especials necessitats de tutela.
 
 - Establirem una deducció estatal en l'IRPF per a les persones joves que viuen
-  de lloguer, amb rendes anuals de fins a 33.000 euros, per reduir l'esforç
-  econòmic que suposa accedir a un habitatge i facilitar l'emancipació juvenil.
+  de lloguer, amb rendes anuals de fins a 33.000 euros, per així reduir
+  l'esforç econòmic que suposa accedir a un habitatge i facilitar l'emancipació
+  juvenil.
 
 - Reforçarem i prioritzarem, dins de les línies d'ajudes a la rehabilitació
   d'edificis, aquelles actuacions orientades a la millora de l'eficiència
@@ -2001,12 +2078,14 @@ JOVENTUT
 - Implantarem l’homologació i acreditació efectiva de les titulacions en
   matèria d'activitats de temps lliure entre les diferents autonomies.
 
-- Fomentarem la formació en matèria de temps lliure, afavorint i donant suport
-  a xarxes d'escoles d'animació, i afavorint un procés per facilitar el
+- Fomentarem la formació en matèria de temps lliure, tot afavorint i donant
+  suport a xarxes d'escoles d'animació, i propiciant un procés per facilitar el
   reconeixement d'aquestes titulacions, en les diferents autonomies, per part
   de les administracions competents en educació i ocupació.
 
 - Promocionarem i ampliarem la xarxa estatal d'albergs juvenils.
+
+.. 42
 
 - Implementarem un pla d'acció contra l'assetjament escolar LGTBIQ+.
 
@@ -2041,19 +2120,21 @@ JOVENTUT
 
 - Crearem un programa estatal de beques, ajudes i residències artístiques per a
   facilitar l'accés de les persones joves a la creació cultural i a la
-  professionalització en els sectors artístics, garantint una remuneració digna
-  i oportunitats de desenvolupament professional.
+  professionalització en els sectors artístics, tot garantint una remuneració
+  digna i oportunitats de desenvolupament professional.
 
 - Impulsarem la coordinació interterritorial de polítiques saludables d'oci i
   temps lliure.
 
 - Reformarem la Llei 13/2011, de regulació del joc, per a reforçar la protecció
-  de la salut pública i de les persones menors d'edat, considerant el joc
+  de la salut pública i de les persones menors d'edat, tot considerant el joc
   d'apostes com una activitat amb potencial addictiu i establint majors
-  restriccions a la seua publicitat, promoció i patrocini; establir un marc
+  restriccions a la seua publicitat, promoció i patrocini; establirem un marc
   estatal de coordinació amb les comunitats autònomes per a evitar la
   concentració d'establiments d'apostes en entorns educatius, sanitaris, parcs
   i centres de tractament d'addiccions.
+
+.. 43
 
 - Impulsarem un programa estatal de beques esportives per a joves de famílies
   amb rendes baixes, que cobrisca les despeses de llicències federatives,
@@ -2105,8 +2186,10 @@ FEMINISME
   sanitàries, així com en la formació continuada.
 
 - Establirem protocols de detecció precoç i atenció específica per a patologies
-  que afecten especialment les dones, incloent-hi la menopausa, la salut
+  que afecten especialment les dones, tot incloent-hi la menopausa, la salut
   menstrual i el dolor crònic.
+
+.. 44
 
 - Impulsarem observatoris públics que identifiquen els biaixos de gènere en
   l’atenció sanitària i publiquen indicadors sobre retards diagnòstics,
@@ -2155,6 +2238,8 @@ FEMINISME
   territorials i exigir responsabilitats a les administracions que no
   garantisquen el servei.
 
+.. 45
+
 - Incorporarem la coeducació de manera transversal i avaluable en totes les
   etapes educatives, des d’Infantil fins a la Formació Professional i el
   Batxillerat.
@@ -2179,7 +2264,7 @@ LLUITA CONTRA LES VIOLÈNCIES MASCLISTES
   reproductiva.
 
 - Impulsarem mesures contra el negoci transnacional de l’explotació
-  reproductiva, incloent-hi la cooperació internacional i el control de les
+  reproductiva, tot incloent-hi la cooperació internacional i el control de les
   empreses intermediàries.
 
 - Garantirem que les mesures contra aquestes pràctiques no vulneren els drets
@@ -2202,8 +2287,10 @@ LLUITA CONTRA LES VIOLÈNCIES MASCLISTES
   ordres de protecció i les conductes d’alt risc.
 
 - Millorarem la coordinació entre policia, justícia, serveis socials, sanitat i
-  centres educatius, evitant que les víctimes hagen de repetir contínuament el
-  seu relat.
+  centres educatius, de manera que s’evite que les víctimes hagen de repetir
+  contínuament el seu relat.
+
+.. 46
 
 - Reforçarem la protecció de les filles i els fills davant la violència
   vicària, amb mecanismes de detecció precoç i revisió de les decisions de
@@ -2218,8 +2305,8 @@ LLUITA CONTRA LES VIOLÈNCIES MASCLISTES
 
 - Establirem majors responsabilitats i sancions per a activitats que impliquen
   explotació sexual i tràfic de persones amb finalitats d’explotació sexual,
-  amb un règim penal proporcionat per als supòsits més greus, evitant en tot
-  cas sancionar les persones prostituïdes.
+  amb un règim penal proporcionat per als supòsits més greus, per tal d’evitar
+  en tot cas sancionar les persones prostituïdes.
 
 - Reforçarem la investigació i persecució dels delictes d’explotació sexual,
   especialment aquells que impliquen violència, coacció, intimidació, engany o
@@ -2227,13 +2314,13 @@ LLUITA CONTRA LES VIOLÈNCIES MASCLISTES
   que se’n beneficien.
 
 - Crearem un pla estatal contra l’explotació sexual i el tràfic de persones amb
-  finalitats d’explotació sexual, amb finançament plurianual, que garantisca
-  habitatge, ingressos suficients, atenció sanitària i psicològica, formació i
-  inserció laboral.
+  finalitats d’explotació sexual, amb finançament plurianual, el qual
+  garantisca habitatge, ingressos suficients, atenció sanitària i psicològica,
+  formació i inserció laboral.
 
 - Garantirem protecció i alternatives a les dones migrants en situació
-  administrativa irregular, evitant que la por a l’expulsió impedisca accedir
-  als serveis públics.
+  administrativa irregular, tot evitant que la por a l’expulsió impedisca
+  accedir als serveis públics.
 
 - Desenvoluparem campanyes educatives dirigides especialment als homes i als
   adolescents, que qüestionen la compra d’accés sexual al cos de les dones i la
@@ -2251,6 +2338,8 @@ DRETS LGTBIQ+
 
 - Reforçarem el Servicio Arcoiris i les OAVD per millorar l’assessorament i
   assistència a les víctimes de delictes d’odi.
+
+.. 47
 
 - Tipificarem específicament les teràpies de conversió com a delicte i
   establirem mecanismes de protecció i reparació especialment per a les
@@ -2276,13 +2365,13 @@ DRETS LGTBIQ+
   amb els col·lectius LGTBIQ+ en tots els centres públics d'ensenyament, perquè
   puga tindre coneixements sobre diversitat sexual, familiar i de gènere, així
   com atendre a persones estudiants, familiars, tutors i tutores, equip docent
-  i directiu de cada centre; o, si és necessari, intervindre en els conflictes
+  i directiu de cada centre o, si és necessari, intervindre en els conflictes
   que sorgisquen en els centres.
 
 - Impulsarem l’elaboració de protocols sobre la igualtat de tracte en el
   treball i l'ocupació amb el concurs i la implicació de sindicats i
-  associacions d'empresaris/ àries per a lluitar contra la discriminació per
-  orientació sexual i identitat de gènere en l'àmbit laboral.
+  associacions d'empresaris i empresàries per a lluitar contra la discriminació
+  per orientació sexual i identitat de gènere en l'àmbit laboral.
 
 - Reforçarem els protocols i la formació en l’àmbit sanitari perquè es
   garantisca l’atenció sense prejudicis, amb perspectiva de gènere i tenint en
@@ -2293,9 +2382,11 @@ DRETS LGTBIQ+
   lesbianes, gais, trans, bisexuals, intersexuals i queer.
 
 - Promocionarem les iniciatives culturals relacionades amb la realitat LGTBI i
-  del debat sobre el gènere i la sexualitat. Promoció en la cerca de la
-  col·laboració de les universitats, la reflexió i la recerca científica sobre
-  la diversitat sexual i de gènere.
+  el debat sobre el gènere i la sexualitat, tot buscant la col·laboració de les
+  universitats, i donant veu a la reflexió i la recerca científica sobre la
+  diversitat sexual i de gènere.
+
+.. 48
 
 - Reforçarem el compromís i la cooperació per a la defensa i promoció dels
   drets de les persones LGTBI en tots els fòrums i organismes internacionals en
@@ -2319,15 +2410,16 @@ MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
   de l'infrafinançament cronificat (un 78% del deute públic en total).
 
 - Posarem en marxa un fons transitori d’anivellament que equipare el nostre
-  finançament a la mitjana de comunitats, mentre no s’aprove la reforma del
-  finançament autonòmic, i evite seguir generant deute per l’infrafinançament.
+  finançament a la mitjana de comunitats mentre no s’aprove la reforma del
+  finançament autonòmic, i que evite seguir generant deute per
+  l’infrafinançament.
 
 - Reclamarem el pagament del deute de l’Estat amb la Generalitat Valenciana per
   l’atenció a persones desplaçades d’altres territoris.
 
 - Desenvoluparem adequadament el Fons de Garantia Assistencial (FOGA) i el Fons
-  de Cohesió Sanitària, diferenciant-ne les funcions i garantint la liquidació
-  i el pagament dels imports pendents.
+  de Cohesió Sanitària, tot diferenciant-ne les funcions i garantint la
+  liquidació i el pagament dels imports pendents.
 
 - Garantirem que l’Estat assumisca el 50% del finançament de la Llei de
   promoció de l’autonomia personal i atenció a les persones en situació de
@@ -2335,16 +2427,16 @@ MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
 
 - Pressupostarem i executarem unes inversions territorials de l’Estat en el
   País Valencià que siguen justes amb el nostre pes poblacional i que compense
-  els dèficits inversors previs. Especialment en la demarcació d’Alacant que és
-  reitaradament l’última en inversió estatal.
+  els dèficits inversors previs, especialment en la demarcació d’Alacant que és
+  reiteradament l’última en inversió estatal.
 
-- Executarem un pla de modernització de Rodalies al País Valencià amb una
+- Executarem un pla de modernització de rodalia al País Valencià amb una
   inversió prevista de 1.500 milions d’euros, i la incorporació de 58 trens
   nous, amb un calendari verificable i informació pública sobre el grau
   d’execució de les actuacions. En concret, incorporarem les següents mesures:
 
-  - Completarem la línia C1 entre Cullera i Gandia, eliminar les limitacions
-    estructurals de velocitat i avançar cap a freqüències de mitja hora i
+  - Completarem la línia C1 entre Cullera i Gandia, eliminarem les limitacions
+    estructurals de velocitat i avançarem cap a freqüències de mitja hora i
     serveis cada quinze minuts en hores punta.
 
   - Impulsarem el Tren de la Costa entre Gandia, Oliva i Dénia, amb una
@@ -2352,26 +2444,26 @@ MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
     comarques centrals valencianes i les comarques del sud.
 
   - Completarem la duplicació de la línia C2 entre València, Xàtiva i Moixent,
-    resoldre la limitació de velocitat del pont sobre el Xúquer entre Alzira i
-    Carcaixent i ampliar les freqüències en hora punta.
+    resoldrem la limitació de velocitat del pont sobre el Xúquer entre Alzira i
+    Carcaixent i ampliarem les freqüències en hora punta.
 
   - Millorarem l’accessibilitat i el servei de les estacions de l’Alcúdia de
-    Crespins i estudiar noves parades que donen servei a municipis sense
+    Crespins i estudiarem noves parades que donen servei a municipis sense
     connexió ferroviària adequada.
 
   - Desencallarem les actuacions necessàries per a eliminar el pas a nivell
     d’Alfafar-Sedaví.
 
-  - Electrificarem la línia C3, avançar en la duplicació de via fins a Bunyol i
-    recuperar plenament el servei entre Bunyol i Utiel després dels danys de la
-    DANA. Garantir també un servei adequat fins a Camporrobles.
+  - Electrificarem la línia C3, avançarem en la duplicació de via fins a Bunyol
+    i recuperarem plenament el servei entre Bunyol i Utiel després dels danys
+    de la DANA. Garantirem també un servei adequat fins a Camporrobles.
 
   - Publicarem un calendari per a l’electrificació de Sagunt-Terol i la millora
-    de la línia C5, estudiar-ne l’extensió fins a Barracas i integrar-la en una
-    xarxa de Rodalies útil per a l’interior.
+    de la línia C5, i estudiarem l’extensió fins a Barracas per integrar-la en
+    una xarxa de rodalia útil per a l’interior.
 
-  - Finalitzarem la tercera via de la línia C6 entre València i Castelló,
-    millorant la coordinació entre els serveis d’alta velocitat i Rodalies i
+  - Finalitzarem la tercera via de la línia C6 entre València i Castelló, tot
+    millorant la coordinació entre els serveis d’alta velocitat i rodalia i
     reduirem el temps de trajecte a menys d’una hora.
 
   - Millorarem els serveis ferroviaris entre Castelló i Vinaròs, amb tarifes
@@ -2379,21 +2471,25 @@ MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
     Santa Magdalena de Polpis.
 
   - Electrificarem i millorarem les connexions ferroviàries entre Alacant,
-    Múrcia i Villena; recuperar estacions infrautilitzades o tancades, millorar
-    les freqüències i estudiar una connexió ferroviària amb l’aeroport de
-    l’Altet.
+    Múrcia i Villena; recuperarem estacions infrautilitzades o tancades,
+    millorarem les freqüències i estudiarem una connexió ferroviària amb
+    l’aeroport de l’Altet.
 
-  - Estudiarem la connexió ferroviària Alcoi-Alacant i millorar la integració
+  - Estudiarem la connexió ferroviària Alcoi-Alacant i millorarem la integració
     tarifària del transport públic en les àrees urbanes i metropolitanes.
 
   - Millorarem la connexió ferroviària del port d’Alacant i estudiarem les
     actuacions necessàries per a reduir l’impacte de les infraestructures sobre
     els barris, inclós l’entorn de Sant Gabriel.
 
-  - Posarem en marxa el servei Avant Alacant-València, unint les dues ciutats
-    en una hora.
+  - Posarem en marxa el servei Avant Alacant-València, que permetrà unir les
+    dues ciutats en una hora.
 
   - Millorarem la integració de la nova estació d’Alacant en la ciutat.
+
+.. 49
+
+.. 50
 
 - Ampliarem la dotació del Fons de Compensació Interterritorial i modificarem
   la seua normativa per a que l’objectiu siga la convergència en renda per
@@ -2401,9 +2497,9 @@ MODEL DE FINANÇAMENT AUTONÒMIC I INVERSIONS
 
 - Establirem un sistema públic de seguiment de les inversions estatals, amb
   informació territorialitzada, calendari d’execució i rendició de comptes. Els
-  anuncis pressupostaris han de convertir-se en obres acabades i les prioritats
-  d’inversió estatal han de respondre a les necessitats de les comarques, els
-  municipis, les àrees metropolitanes i el teixit productius.
+  anuncis pressupostaris hauran de convertir-se en obres acabades i les
+  prioritats d’inversió estatal hauran de respondre a les necessitats de les
+  comarques, els municipis, les àrees metropolitanes i el teixit productius.
 
 - Revisarem les regles fiscals i els mecanismes de control del deute perquè no
   impedisquen a les administracions prestar els serveis públics essencials ni
@@ -2420,10 +2516,10 @@ MODEL D’ESTAT
   econòmics i humans necessaris per exercir-les.
 
 - Impulsarem una Llei de Seus de l’Estat per descentralitzar institucions clau
-  establint criteris objectius de distribució territorial de seus i organismes
-  estatals, amb l’objectiu de superar la concentració actual i reforçar la
-  cohesió territorial amb garanties de servei, estabilitat laboral i
-  coordinació institucional.
+  tot establint criteris objectius de distribució territorial de seus i
+  organismes estatals, amb l’objectiu de superar la concentració actual i
+  reforçar la cohesió territorial amb garanties de servei, estabilitat laboral
+  i coordinació institucional.
 
 - Avançarem cap a un model d’Estat plurinacional que reconega la diversitat
   nacional, cultural i lingüística.
@@ -2435,7 +2531,9 @@ MODEL D’ESTAT
 - Impulsarem la reforma constitucional necessària per a recuperar el dret civil
   valencià i així ampliar la legislació civil per a regular permisos de cures
   per a unions civils homologables entre amistats, garantir una regulació
-  pròpia del matrimoni i drets de persones amb unions estables en general.
+  pròpia del matrimoni i dels drets de persones amb unions estables en general.
+
+.. 51
 
 - Impulsarem una nova organització territorial que permeta superar l’actual
   estructura provincial i adaptarem la gestió supramunicipal a la realitat
@@ -2467,8 +2565,10 @@ MUNICIPALISME
   habitatge, connectivitat i oportunitats en el món rural.
 
 - Reconeixerem jurídicament les comarques com a espais de cooperació,
-  planificació i prestació de serveis, respectant la voluntat dels municipis i
-  les particularitats territorials del País Valencià.
+  planificació i prestació de serveis, tot respectant la voluntat dels
+  municipis i les particularitats territorials del País Valencià.
+
+.. 52
 
 7\. COMPROMÍS AMB LA PAU I LA DIGNITAT HUMANA
 =============================================
@@ -2480,7 +2580,7 @@ POLÍTICA EXTERIOR I DEFENSA
   incloent la democratització de les Nacions Unides mitjançant una Assemblea
   Parlamentària.
 
-- Impulsarem canvis en el sistema de seguretat col·lectiva, treballant per
+- Impulsarem canvis en el sistema de seguretat col·lectiva, tot treballant per
   acabar amb els vetos injustificats al Consell de Seguretat i estenent l’ús de
   les intervencions front casos flagrants de violacions de drets humans.
 
@@ -2501,8 +2601,8 @@ POLÍTICA EXTERIOR I DEFENSA
   facilitar l’atenció a la ciutadania en l’estranger.
 
 - Mantindrem una relació estratègica privilegiada amb les potències del sud
-  global com Xina, Índia i Amèrica Llatina, combinant l’exigència dels drets
-  humans amb el diàleg constructiu en temes d’interés comú com el canvi
+  global com Xina, Índia i Amèrica Llatina, tot combinant l’exigència dels
+  drets humans amb el diàleg constructiu en temes d’interés comú com el canvi
   climàtic o la reforma del sistema multilateral.
 
 - Augmentarem el suport al poble palestí i per la construcció d’unes
@@ -2520,27 +2620,29 @@ POLÍTICA EXTERIOR I DEFENSA
   pau, la protecció de la democràcia i la defensa de la legalitat
   internacional.
 
+.. 53
+
 - Auditarem tota la despesa en Defensa, incloses les partides pressupostàries
   repartides entre altres ministeris i els compromisos de pagament plurianuals
   dels grans programes d'armament, i publicarem els resultats.
 
 - Prioritzarem les inversions en capacitats de defensa necessàries, seguretat
-  humana i protecció davant d'amenaces híbrides, evitant la compra d'armament
-  que no responga a les necessitats reals del país.
+  humana i protecció davant d'amenaces híbrides, tot evitant la compra
+  d'armament que no responga a les necessitats reals del país.
 
 - Impedirem que els increments de la despesa militar es facen a costa de reduir
   la inversió en serveis públics, protecció social o infraestructures
   crítiques.
 
 - Reformularem totes les estratègies de seguretat i defensa nacional als nous
-  reptes i amenaces híbrides, incorporant tots els aspectes de l’Agenda “Pau,
-  Dones i Seguretat” o les resolucions sobre seguretat humana de Nacions
-  Unides.
+  reptes i amenaces híbrides, amb la incorporació de tots els aspectes de
+  l’Agenda “Pau, Dones i Seguretat” o les resolucions sobre seguretat humana de
+  Nacions Unides.
 
 DRETS HUMANS I LEGALITAT INTERNACIONAL
 --------------------------------------
 
-- Promourem la reforma de la Llei Orgànica del Poder Judicial per a permetre
+- Promourem la reforma de la Llei Orgànica del Poder Judicial per a permetre a
   les autoritats investigar i processar tota persona sospitosa d’un crim de
   dret humanitari internacional, amb independència del lloc en què s’haja
   perpetrat el delicte o la nacionalitat de la persona acusada o víctima.
@@ -2558,14 +2660,16 @@ DRETS HUMANS I LEGALITAT INTERNACIONAL
   Internacional.
 
 - Donarem suport al dret a la lliure determinació dels pobles consagrada en la
-  Carta de Nacions Unides en casos com el Sàhara Occidental, redoblant esforços
-  diplomàtics i exigint la celebració d’un referèndum.
+  Carta de Nacions Unides en casos com el Sàhara Occidental, tot redoblant
+  esforços diplomàtics i exigint la celebració d’un referèndum.
 
 UNIÓ EUROPEA
 ------------
 
 - Proposarem una reforma dels tractats per dotar més poder al Parlament Europeu
   i al Comité de les Regions.
+
+.. 54
 
 - Treballarem per superar l’adopció de decisions en el Consell de la UE per
   unanimitat en política exterior o política fiscal.
@@ -2588,18 +2692,18 @@ UNIÓ EUROPEA
 
 - Insistirem en reorientar la política comercial i de mercat interior cap a la
   reducció de les desigualtats, la protecció dels sectors vulnerables front a
-  la competència deslleial i el reforç de la nostra autonomia estratègica
+  la competència deslleial i el reforç de la nostra autonomia estratègica.
 
 SOLIDARITAT GLOBAL I MIGRACIÓ
 -----------------------------
 
 - Recuperarem les polítiques de cooperació al desenvolupament amb una nova
-  planificació coherent amb l'Agenda 2030 i el marc de les Nacions Unides,
-  garantint el 0,7% per a la cooperació, blindat per llei.
+  planificació coherent amb l'Agenda 2030 i el marc de les Nacions Unides, tot
+  garantint el 0,7% per a la cooperació blindat per llei.
 
-- Facilitarem els programes de cooperació descentralitzada, eliminant traves a
-  les comunitats autònomes i entitats locals per a desenvolupar accions de
-  cooperació internacional.
+- Facilitarem els programes de cooperació descentralitzada, amb l’eliminació de
+  traves a les comunitats autònomes i entitats locals per a desenvolupar
+  accions de cooperació internacional.
 
 - Exigirem l’eliminació dels CIES.
 
@@ -2610,6 +2714,12 @@ SOLIDARITAT GLOBAL I MIGRACIÓ
   homologació de títols i reconeixement de qualificacions.
 
 - Prohibirem radicalment les devolucions il·legals encobertes sota retorns
-  voluntaris, assegurant que tota persona migrant reba informació veraç,
+  voluntaris, tot assegurant que tota persona migrant reba informació veraç,
   exacta, exhaustiva i en un idioma comprensible sobre les conseqüències
   jurídiques del retorn.
+
+- Farem obligatori per als ajuntaments l'empadronament a totes les persones
+
+  independentment de la seua situació administrativa.
+
+.. 55

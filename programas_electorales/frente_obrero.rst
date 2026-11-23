@@ -2,76 +2,6 @@
 UN PROGRAMA PARA RECUPERAR ESPAÑA
 #################################
 
-ÍNDICE
-======
-
-.. list-table::
-   :widths: 8 80 12
-
-   * - 01
-     - LA ESPAÑA QUE DEBEMOS SER
-     - PÁG. 4
-   * - 02
-     - LOS TRABAJADORES PRIMERO
-     - PÁG. 7
-   * - 03
-     - SOBERANÍA NACIONAL
-     - PÁG. 10
-   * - 04
-     - RECUPEREMOS LA INDUSTRIA ESPAÑOLA
-     - PÁG. 12
-   * - 05
-     - SOBERANÍA ENERGÉTICA
-     - PÁG. 14
-   * - 06
-     - FISCALIDAD
-     - PÁG. 17
-   * - 07
-     - EDUCACIÓN
-     - PÁG. 20
-   * - 08
-     - CULTURA
-     - PÁG. 23
-   * - 09
-     - JUVENTUD
-     - PÁG. 27
-   * - 10
-     - MUJER E IGUALDAD REAL
-     - PÁG. 30
-   * - 11
-     - NATALIDAD Y FAMILIA
-     - PÁG. 33
-   * - 12
-     - EN DEFENSA DEL CAMPO ESPAÑOL
-     - PÁG. 36
-   * - 13
-     - CONTRA LA CENSURA
-     - PÁG. 39
-   * - 14
-     - SANIDAD
-     - PÁG. 41
-   * - 15
-     - VIVIENDA
-     - PÁG. 44
-   * - 16
-     - PENSIONES
-     - PÁG. 47
-   * - 17
-     - INMIGRACIÓN
-     - PÁG. 50
-   * - 18
-     - ESTRUCTURA TERRITORIAL Y ADMINISTRACIÓN
-     - PÁG. 55
-   * - 19
-     - JUSTICIA
-     - PÁG. 57
-   * - 20
-     - FUERZAS Y CUERPOS DE SEGURIDAD DEL ESTADO
-     - PÁG. 60
-   * - 21
-     - EJÉRCITO
-     - PÁG. 62
-
 .. 01 LA ESPAÑA QUE DEBEMOS SER
 
 .. -4-
@@ -1759,52 +1689,115 @@ En vista de esto apostamos por tomar las siguientes medidas:
 
 .. -61-
 
-.. 21 EJÉRCITO
+21 SEGURIDAD PRIVADA
+====================
 
-.. UN PROGRAMA PARA RECUPERAR ESPAÑA
+Los vigilantes de seguridad son trabajadores que desempeñan una función
+esencial en nuestra sociedad. Se enfrentan diariamente a todo tipo de amenazas
+y agresiones, muchas veces en solitario y sin disponer de los medios necesarios
+para garantizar su propia seguridad. Sin embargo, los riesgos que asumen no se
+corresponden con unas condiciones laborales dignas. Los salarios cercanos al
+mínimo, la falta de reconocimiento profesional y la insuficiente protección
+jurídica forman también parte de su día a día. Esta situación es consecuencia
+de una normativa obsoleta, una formación insuficiente y una escasa coordinación
+con las fuerzas y cuerpos de seguridad del Estado. Todo ello se ve agravado por
+las prácticas de muchas empresas del sector, que priorizan sus beneficios
+económicos por encima de las condiciones laborales y la seguridad de sus
+trabajadores. La competencia por ofrecer servicios cada vez más baratos, el
+incumplimiento de los convenios colectivos y la pasividad de los sindicatos
+mayoritarios han contribuido a la precarización del sector. Es necesario
+dignificar la profesión, mejorar las condiciones laborales y garantizar que los
+vigilantes de seguridad dispongan de la formación, los medios y la protección
+jurídica adecuados para desempeñar sus funciones.
 
-.. -62-
+Desde el Frente Obrero proponemos las siguientes medidas:
 
-21 EJÉRCITO
-===========
+* **1.** Profesionalización del acceso a la seguridad privada mediante la
+  Formación Profesional de Técnico en Seguridad, con pruebas psicotécnicas,
+  evaluaciones psicológicas y prácticas tuteladas. Acceso preferente para los
+  militares que finalicen su compromiso con las Fuerzas Armadas a los 45 años.
 
-Aun conscientes del papel del ejército en los países capitalistas, es necesario
-apuntar que señalar a todo militar como enemigo solo lleva a caer en actitudes
-infantiles que poco tiene que ver con la transformación de la sociedad. Los
-soldados del ejército español son en su mayoría de extracción obrera y recurren
-al ejército por necesidades económicas. Tienen unas malas condiciones de
-trabajo y a los 45 años les obligan a jubilarse de la peor manera posible si no
-consiguen obtener ciertas características.
+* **2.** Refuerzo de la seguridad y protección de los vigilantes, clasificando
+  los servicios según su peligrosidad, ampliando los medios de defensa y
+  estableciendo la obligatoriedad de trabajar en parejas en los servicios de
+  mayor riesgo.
 
-Es necesario concienciar a los militares de que en este país se necesitan
-muchos cambios, comenzando por la democratización del propio ejército, la
-depuración de los mandos reaccionarios y la mejora de sus propias condiciones
-de trabajo.
+* **3.** Mejora de las condiciones laborales y salariales de los vigilantes de
+  seguridad, estableciendo complementos de peligrosidad según el riesgo del
+  servicio y endureciendo las sanciones a las empresas que incumplan los
+  convenios colectivos.
 
-Los militares no pueden sindicarse, no tienen libertad de reunión y no pueden
-ser miembros de ningún partido. Los revolucionarios siempre hemos hecho trabajo
-en el ejército. Debemos tener propuestas claras para la resolución de todos
-estos conflictos, independientemente de que cuando se dé el proceso
-constituyente, aboguemos por una refundación del ejército actual, en un
-Ejército al servicio del pueblo.
+* **4.** Reconocimiento de la condición de agente de la autoridad a los
+  vigilantes de seguridad durante el ejercicio de sus funciones, ampliando la
+  protección jurídica actualmente prevista en la Ley de Seguridad Privada.
 
-Por ello, proponemos todas las siguientes medidas:
-
-* **1.** Modernización y democratización de las estructuras del ejército.
-  Incluyendo la depuración de los mandos al servicio de la reacción.
-
-* **2.** Dignificación de la vida del soldado. Mejorarán las atribuciones y
-  tendrán libertad de reunión, sindicación y afiliación política.
-
-* **3.** Se acabará con el cese de contrato a los 45 años sin dar alternativas
-  laborales para su vuelta al mundo civil.
-
-* **4.** Todas estas medidas contribuirán en el futuro a refundar al ejército
-  en uno diferente al actual, en un Ejército al servicio del pueblo, dejando lo
-  reaccionario y represivo en el pasado.
-
-* **5.** Los soldados españoles dejarán de poner en riesgo sus vidas en
-  misiones en el extranjero que solo buscan defender intereses extranjeros
-  ajenos a nuestros intereses.
+* **5.** Fortalecimiento de la colaboración con las fuerzas y cuerpos de
+  seguridad del Estado. Desarrollo de una plataforma de comunicación e
+  intercambio de información en ambos sentidos entre los vigilantes de
+  seguridad, la Policía Nacional y la Guardia Civil, con acceso regulado según
+  las funciones desempeñadas.
 
 .. -63-
+
+.. -46-
+
+22 EJÉRCITO
+===========
+
+El Ejército desempeña un papel esencial en la protección de nuestro territorio
+y la defensa de nuestra soberanía nacional. Los soldados del Ejército español
+son de extracción obrera y muchos recurren a las Fuerzas Armadas por
+necesidades económicas. Sin embargo, sus condiciones laborales no siempre se
+corresponden con las responsabilidades y los riesgos que asumen. A ello se
+suman las limitaciones de sus derechos profesionales y la incertidumbre que
+supone para muchos militares tener que abandonar las Fuerzas Armadas a los 45
+años de la peor manera. Es necesario concienciar a los militares de que en este
+país se necesitan muchos cambios, comenzando por la democratización del propio
+Ejército, la depuración de los mandos políticos que no están al verdadero
+servicio de España y la mejora de sus propias condiciones de trabajo. Los
+militares no pueden sindicarse, no tienen libertad de reunión y no pueden ser
+miembros de ningún partido. Los revolucionarios siempre hemos hecho trabajo en
+el Ejército. Debemos tener propuestas claras para la resolución de todos estos
+conflictos, independientemente de que, cuando se dé el proceso constituyente,
+aboguemos por una refundación del Ejército actual para convertirlo en un
+Ejército al servicio del pueblo.
+
+Por ello, proponemos las siguientes medidas:
+
+* **1.** Modernización y democratización de las estructuras del Ejército,
+  incluyendo la depuración de los mandos políticos puestos a dedo y que no
+  están al verdadero servicio de España.
+
+* **2.** Reforma de la Ley Orgánica de Derechos y Deberes de los miembros de
+  las Fuerzas Armadas, asegurando los derechos de asociación, reunión y
+  representación de los militares y garantizando su participación en las
+  decisiones que afectan a sus condiciones profesionales, así como el acceso de
+  los representantes asociativos a las unidades militares para impartir charlas
+  informativas.
+
+* **3.** Incremento de las retribuciones del personal militar. Revisión de los
+  complementos salariales para compensar adecuadamente la disponibilidad
+  permanente, la responsabilidad y las condiciones particulares del servicio.
+
+* **4.** Reconocimiento de la profesión militar como profesión de riesgo,
+  garantizando una protección social adecuada a los riesgos inherentes al
+  servicio y mejorando las condiciones de jubilación y las prestaciones por
+  incapacidad.
+
+* **5.** Eliminación del cese obligatorio de los compromisos temporales a los
+  45 años sin que existan alternativas viables para su incorporación a la vida
+  laboral y civil. Ampliación de las posibilidades de acceso a una relación de
+  servicios permanente, mejora de la promoción interna y garantía de
+  alternativas laborales para quienes abandonen las Fuerzas Armadas.
+
+.. -65-
+
+* **6.** Todas estas medidas contribuirán en el futuro a refundar el Ejército,
+  convirtiéndolo en uno diferente al actual, al servicio del pueblo, con un
+  carácter más profesional.
+
+* **7.** Los soldados españoles dejarán de poner en riesgo sus vidas en
+  misiones en el extranjero que solo buscan defender intereses extranjeros
+  ajenos a los nuestros.
+
+.. -66-

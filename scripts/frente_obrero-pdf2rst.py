@@ -4,6 +4,12 @@ frente_obrero-pdf2rst.py - Convert the Frente Obrero programme "Recuperar
 España - Programa político" (PDF) to reStructuredText, repeatably, and verify
 that no text was altered, omitted or added.
 
+Version 2 (programa-frente-obrero.pdf, of 19 November 2026) adds chapter 21
+("SEGURIDAD PRIVADA") and renumbers "EJÉRCITO" as 22; its index page and the
+divider pages of those two chapters are images (no text), and the titles of
+those two chapters are set in another font (HelveticaLTStd). Version 1
+(Programa.pdf) converts the same way.
+
 1. Extract with poppler-utils (``pdftotext -bbox-layout`` for text and
    positions, ``pdftohtml -xml`` for fonts; see pdf2rst_common.py). Each text
    block of this PDF is one paragraph; a hyphen at a line end inside a block
@@ -12,20 +18,22 @@ that no text was altered, omitted or added.
      * the cover and back page are images (no text); "UN PROGRAMA PARA
        RECUPERAR ESPAÑA", the running head of the chapter dividers, is the
        document title
-     * ÍNDICE -> a table (number | chapter | page)
+     * ÍNDICE -> a table (number | chapter | page); in version 2 the index is
+       an image, so there is none
      * each chapter's divider page (big number and title, repeated on the
-       next page) -> an RST comment, kept but not rendered
+       next page) -> an RST comment, kept but not rendered; a chapter whose
+       divider is an image is checked against nothing
      * chapter headings ("01 LA ESPAÑA QUE DEBEMOS SER") -> level 1; the drop
        cap is joined to its paragraph ("E" + "l Frente..." -> "El Frente...")
      * numbered measures ("1." ...) -> bullet items keeping their number
      * paragraphs joined across page breaks; bold and italics kept
-     * page numbers ("-5-") -> RST comments
+     * page numbers ("-5-"; the last one higher up the page) -> RST comments
 3. Verify against plain pdftotext: the RST text is exactly the PDF's lines,
    each used once and whole, in any order (plain pdftotext prints the index
    column by column); pandoc must read the same words, without warnings.
 
-Usage:  python3 frente_obrero-pdf2rst.py Programa.pdf -o frente_obrero.rst
-        python3 frente_obrero-pdf2rst.py Programa.pdf --verify-only frente_obrero.rst
+Usage:  python3 frente_obrero-pdf2rst.py programa-frente-obrero.pdf -o frente_obrero.rst
+        python3 frente_obrero-pdf2rst.py programa-frente-obrero.pdf --verify-only frente_obrero.rst
 """
 import os
 import re
@@ -57,7 +65,7 @@ def rows(blocks, tol=5):
 
 
 def is_page_number(b):
-    return b.y0 > 795 and re.fullmatch(r"-\d+-", b.text)
+    return b.y0 > 760 and re.fullmatch(r"-\d+-", b.text)       # p66 of version 2: y 769
 
 
 def is_divider(bs):
@@ -123,7 +131,7 @@ def convert(pdf, report):
     for b in blocks:
         pages.setdefault(b.page, []).append(b)
     w = Writer()
-    counts = {"chapters": 0, "measures": 0, "dividers": 0}
+    counts = {"chapters": 0, "measures": 0, "dividers": 0, "chapters whose divider is an image": 0}
     # document title: the running head of the first chapter divider
     first_div = next(p for p in sorted(pages) if is_divider(pages[p]))
     head = next(b for b in pages[first_div] if b.font.name.startswith("Avenir-Heavy") and b.font.size == 12)
@@ -163,13 +171,18 @@ def flow(w, bs, counts, dividers):
             continue
         t = b.text
         if b.font.size >= 80 and re.fullmatch(r"\d\d", t):              # chapter number + title
-            title = [o for o in bs if o.font.name.startswith("Univers") and o.y0 < 140]
+            title = [o for o in bs if o.font.name.startswith(("Univers", "HelveticaLTStd")) and o.y0 < 140]
+            if not title:
+                raise C.ConvertError(f"p{b.page}: chapter {t} without its title")
             skip.update(title)
             name = f"{t} {' '.join(o.text for o in rows(title))}"
             w.emit(heading(name, "="))
             counts["chapters"] += 1
-            if dividers and dividers[-1] != name:
-                raise C.ConvertError(f"chapter {name!r} does not match its divider {dividers[-1]!r}")
+            divider = dividers.pop() if dividers else None
+            if divider is None:
+                counts["chapters whose divider is an image"] += 1
+            elif divider != name:
+                raise C.ConvertError(f"chapter {name!r} does not match its divider {divider!r}")
         elif b.font.size >= 50 and len(t) == 1:                          # drop cap
             cap = b.chars()
         elif re.fullmatch(r"\d{1,2}\.", t) and b.x0 < 60:                 # "1." + its text
