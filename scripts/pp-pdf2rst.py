@@ -19,10 +19,18 @@ The only content changes allowed (and checked) are:
     the decorative ‘‘ marks of the pull quotes, the "Permanezca atento..."
     boxes and one sub-heading in section 3.2)
 
-The structural rules in step 3 are specific to this document.
+The structural rules in step 3 are specific to this document. Two layouts of
+it are read: version 1 (LA-RECONSTRUCCION-NACIONAL.pdf, 82 pages) and version
+2 (PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf, 64 pages, the same
+text laid out again). In version 2 pdftotext gives the chapter openers in
+pieces ("subtitle", ‘‘, "01", "TITLE", ‘‘, "quote", or the quote before the
+number), some headings as blocks of their own and paragraphs cut at a
+hyphenated line end as two blocks; ``normalize_v2`` puts them back in the
+order of version 1, so both give the same RST.
 
 Usage:
-  python3 pdf2rst.py LA-RECONSTRUCCION-NACIONAL-1.pdf -o reconstruccion-nacional.rst
+  python3 pp-pdf2rst.py PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf -o pp.rst
+  python3 pp-pdf2rst.py LA-RECONSTRUCCION-NACIONAL.pdf -o pp.rst            # version 1
   python3 pdf2rst.py input.pdf -o out.rst --save-text filtered.txt   # also keep step 2
   python3 pdf2rst.py input.pdf -o out.rst --page-numbers             # keep page markers
   python3 pdf2rst.py input.pdf --verify-only existing.rst            # only run step 4
@@ -74,10 +82,18 @@ def extract(pdf, mode=None):
 
 
 # =============================================================== 2. clean
+def split_page_heads(raw):
+    """A paragraph that runs onto the next page: in version 2, pdftotext gives
+    that page's number as the first line of the paragraph's next block
+    ("conti-" / "\\f18" / "nuidad ..."). Make the number a block of its own,
+    like every other page number."""
+    return re.sub(r'\x0c(\d+)\n(?=\S)', '\x0c\\1\n\n', raw)
+
+
 def clean(raw):
     """Join the lines of every blank-line separated block into one paragraph."""
     out = []
-    for block in raw.split('\n\n'):
+    for block in split_page_heads(raw).split('\n\n'):
         s = ''
         for line in block.split('\n'):
             if s.endswith('-'):
@@ -98,11 +114,38 @@ def is_page_block(i, block):
 
 
 # =============================================================== 3. convert
+def normalize_v2(items):
+    """Version 2's pdftotext order -> version 1's (see the module docstring)."""
+    if not any(it == ('TEXT', '01') for it in items):
+        return items                       # version 1
+    items = list(items)
+    for n, title in enumerate(CHAPTER_TITLES, 1):
+        num = f'0{n}'
+        k = items.index(('TEXT', num))
+        assert items[k + 1] == ('TEXT', title), (num, items[k + 1])
+        # the opener, after its page number: subtitle, ‘‘, "01", TITLE, ‘‘, quote, intro
+        # (chapter 1) or subtitle, ‘‘, quote, ‘‘, "02", TITLE, intro (chapters 2-4)
+        lo = max(i for i in range(k) if items[i][0] == 'PAGE') + 1
+        q, t = ('QMARK', '‘‘'), ('TEXT', title)
+        sub = items[lo]
+        if items[lo + 1:lo + 7] == [q, ('TEXT', num), t, q, items[lo + 5], items[lo + 6]]:
+            quote, intro = items[lo + 5], items[lo + 6]
+        elif items[lo + 1:lo + 7] == [q, items[lo + 2], q, ('TEXT', num), t, items[lo + 6]]:
+            quote, intro = items[lo + 2], items[lo + 6]
+        else:
+            raise SystemExit(f'chapter {num}: opener not understood: {items[lo:lo + 7]}')
+        assert {sub[0], quote[0], intro[0]} == {'TEXT'}, (num, sub, quote, intro)
+        items[lo:lo + 7] = [('TEXT', f'{num} {sub[1]}'), q, quote, ('TEXT', f'{title} {intro[1]}'), q]
+    k = items.index(('TEXT', 'LA ESPAÑA QUE HAREMOS ENTRE TODOS'))
+    items[k:k + 2] = [('TEXT', 'LA ESPAÑA QUE HAREMOS ENTRE TODOS ' + items[k + 1][1])]
+    return items
+
+
 def convert(text, keep_pages=False):
     paras = text.split('\n\n')
     out = []
     state = {'open': None, 'pages': [], 'ph_needed': 0, 'ph_seen': 0, 'qmarks': 0,
-             'fortaleceremos_pending': True}
+             'fortaleceremos_pending': True, 'fortaleceremos_out': False}
 
     # ---- tokenise
     items = []
@@ -123,6 +166,8 @@ def convert(text, keep_pages=False):
             items.append(('PLACEHOLDER', p))
         else:
             items.append(('TEXT', p))
+
+    items = normalize_v2(items)
 
     # ---- helpers
     def join(a, b):
@@ -186,11 +231,13 @@ def convert(text, keep_pages=False):
             state['pages'].clear()
             if b['kind'] == 'measure':
                 body = b['text']
-                if b['num'] == '110':      # PDF puts the 3rd sub-heading of 3.2 here
+                if b['num'] == '110' and ' Una comunidad política se mide' in body:
+                    # version 1 puts the 3rd sub-heading of 3.2 here
                     k = body.index(' Una comunidad política se mide')
                     emit_measure('110', body[:k])
                     out.extend(page_comment(n) for n, off in marks if off <= k)
                     out.append(heading('Fortaleceremos el pacto entre personas', '~'))
+                    state['fortaleceremos_out'] = True
                     emit_prose(body[k + 1:], [(n, off - k - 1) for n, off in marks if off > k])
                 else:
                     emit_measure(b['num'], body)
@@ -293,17 +340,25 @@ def convert(text, keep_pages=False):
             elif m2:
                 out.append(heading(m2.group(1), '-'))
                 start_measure(m2.group(2), m2.group(3) or '')
+            elif re.fullmatch(rf'\d\.\d+ [{UPPER}0-9 ,.;:-]+', s):     # version 2: heading alone
+                out.append(heading(s, '-'))
             else:
                 raise SystemExit(f'unparsed section: {s}')
             continue
 
-        if s == 'Reconstruiremos el pacto entre generaciones':
+        if s in ('Reconstruiremos el pacto entre generaciones',
+                 'Reconstruiremos el pacto territorial'):          # the latter alone in version 2
             close()
             out.append(heading(s, '~'))
             continue
         if s == 'Fortaleceremos el pacto entre personas':
-            assert state['fortaleceremos_pending']   # already emitted (PDF order)
+            assert state['fortaleceremos_pending']
             state['fortaleceremos_pending'] = False
+            if not state['fortaleceremos_out']:    # version 1: already emitted with measure 110
+                close()
+                if not state['fortaleceremos_out']:
+                    out.append(heading(s, '~'))    # version 2: printed in its place
+                    state['fortaleceremos_out'] = True
             continue
         if s == 'EL CAMBIO NECESARIO':
             close()
@@ -347,7 +402,7 @@ def verify(raw, rst_text, layout, keep_pages=False):
 
     # ---- source: raw pdftotext, page-number blocks set aside, line breaks kept
     src_pages, src_blocks = [], []
-    for i, b in enumerate(raw.split('\n\n')):
+    for i, b in enumerate(split_page_heads(raw).split('\n\n')):
         if is_page_block(i, b):
             src_pages.append(b.replace('\x0c', ''))
         else:

@@ -185,10 +185,10 @@
 		"name": "Partido Popular (PP)",
 		"title": "Reconstrucción Nacional",
 		"language": "es",
-		"version": 1,
-		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL.pdf",
-		"file": "LA-RECONSTRUCCION-NACIONAL.pdf",
-		"sha256sum": "cea8f2a052278e51ad682d19444eb0e9089997adbde8df76babf7f236bb5ffbe"
+		"version": 2,
+		"program_url": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf",
+		"file": "PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf",
+		"sha256sum": "ae0c35d7ef3faf540acaa79d47abbe3ae2bf56a3a755c4e78a8f5bf3ea49789c"
 	},
 	{
 		"party": "psoe",
