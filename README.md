@@ -13,7 +13,7 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 | EH Bildu | [Posible egin.](programas_electorales/eh_bildu-eu.rst) | euskera | [PROGRAMA-EUS.pdf](documentos_originales/PROGRAMA-EUS.pdf) ([fuente](https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-EUS.pdf)) | 1 | 30 | 8.175 |
 | Esquerra Republicana (ERC) | [Pel país. Per la gent. Pel futur.](programas_electorales/erc.rst) | catalán | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) ([fuente](https://esquerrarepublicana.cat/documents/e2026-programa.pdf)) | 2 | 48 | 25.307 |
 | Feministas al Congreso | [Juntas hacemos historia](programas_electorales/feministas_al_congreso.rst) | castellano | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) ([fuente](https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf)) | 1 | 2 | 617 |
-| Frente Amplio | [Un Programa como una Casa](programas_electorales/frente_amplio.rst) | castellano | [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) ([fuente](https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf)) | 2 | 151 | 48.994 |
+| Frente Amplio | [Un Programa como una Casa](programas_electorales/frente_amplio.rst) | castellano | [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) ([fuente](https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf)) | 3 | 158 | 51.539 |
 | Frente Obrero | [Recuperar España](programas_electorales/frente_obrero.rst) | castellano | [programa-frente-obrero.pdf](documentos_originales/programa-frente-obrero.pdf) ([fuente](https://frenteobrero.es/documentos/programa-frente-obrero.pdf)) | 2 | 67 | 13.400 |
 | Iustitia Europa (IE) | [Contrato electoral](programas_electorales/iustitia_europa.rst) | castellano | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) ([fuente](https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf)) | 1 | 28 | 4.382 |
 | Partido Animalista Con el Medio Ambiente (PACMA) | [Vota por lo que crees](programas_electorales/pacma.rst) | castellano | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) ([fuente](https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf)) | 1 | 82 | 41.387 |
@@ -44,7 +44,7 @@ Programas electorales convertidos de su PDF original (o de su web, guardada en H
 | [PROGRAMA-EUS.pdf](documentos_originales/PROGRAMA-EUS.pdf) | `69bce4b5e5bf5f003c4f3d5e3e4558c89483bf182ce021fc3daa56e03509c190` |
 | [e2026-programa.pdf](documentos_originales/e2026-programa.pdf) | `f0b6d8e0bf7fc6a75206ac4a6b0b7e0e31745b147fae86d341916562d6a433fd` |
 | [Programa_1IMP.pdf](documentos_originales/Programa_1IMP.pdf) | `def48f491e28aff00d8e1e659c4704bcf8da3e5d2276fe81c947311da7621745` |
-| [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) | `516c5c6caaa04d0bd6f28770a49ae312f79ff3ebcf48967db66adc4ce2335424` |
+| [ProgramaFrenteAmplio.pdf](documentos_originales/ProgramaFrenteAmplio.pdf) | `d7e2c8152a25d0b3e8ca9f13f15e11c2616389f1e0e2309e573d665fcfff33b9` |
 | [programa-frente-obrero.pdf](documentos_originales/programa-frente-obrero.pdf) | `385da7b35a3ddc67e75a6600cb7222c4db3e3537fe0b42f88944365804df2a11` |
 | [descarga-aqui-tu-contrato-00030.pdf](documentos_originales/descarga-aqui-tu-contrato-00030.pdf) | `03740dc25a9e94599f7b3e085a5f24fefe8ad8aa796740dccd0dfc1b2facb5dd` |
 | [PE_GENERALES_29N26.pdf](documentos_originales/PE_GENERALES_29N26.pdf) | `6009e569e3bfd4f607b8831ade1d1ef33cbbda6033805e3ebc331d4dd0e30a1d` |

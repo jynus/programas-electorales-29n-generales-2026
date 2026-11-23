@@ -66,237 +66,240 @@
    * - 2.8.
      - Infancia, adolescencia y juventud con derechos
      - 44
+   * - 2.9
+     - El deporte como derecho
+     - 47
    * -
      - **03. Una reforma fiscal en profundidad**
      -
    * - 3.1.
      - Que las grandes empresas paguen lo que les corresponde
-     - 49
+     - 57
    * - 3.2.
      - Más contribución de los grandes patrimonios
-     - 50
+     - 58
    * - 3.3.
      - Que las rentas del capital tributen como las del trabajo
-     - 51
+     - 59
    * - 3.4.
      - Un IVA más justo
-     - 52
+     - 60
    * - 3.5.
      - Fiscalidad verde y sobre el lujo
-     - 52
+     - 60
    * - 3.6.
      - Lucha contra el fraude fiscal
-     - 53
+     - 61
    * - 3.7.
      - Transparencia fiscal
-     - 54
+     - 62
    * -
      - **04. Salarios y pensiones dignos y precios asequibles**
      -
    * - 4.1.
      - Salarios que deben crecer, más tiempo para la vida
-     - 57
+     - 65
    * - 4.2.
      - Precios asequibles y control de márgenes
-     - 62
+     - 70
    * - 4.3.
      - Pensiones públicas dignas
-     - 63
+     - 71
    * -
      - **05. Continuar el impulso hacia una transición ecológica justa**
      -
    * - 5.1.
      - Energía limpia, pública y al alcance de todas las familias
-     - 68
+     - 76
    * - 5.2.
      - Transporte público asequible y seguro para alcanzar una movilidad
        sostenible
-     - 72
+     - 80
    * - 5.3.
      - Protección ambiental: ciudades y territorios adaptándose para el cambio
        climático
-     - 76
+     - 84
    * - 5.4.
      - Descarbonización del turismo
-     - 78
+     - 86
    * - 5.5.
      - Gestión de residuos, reparación y reutilización
-     - 79
+     - 87
    * - 5.6.
      - Agua como bien público
-     - 80
+     - 88
    * - 5.7.
      - Bienestar animal
-     - 82
+     - 90
    * -
      - **06. Estado emprendedor y política industrial activa**
      -
    * - 6.1.
      - Una nueva política industrial y soberanía tecnológica
-     - 89
+     - 97
    * - 6.2.
      - Empresas públicas fuertes
-     - 93
+     - 101
    * - 6.3.
      - Banca pública
-     - 93
+     - 101
    * -
      - **07. Agricultura, ganadería y pesca: hacia su sostenibilidad
        medioambiental, social y económica**
      -
    * - 7.1.
      - Sostenibilidad económica y social
-     - 97
+     - 105
    * - 7.2.
      - Sostenibilidad medioambiental: descarbonización de la agricultura, la
        ganadería y la pesca
-     - 98
+     - 106
    * -
      - **08. Autónomos, pymes y economía social**
      -
    * - 8.1.
      - Simplificación burocrática, digitalización, protección a las pymes y
        fiscalidad
-     - 103
+     - 111
    * - 8.2.
      - Energía a precios justos
-     - 104
+     - 112
    * - 8.3.
      - Impulsar la economía social
-     - 104
+     - 112
    * -
      - **09. Lucha contra la despoblación y retos de la insularidad**
      -
    * - 9.1.
      - Garantizar empleo y servicios públicos
-     - 109
+     - 117
    * - 9.2.
      - Abordar los retos de la insularidad
-     - 110
+     - 118
    * -
      - **10. Empleo público de calidad**
      -
    * - 10.1.
      - Dignificar el empleo público
-     - 113
+     - 121
    * - 10.2.
      - Potenciar el empleo público
-     - 113
+     - 121
    * -
      - **11. Financiación autonómica y vertebración territorial**
      -
    * - 11.1.
      - Reforma del modelo de financiación autonómica
-     - 117
+     - 125
    * - 11.2.
      - Condonación de deuda y prohibición del dumping fiscal
-     - 118
+     - 126
    * - 11.3.
      - Infraestructuras e inversión en todo el territorio
-     - 119
+     - 127
    * -
      - **12. Ayuntamientos con recursos y autonomía**
      -
    * - 12.1.
      - Un nuevo marco de financiación local
-     - 125
+     - 133
    * - 12.2.
      - Alivio de la deuda para ayuntamientos en riesgo financiero
-     - 126
+     - 134
    * - 12.3.
      - Una regla de gasto que no castigue a los ayuntamientos
-     - 126
+     - 134
    * - 12.4.
      - Una fiscalidad local más justa y más verde
-     - 127
+     - 135
    * - 12.5.
      - Un mejor gobierno local
-     - 129
+     - 137
    * -
      - **13. Democratización económica y poder financiero**
      -
    * - 13.1.
      - Democracia en las empresas
-     - 133
+     - 141
    * - 13.2.
      - Límite al poder de los grandes grupos empresariales
-     - 134
+     - 142
    * -
      - **14. Poder digital y pluralismo informativo**
      -
    * - 14.1.
      - Gobernanza digital, supervisión y responsabilidad penal de directivos
-     - 139
+     - 147
    * - 14.2.
      - Transparencia algorítmica, autonomía del usuario, interoperabilidad y
        privacidad
-     - 139
+     - 147
    * - 14.3.
      - Regulación de la inteligencia artificial en el sector público y privado
-     - 140
+     - 148
    * -
      - **15. Igualdad y más derechos para todas, todos y todes**
      -
    * - 15.1.
      - Transparencia salarial y erradicación de la brecha de género
-     - 145
+     - 153
    * - 15.2.
      - Despliegue de la Ley Trans e identidades no binarias
-     - 145
+     - 153
    * -
      - **16. Migraciones y antirracismo**
      -
    * - 16.1.
      - Ley Integral Antirracismo y el Estatuto del Pueblo Gitano
-     - 149
+     - 157
    * - 16.2.
      - Procedimientos estables de regularización y vías legales y seguras para
        la migración y el asilo
-     - 149
+     - 157
    * -
      - **17. La seguridad humana: paz, solidaridad y Europa**
      -
    * - 17.1.
      - Apostar por la seguridad humana frente al discurso belicista
-     - 155
+     - 163
    * - 17.2.
      - Cooperación internacional y ayuda al desarrollo
-     - 158
+     - 166
    * - 17.3.
      - Hacia una Europa de los pueblos
-     - 160
+     - 168
    * -
      - **18. Hacia una democracia avanzada**
      -
    * - 18.1.
      - Hacia una República Federal para alcanzar la democracia real
-     - 167
+     - 175
    * - 18.2.
      - Transparencia, lucha contra la corrupción y dimensión ética de la
        gestión pública
-     - 168
+     - 176
    * - 18.3.
      - Acabar con la criminalización de la protesta social
-     - 169
+     - 177
    * - 18.4.
      - Deberes y derechos de las Fuerzas y Cuerpos de Seguridad del Estado para
        servir en un Estado democrático
-     - 170
+     - 178
    * - 18.5.
      - Transparencia y la pluralidad en los medios de comunicación privados y
        públicos
-     - 172
+     - 180
    * - 18.6.
      - Más memoria democrática para el reconocimiento, la justicia y la
        reparación
-     - 173
+     - 181
    * - 18.7.
      - Modernización, renovación y democratización del acceso al sistema
        judicial
-     - 175
+     - 183
    * - 18.8.
      - Laicidad del Estado
-     - 177
+     - 185
 
 Las próximas elecciones generales son una encrucijada histórica.
 
@@ -1909,8 +1912,7 @@ Garantía del consentimiento, más protección judicial y violencia vicaria
 * Solo sí es sí: El consentimiento explícito de las mujeres es lo que determina
   si existe o no agresión sexual y deberá ser el eje vertebrador de las normas
   legales, evitando que tengan que demostrar que ha habido violencia y/o
-  intimidación. Serán estrictamente agravantes de la conducta y no requisitos
-  del tipo penal básico.
+  intimidación.
 
 * Suspensión cautelar automática del régimen de visitas: Estableceremos la
   suspensión cautelar automática del régimen de visitas, estancia y
@@ -1944,8 +1946,7 @@ Lucha contra la trata y la explotación sexual
 
 * Eliminaremos toda normativa que penalice o punitivice a las personas que
   ejercen la prostitución garantizando el acceso a derechos fundamentales como
-  seguridad social, salud, condiciones de trabajo dignas y la posibilidad de
-  organizarse, rechazando siempre el estigma asociado a la misma.
+  seguridad social, salud, rechazando siempre el estigma asociado a la misma.
 
 * Desvinculación de la denuncia policial (Ley de Extranjería): Reformaremos el
   artículo 59 bis de la Ley de Extranjería para garantizar que el permiso de
@@ -2159,6 +2160,366 @@ Juventud, emancipación y derechos democráticos
 
 .. 46 DERECHOS SOCIALES PARA UNA VIDA DIGNA
 
+2.9. El deporte como derecho
+----------------------------
+
+Deporte para la salud, la calidad de vida y el bienestar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* El deporte es, y debe ser, sinónimo de salud y de bienestar personal y
+  social. Garantizaremos la salud, la calidad de vida y el bienestar a través
+  del deporte, que es también una forma de conservar el medio ambiente que nos
+  rodea.
+
+* Ecosistemas saludables: Promoveremos «ecosistemas saludables» que favorezcan
+  el trabajo multidisciplinar y ofrezcan calidad, seguridad y control a las
+  personas practicantes, y garantizaremos la profesionalidad de quienes
+  trabajan en el sector.
+
+* Campañas por la vida activa: Impulsaremos campañas en los medios de
+  comunicación públicos y privados y en las redes sociales para promover
+  hábitos de vida sana, combatir el sedentarismo, luchar contra la obesidad
+  infantil y juvenil e impulsar la vida activa. También desarrollaremos
+  campañas de información y prevención del consumo de fármacos y sustancias de
+  especial peligrosidad, sin prescripción médica ni control sanitario, en
+  gimnasios y centros deportivos, así como en clubes y federaciones deportivas.
+
+* Espacios de salud al aire libre: Incrementaremos los «espacios de salud», con
+  equipamientos para el ejercicio físico, en los entornos deportivos al aire
+  libre de parques, espacios lúdicos, jardines y áreas periurbanas.
+
+* Receta deportiva en atención primaria: Estableceremos un programa marco de
+  financiación para la receta deportiva o prescripción de ejercicio físico en
+  los centros de salud, e incorporaremos a los centros de salud a profesionales
+  de las ciencias del deporte.
+
+* Atención sanitaria en los centros deportivos: Garantizaremos que los centros
+  deportivos cuenten con programas médicos y servicio de fisioterapia
+  deportiva, para adaptar la práctica deportiva a las posibles patologías y
+  mejorar las lesiones o traumatismos de los deportistas, evitando así
+  dolencias que les impidan practicar ejercicio físico.
+
+* Deporte asequible para mayores y personas vulnerables: Estableceremos
+  fórmulas para fijar precios reducidos de los servicios deportivos en
+  gimnasios e instalaciones deportivas para las personas mayores y en situación
+  de vulnerabilidad.
+
+Un modelo deportivo inclusivo y contra la violencia, el racismo y la intolerancia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Apostamos por un nuevo marco deportivo inclusivo, transversal y vertebrador.
+  Aplicaremos el concepto de inclusión social como elemento transversal y
+  vertebrador de una sociedad cohesionada, también a través del deporte,
+  implicando a todas las instituciones y entidades que trabajan en este ámbito,
+  como el tercer sector (asociaciones de mujeres, de personas migrantes y de
+  personas desempleadas, entidades de cooperación al desarrollo y de personas
+  con discapacidad) o los centros penitenciarios, entre otros.
+
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 47
+
+* Deporte libre de LGTBQAifobia: Garantizaremos la plena aplicación en el
+  deporte de la legislación estatal de protección de las personas trans y de
+  las personas LGTBIQA+, con medidas contra la discriminación en federaciones,
+  clubes, competiciones e instalaciones, y una estrategia específica para el
+  ámbito deportivo coordinada con el Observatorio Estatal contra la
+  LGTBQAifobia.
+
+* Protección frente a los abusos y la violencia sexual: Impulsaremos cursos de
+  formación y protocolos en federaciones, clubes y servicios municipales de
+  deporte para luchar contra el acoso, los abusos y la violencia sexual en el
+  deporte y garantizar la protección de los menores.
+
+* Dimensión internacional del deporte: Cuidaremos la dimensión internacional
+  del deporte: apoyaremos al máximo las políticas que contribuyan a nuestros
+  éxitos deportivos y aprovecharemos esos éxitos para fomentar la cooperación
+  internacional.
+
+Deporte en comunidad y a lo largo de la vida
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Ludotecas en las instalaciones deportivas: Promoveremos ludotecas en las
+  instalaciones deportivas multidisciplinares, de nueva construcción o
+  aprovechando equipamientos públicos cercanos (polideportivos, colegios,
+  bibliotecas, centros culturales), para crear una red de actividades de
+  bienestar y salud.
+
+* Zonas de juego junto a las instalaciones al aire libre: Construiremos zonas
+  de juego infantil cerca de los espacios deportivos al aire libre, para que
+  las familias puedan disfrutar juntas de un tiempo libre activo.
+
+* Escuelas deportivas intergeneracionales: Apoyaremos programas de escuelas
+  deportivas que refuercen los lazos sociales entre personas de distintas
+  edades.
+
+* Programas municipales para personas mayores: Reforzaremos, con financiación
+  estatal y en cooperación con las entidades locales, respetando sus
+  competencias, la oferta deportiva municipal dirigida a las personas mayores
+  para mejorar su salud, su bienestar, su autoestima y sus relaciones sociales.
+
+* Ocio deportivo nocturno para jóvenes: Promoveremos actividades y eventos
+  deportivos nocturnos como alternativa de ocio saludable y para prevenir el
+  abuso de las pantallas y del juego entre adolescentes y jóvenes.
+
+* Deporte compartido: Impulsaremos campañas para promover la práctica deportiva
+  en grupo en los servicios deportivos municipales, los centros deportivos
+  privados, los clubes y las federaciones.
+
+* Cheque deporte: Crearemos un cheque deporte anual para niños, niñas y
+  jóvenes, destinado a la contratación de servicios deportivos.
+
+La educación física y el deporte como política de transformación social
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Propondremos un modelo deportivo en edad escolar que aumente la participación
+  de niñas, niños y jóvenes. El talento deportivo no puede ser la única
+  condición para practicar deporte: promoveremos el deporte y la actividad
+  física para todas y todos, con la diversión y la educación a través del
+  movimiento como vía para mantener durante toda la vida hábitos saludables y
+  una práctica deportiva continuada.
+
+.. 48 DERECHOS SOCIALES PARA UNA VIDA DIGNA
+
+* Oferta pública de deporte escolar: El deporte en edad escolar no puede
+  depender exclusivamente de las propuestas de las federaciones deportivas.
+  Desde las administraciones públicas ofreceremos una oferta deportiva que
+  movilice al alumnado de infantil, primaria, secundaria y universidad, con
+  especial atención al paso de la infancia a la adolescencia, cuando se produce
+  la mayor parte del abandono de la práctica deportiva.
+
+* Tres horas semanales de educación física: Garantizaremos un mínimo de tres
+  horas semanales de educación física en la enseñanza obligatoria, para crear
+  hábitos de vida que prevengan el sedentarismo, la obesidad y el sobrepeso en
+  niñas, niños y jóvenes.
+
+* Equipamientos deportivos variados en los centros educativos: Diversificaremos
+  los equipamientos deportivos de los centros educativos, con una oferta
+  variada de actividades físicas y deportivas.
+
+* Instalaciones escolares abiertas al barrio: Abriremos las instalaciones
+  deportivas de los centros de enseñanza obligatoria y de las universidades por
+  las tardes y los fines de semana, en colaboración con ayuntamientos, clubes,
+  federaciones deportivas y entidades del tercer sector.
+
+* Deporte universitario: La situación del deporte universitario es
+  especialmente preocupante. Crearemos una mesa de trabajo con todas las partes
+  implicadas y daremos más peso e importancia al deporte en el ámbito
+  universitario.
+
+* Estudios compatibles con el alto rendimiento: Impulsaremos programas para la
+  preparación de deportistas de élite compatible con la universidad, programas
+  de conciliación y mentoría de estudios para jóvenes deportistas de alto
+  rendimiento y becas de estudio para ellos. Incorporaremos la práctica
+  deportiva como actividad docente complementaria, para hacer compatible el
+  talento deportivo con el talento académico, y avanzaremos en la
+  transformación de los centros de tecnificación y de alto rendimiento en
+  espacios integrales de formación.
+
+* Actualización de los grados en ciencias del deporte: Revisaremos y
+  ordenaremos los planes de estudio de los grados en Ciencias de la Actividad
+  Física y del Deporte para adaptarlos a las nuevas realidades del deporte, a
+  las demandas sociales y a los estilos de vida actuales.
+
+Igualdad efectiva entre mujeres y hombres en el deporte
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Deporte femenino en los medios públicos: Garantizaremos la presencia del
+  deporte femenino en la radio y la televisión públicas, con un tratamiento
+  informativo libre de estereotipos de género, y promoveremos su retransmisión
+  en el resto de medios.
+
+* Mujeres en la dirección del deporte: Promoveremos la presencia de mujeres en
+  los cargos federativos y en los ámbitos técnicos del deporte.
+
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 49
+
+* Ligas profesionales y convenios en el deporte femenino: Garantizaremos el
+  derecho a constituir ligas profesionales y a negociar convenios colectivos en
+  el deporte femenino.
+
+* Nueva regulación laboral de los deportistas profesionales: Modificaremos el
+  Real Decreto 1006/1985, de 26 de junio, que regula la relación laboral
+  especial de los deportistas profesionales, para adaptarlo a la realidad
+  actual y mejorar las condiciones laborales de las mujeres deportistas.
+
+* Conciliación de las deportistas: Impulsaremos medidas de conciliación para
+  las mujeres deportistas, profesionales y de otros niveles.
+
+* Planes de igualdad en todas las federaciones: Promoveremos la implantación de
+  planes de igualdad en todas las federaciones deportivas.
+
+* Más niñas haciendo deporte: Desarrollaremos campañas y programas específicos
+  para impulsar la práctica deportiva femenina en edad escolar y prevenir el
+  abandono temprano de las niñas y las adolescentes.
+
+* Los mismos derechos en las instalaciones: Garantizaremos que el deporte
+  femenino y el masculino tengan los mismos derechos en el acceso a espacios y
+  horarios de las instalaciones deportivas, y aplicaremos medidas de acción
+  positiva, como la reducción de la cuota de inscripción de los equipos
+  femeninos en las competiciones municipales y autonómicas, en cooperación con
+  las comunidades autónomas y las entidades locales y respetando sus
+  competencias.
+
+Más espacios e instalaciones deportivas públicas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Ciudades activas: Haremos del multideporte una prioridad política nacional y
+  aumentaremos los espacios y equipamientos deportivos al aire libre, abiertos
+  y gratuitos: carriles bici, parques de salud, senderos deportivos, espacios
+  de parkour y calistenia, rocódromos y pistas de skate y patinaje, entre
+  otros. Lo haremos con financiación estatal y en cooperación con las
+  comunidades autónomas y las entidades locales, respetando sus competencias.
+
+* Horarios ampliados: Promoveremos, en cooperación con las entidades locales y
+  respetando sus competencias, la ampliación de los horarios de apertura de las
+  instalaciones deportivas municipales por las tardes, las noches y los fines
+  de semana.
+
+* Alto rendimiento en las nuevas disciplinas: Crearemos centros de alto
+  rendimiento para disciplinas emergentes, como la escalada o el skate, tanto
+  en la práctica popular como en la competición y el olimpismo.
+
+* Instalaciones sostenibles y accesibles: Mejoraremos la sostenibilidad
+  energética y ambiental de las instalaciones deportivas, garantizaremos su
+  accesibilidad, reforzaremos las instalaciones dirigidas a personas con
+  discapacidad y adaptaremos la oferta a la demanda del medio rural.
+
+* Senderismo: Impulsaremos el senderismo como actividad estratégica de salud,
+  bienestar y sociabilidad.
+
+.. 50 DERECHOS SOCIALES PARA UNA VIDA DIGNA
+
+El deporte como herramienta de mejora económica y social
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Deporte en el trabajo: Impulsaremos la práctica deportiva en las
+  administraciones e instituciones públicas para mejorar la salud del personal,
+  reforzar los lazos en el entorno laboral y reducir las bajas asociadas a la
+  inactividad, y promoveremos horarios flexibles que permitan incorporar la
+  actividad física a la jornada.
+
+* Corresponsabilidad de las empresas y los agentes sociales: Haremos
+  corresponsables a las empresas y a los demás agentes sociales de ampliar el
+  acceso a la actividad deportiva: impulsaremos que incorporen programas de
+  actividad física para sus plantillas y horarios flexibles que los hagan
+  compatibles con la jornada laboral, también a través de la negociación
+  colectiva.
+
+* Estudios sobre deporte y economía: Impulsaremos estudios periódicos sobre el
+  coste laboral de la inactividad y sobre el impacto económico del deporte, por
+  modalidades y ámbitos (eventos, turismo deportivo, deporte y salud, entre
+  otros).
+
+* Turismo deportivo sostenible: Promoveremos un turismo deportivo sostenible y
+  respetuoso con la capacidad ecológica y social de los territorios, a través
+  de eventos y de la oferta turística ordinaria, en el medio urbano y rural, en
+  los espacios naturales y en ríos, lagos y mares.
+
+* Modernización del sector: federaciones, clubes y profesiones
+
+* Modernización de federaciones y clubes: Dotaremos a las federaciones y los
+  clubes deportivos de los medios necesarios para modernizarse y convertirse en
+  entidades más eficientes y solventes. Diseñaremos herramientas de asistencia
+  técnica para la búsqueda de financiación del deporte reglado y de competición
+  y para la captación de fondos adicionales, y respaldaremos su fortalecimiento
+  y su democratización.
+
+* Digitalización, buen gobierno y transparencia: Impulsaremos la digitalización
+  de sus procedimientos administrativos y de su funcionamiento interno, e
+  implantaremos un código de buen gobierno y un portal de transparencia en
+  todas las federaciones deportivas, que son entidades privadas con
+  competencias públicas delegadas.
+
+* Ley de profesiones del deporte: Contribuiremos al desarrollo de una
+  legislación estatal de regulación profesional de la actividad física y del
+  deporte, y aplicaremos un sistema de inspección del personal contratado en
+  estas tareas para evitar el intrusismo y garantizar la salud pública.
+
+* Planes de empleo deportivo: Diseñaremos planes de empleo deportivo para
+  diversificar las salidas profesionales e incorporar profesionales al sector,
+  mediante conciertos con los servicios de empleo, empresas, ONG, federaciones
+  y ayuntamientos.
+
+* Futuro laboral de los deportistas de alto nivel: Mejoraremos las herramientas
+  de apoyo a la inserción laboral de las y los deportistas de alto rendimiento
+  al terminar su etapa deportiva, y estableceremos un convenio especial con la
+  Seguridad Social para que coticen, con efecto retroactivo, los años de
+  dedicación como deportistas de alto nivel (DAN) en los que disfrutaron de
+  becas oficiales.
+
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 51
+
+* Salud mental de las y los deportistas: Crearemos servicios de atención y
+  cuidado de la salud mental para deportistas de alto nivel y de alto
+  rendimiento, en activo y retirados, con planes de intervención y preparación
+  a corto, medio y largo plazo para la transición tras la retirada.
+
+Coordinación, conocimiento y comunicación
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Coordinación entre administraciones: Garantizaremos una cultura de
+  cooperación y alianzas que aproveche plenamente el potencial y los recursos
+  del Estado, las comunidades autónomas y las entidades locales, respetando sus
+  competencias, y de los agentes privados del sector deportivo. Esta
+  coordinación implicará también a las distintas áreas de gobierno (sanidad,
+  medio ambiente y educación, entre otras), mediante informes y la
+  planificación conjunta de la política deportiva.
+
+* Observatorio Nacional del Deporte: Crearemos un Observatorio Nacional del
+  Deporte que investigue de forma estable la realidad deportiva y proporcione
+  datos periódicos a las administraciones públicas para mejorar la política
+  deportiva.
+
+* Innovación legislativa: Promoveremos nuevas normas en ámbitos prioritarios
+  como las nuevas disciplinas deportivas, el mecenazgo y el patrocinio, la
+  regulación deportiva en la Administración local, la educación física, los
+  nuevos espacios deportivos, el deporte universitario, la protección de los
+  menores deportistas y el uso de la tecnología.
+
+* Formación especializada: Impulsaremos, a través de universidades, centros de
+  formación profesional y federaciones, la formación en nuevos ámbitos del
+  deporte: deporte adaptado, intervención social, perspectiva de género, I+D+i,
+  deporte para todas y todos, alto nivel, búsqueda de financiación y
+  patrocinio, digitalización, planificación y organización deportivas y
+  sostenibilidad.
+
+* Investigación estratégica: Investigaremos temas de importancia estratégica
+  para el sistema deportivo y para el interés general, como la incidencia del
+  deporte en la salud y el bienestar, los hábitos sociales en torno al deporte,
+  su impacto económico, la tecnología y los materiales, la perspectiva de
+  género y el deporte adaptado. Potenciaremos el trabajo de las instituciones
+  científicas y académicas, la difusión de sus resultados y el trabajo
+  multidisciplinar, para que tengan un impacto real en el sistema deportivo.
+
+* Comunicación del deporte: Necesitamos medios de comunicación que contribuyan
+  a promover la cultura física, los estilos de vida activos y el multideporte,
+  que muestren otras realidades deportivas y que se impliquen con la cultura
+  física como herramienta de salud y bienestar social. Colaboraremos con ellos
+  para promover la retransmisión y la información de eventos de deporte
+  femenino y de deportes mayoritarios y minoritarios, y para desarrollar
+  campañas contra la obesidad y el sobrepeso infantil y juvenil y por una vida
+  activa a través del deporte y el ejercicio físico.
+
+.. 52 DERECHOS SOCIALES PARA UNA VIDA DIGNA
+
+Financiación del deporte
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Ninguna política deportiva será efectiva y útil sin recursos suficientes en
+  los presupuestos del Estado, de las comunidades autónomas y de los
+  ayuntamientos. Desde la convicción de la utilidad social del deporte y de su
+  importancia capital en la formación de la personalidad, la salud y el
+  bienestar físico, psíquico y social, garantizaremos una financiación adecuada
+  para la política deportiva. Invertir en deporte es ahorrar en sanidad.
+
+* Suelo de inversión pública en deporte del 0,25 % del PIB: Impulsaremos un
+  pacto entre el Estado y las comunidades autónomas que eleve a medio plazo la
+  irrisoria inversión pública en deporte desde el 0,06 % actual hasta el 0,25 %
+  del PIB, acompañado de una política de patrocinio y mecenazgo que excluya a
+  las empresas de combustibles fósiles, las casas de apuestas y las marcas de
+  bebidas alcohólicas y de alimentos ultraprocesados.
+
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 53
+
 03 Una reforma fiscal en profundidad
 ====================================
 
@@ -2277,7 +2638,7 @@ Juventud, emancipación y derechos democráticos
   las comunidades autónomas, para asegurar un suelo común de tributación sin
   impedir una mayor contribución autonómica.
 
-.. 50 UNA REFORMA FISCAL EN PROFUNDIDAD
+.. 58 UNA REFORMA FISCAL EN PROFUNDIDAD
 
 * Limitaremos las herencias de los ultrarricos a un máximo de 10 millones de
   euros por heredero. Esta limitación se implementará estableciendo un tipo
@@ -2318,7 +2679,7 @@ Juventud, emancipación y derechos democráticos
 * Eliminaremos el régimen fiscal especial de los trabajadores desplazados y las
   deducciones por planes de pensiones privados individuales.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 51
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 59
 
 * Reservaremos los incentivos del IRPF al alquiler asequible y estable.
   Limitaremos las reducciones y deducciones del IRPF sobre rendimientos del
@@ -2373,7 +2734,7 @@ Juventud, emancipación y derechos democráticos
 * Equipararemos la fiscalidad del diésel a la de otros combustibles fósiles en
   el impuesto de hidrocarburos.
 
-.. 52 UNA REFORMA FISCAL EN PROFUNDIDAD
+.. 60 UNA REFORMA FISCAL EN PROFUNDIDAD
 
 * Profundizaremos en la fiscalidad sobre el carbono y los hidrocarburos, con
   compensaciones y exenciones para las rentas bajas y colectivos vulnerables.
@@ -2428,7 +2789,7 @@ Juventud, emancipación y derechos democráticos
   fraude en los contratos de temporada y aplicación irregular de deducciones o
   reducciones.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 53
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 61
 
 3.7. Transparencia fiscal
 -------------------------
@@ -2451,7 +2812,7 @@ Juventud, emancipación y derechos democráticos
   tamaño empresarial, junto a una explicación accesible del destino de los
   impuestos.
 
-.. 54 UNA REFORMA FISCAL EN PROFUNDIDAD
+.. 62 UNA REFORMA FISCAL EN PROFUNDIDAD
 
 04 Salarios y pensiones dignos y precios asequibles
 ===================================================
@@ -2562,7 +2923,7 @@ Tiempo de trabajo, registro de jornada digital y jornada continua
   sobre digitalización de 2020, con comisiones paritarias de algoritmos en los
   convenios.
 
-.. 58 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+.. 66 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 Despido, contratación y protección a los trabajadores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2617,7 +2978,7 @@ Protección por desempleo e inserción laboral
   discontinuas, y desplegaremos el Plan de Empleo Garantizado priorizando
   parados de larga duración y jóvenes.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 59
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 67
 
 * Estableceremos como objetivo central de la política económica que la tasa de
   paro converja con la media europea y que existan suficientes empleos
@@ -2670,7 +3031,7 @@ Prevención de riesgos psicosociales, salud laboral y mutuas
   sanitaria, con un máximo de 3 días consecutivos y un total de 6 días al año,
   como permiso remunerado.
 
-.. 60 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+.. 68 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 * Control exclusivo de bajas por la sanidad pública: Garantizaremos por ley que
   las altas, bajas y confirmaciones por contingencias comunes correspondan en
@@ -2717,7 +3078,7 @@ Teletrabajo, formación, prácticas y trabajo del hogar
 Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 61
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 69
 
 * Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público,
   prohibiendo la compensación mediante horas extraordinarias y exigiendo la
@@ -2772,7 +3133,7 @@ Sector energético, carburantes y reforma del sistema eléctrico
   internacional, junto con la limitación legal de los márgenes en la
   distribución de carburantes.
 
-.. 62 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+.. 70 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 * Auditoría pública de costes de generación eléctrica: Ejecutaremos una
   auditoría pública sobre los costes reales de cada una de las tecnologías de
@@ -2829,7 +3190,7 @@ Blindaje constitucional del carácter público de las pensiones, de su revaloriz
   significativamente su rango normativo y garantizando su aplicabilidad
   inmediata sin necesidad de convocar elecciones.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 63
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 71
 
 Reducir edad de jubilación y eliminar la penalización por jubilación anticipada a quienes han cotizado más de 40 años
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2864,7 +3225,7 @@ Auditoría pública e independiente de las cuentas de la Seguridad Social
   reforzaremos el mecanismo de equidad intergeneracional con una aportación
   adicional de las empresas más automatizadas.
 
-.. 64 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
+.. 72 SALARIOS Y PENSIONES DIGNOS Y PRECIOS ASEQUIBLES
 
 05 Continuar el impulso hacia una transición ecológica justa
 ============================================================
@@ -2982,7 +3343,7 @@ Renovables justas y respetuosas con el territorio
   habitantes, con participación pública y retorno económico y social en el
   territorio.
 
-.. 68 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 76 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Haremos que las renovables contribuyan a vertebrar el país y a fijar
   población en la España vaciada. Garantizaremos el carácter público de las
@@ -3039,7 +3400,7 @@ Reforma del mercado eléctrico e intervención estatal
   capacidad reservada por proyectos que incumplan sus plazos y garantizaremos
   información pública, actualizada y verificable.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 69
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 77
 
 * Reconoceremos la electricidad como servicio público y bien de primera
   necesidad, garantizando el acceso universal y la disponibilidad de un
@@ -3084,7 +3445,7 @@ Avanzaremos en el control público de la energía, incrementando la participaci�
   instalación de bombas de calor, aerotermia o bioclimatización, y aumentaremos
   en 144 kWh el umbral de consumo bonificado en junio, julio y agosto.
 
-.. 70 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 78 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Evitaremos el crecimiento del biogás dependiente de la actividad de las
   macrogranjas. Endureceremos drásticamente la normativa básica estatal de
@@ -3137,7 +3498,7 @@ Avanzaremos en el control público de la energía, incrementando la participaci�
 * Ayudaremos a electrificar los pequeños barcos pesqueros de los puertos de
   pequeñas localidades.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 71
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 79
 
 * Financiaremos la compra de aparatos de refrigeración para personas
   vulnerables: Daremos ayudas a la compra e instalación de aparatos de
@@ -3190,7 +3551,7 @@ Modelo ferroviario, electrificación y reversión de la liberalización
   revirtiendo su externalización, y reforzaremos las Cercanías, el tren de la
   mayoría trabajadora, con más fiabilidad, frecuencias y seguridad.
 
-.. 72 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 80 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Electrificación integral y fin del diésel para 2030: Electrificaremos por
   completo la red ferroviaria estatal antes de 2030 y eliminaremos por completo
@@ -3248,7 +3609,7 @@ Vehículo eléctrico, leasing social e infraestructura de recarga
   desarrollo de un proyecto piloto de retrofit para convertir vehículos de
   combustión en eléctricos.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 73
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 81
 
 * Crearemos un programa estatal estable de financiación para la electrificación
   de las flotas de transporte público, condicionado a objetivos de sustitución
@@ -3301,7 +3662,7 @@ Peajes en carreteras, distribución urbana y cohesión territorial
   y taxi compartido con apoyo estatal y diputaciones, priorizando población
   vulnerable, personas mayores y con dificultades de movilidad.
 
-.. 74 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 82 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Protegeremos los entornos escolares del tráfico motorizado. Priorizaremos el
   acceso peatonal y ciclista, y reduciremos los carriles para vehículos en
@@ -3354,7 +3715,7 @@ Estrategia por la Bicicleta y movilidad activa
 * Plan MOVES de ayudas a la movilidad eléctrica ligera: Ayudas directas a la
   compra de bicicletas, motocicletas y patinetes eléctricos.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 75
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 83
 
 5.3. Protección ambiental: ciudades y territorios adaptándose para el cambio climático
 --------------------------------------------------------------------------------------
@@ -3408,7 +3769,7 @@ Estrategia por la Bicicleta y movilidad activa
   inundaciones, desarrollo de actuaciones de adaptación, e integración formal
   del riesgo de inundación en la ordenación territorial y urbanística.
 
-.. 76 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 84 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Conectividad urbana verde y azul: Aumentaremos la conectividad entre espacios
   verdes y azules en zonas urbanas y densamente pobladas en coordinación con
@@ -3461,7 +3822,7 @@ Estrategia por la Bicicleta y movilidad activa
   cubierta continua o próxima a la naturaleza, y garantizaremos superficies a
   libre evolución y la protección de bosques y rodales maduros.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 77
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 85
 
 * Protección y restauración territorial y marina (objetivo 30 %): Inversión
   general en biodiversidad y restauración de hábitats degradados (conforme a
@@ -3511,7 +3872,7 @@ Estrategia por la Bicicleta y movilidad activa
   sustitución. Exigiremos puntos de recarga en hoteles, campings, otros
   alojamientos y aparcamientos turísticos.
 
-.. 78 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 86 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Ordenaremos el turismo según la capacidad ecológica y social de los
   territorios. Limitaremos plazas en zonas tensionadas, controlaremos viviendas
@@ -3572,7 +3933,7 @@ sostenibilidad de nuestra sociedad.
   embalajes comerciales, así como para los flujos con alto potencial de
   reutilización, como RAEE, muebles o textiles.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 79
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 87
 
 * Actuaremos contra el derroche alimentario en el sector primario y
   agroalimentario, así como en el ámbito de la distribución, la restauración y
@@ -3628,7 +3989,7 @@ sostenibilidad de nuestra sociedad.
   agropecuaria sostenible y soberana, y la adaptación y protección frente al
   cambio climático.
 
-.. 80 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 88 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Crearemos un canon específico sobre el agua consumida por grandes centros de
   datos y prohibiremos su refrigeración mediante agua en las cuencas afectadas
@@ -3683,7 +4044,7 @@ sostenibilidad de nuestra sociedad.
   escenarios climáticos y los riesgos por sequía. Fomentaremos la reutilización
   de aguas depuradas o de escorrentía.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 81
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 89
 
 * Revisaremos la planificación hidrológica para adaptarla al cambio climático.
   Actualizaremos los planes de sequía y las concesiones para evitar
@@ -3732,7 +4093,7 @@ Un marco normativo que promueva el bienestar animal y acabe con el maltrato
   estos animales, así como medidas eficaces para la ciudadanía y un enfoque
   preventivo centrado en la convivencia responsable.
 
-.. 82 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 90 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 Acabar con la financiación pública de la tauromaquia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3788,7 +4149,7 @@ Cuidados veterinarios al alcance de todas las personas
   la protección de la salud pública, el bienestar animal y la prevención de
   enfermedades, en el marco del enfoque One Health, One Welfare.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 83
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 91
 
 Garantizar la gestión ética de los animales urbanos y silvestres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3845,7 +4206,7 @@ Avanzar hacia modelos más respetuosos con el bienestar de los animales de consu
 * Cumpliremos con la normativa europea que prohíbe el corte rutinario del rabo
   en cerdos.
 
-.. 84 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
+.. 92 CONTINUAR EL IMPULSO HACIA UNA TRANSICIÓN ECOLÓGICA JUSTA
 
 * Estableceremos procedimientos de aturdimiento previo para peces y otros
   animales acuáticos de piscifactoría.
@@ -3885,7 +4246,7 @@ Desarrollar una estrategia educativa en materia de protección animal
 
 * Cumpliremos con las recomendaciones de la ONU sobre infancia y tauromaquia.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 85
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 93
 
 06 Estado emprendedor y política industrial activa
 ==================================================
@@ -3996,7 +4357,7 @@ Estrategia de I+D+i, soberanía tecnológica y ciencia abierta
   facilitando el acceso a empresas de menor tamaño y territorios con menor
   capacidad tecnológica.
 
-.. 90 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
+.. 98 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
 
 Planificación estratégica y regulación estricta de centros de datos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4053,7 +4414,7 @@ Nube soberana, software libre y autonomía digital
   ciberseguridad), en coordinación con las comunidades autónomas y los
   ayuntamientos.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 91
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 99
 
 * Nube soberana para la administración pública y servicios críticos:
   Revisaremos la dependencia de proveedores tecnológicos no europeos en áreas
@@ -4106,7 +4467,7 @@ Transición ecológica, reindustrialización verde y marco europeo
   potencial cierre para cada comarca afectada, con calendario, presupuesto,
   indicadores de empleo y población y evaluación independiente.
 
-.. 92 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
+.. 100 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
 
 6.2. Empresas públicas fuertes
 ------------------------------
@@ -4162,7 +4523,7 @@ Creación de la Banca Pública Estatal
   reindustrialización, facilitará créditos ventajosos a pymes y autónomos y
   coordinará el sistema de banca pública.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 93
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 101
 
 * La vocación del Banco Postal Estatal será de crecimiento y paulatina
   integración de la banca privada sistémica cuya rentabilidad se desplomaría
@@ -4182,7 +4543,7 @@ Creación de la Banca Pública Estatal
   geografía española, y así quedará mitigado rápidamente uno de los problemas
   más importantes de la exclusión financiera: la exclusión territorial.
 
-.. 94 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
+.. 102 ESTADO EMPRENDEDOR Y POLÍTICA INDUSTRIAL ACTIVA
 
 07 Agricultura, ganadería y pesca: hacia su sostenibilidad medioambiental, social y económica
 =============================================================================================
@@ -4298,7 +4659,7 @@ Creación de la Banca Pública Estatal
   climáticos» para pequeños agricultores como balón de oxígeno para cubrir
   costes y transicionar hacia un modelo libre de fósiles.
 
-.. 98 AGRICULTURA, GANADERÍA Y PESCA: HACIA SU SOSTENIBILIDAD MEDIOAMBIENTAL, SOCIAL Y ECONÓMICA
+.. 106 AGRICULTURA, GANADERÍA Y PESCA: HACIA SU SOSTENIBILIDAD MEDIOAMBIENTAL, SOCIAL Y ECONÓMICA
 
 * IVA reducido o exenciones para los alimentos de tierra y mar de origen
   ecológico, agroecológico y de proximidad, al mismo tiempo que se aplica el
@@ -4349,7 +4710,7 @@ Creación de la Banca Pública Estatal
   bajo impacto ambiental manteniendo e incrementando las ayudas económicas para
   fomentar nuevas incorporaciones de trabajadores jóvenes y mujeres.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 99
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 107
 
 * Crearemos reservas marinas de protección efectiva aumentando las áreas
   protegidas marinas clave para detener la degradación de la costa y aumentar
@@ -4363,7 +4724,7 @@ Creación de la Banca Pública Estatal
   agua, la transmisión de enfermedades y la sobreexplotación de océanos para
   fabricar piensos.
 
-.. 100 AGRICULTURA, GANADERÍA Y PESCA: HACIA SU SOSTENIBILIDAD MEDIOAMBIENTAL, SOCIAL Y ECONÓMICA
+.. 108 AGRICULTURA, GANADERÍA Y PESCA: HACIA SU SOSTENIBILIDAD MEDIOAMBIENTAL, SOCIAL Y ECONÓMICA
 
 08 Autónomos, pymes y economía social
 =====================================
@@ -4470,7 +4831,7 @@ Creación de la Banca Pública Estatal
 * Apostaremos por las cooperativas y la economía social como forma preferente
   para las ayudas a las pequeñas y medianas empresas y explotaciones.
 
-.. 104 AUTÓNOMOS, PYMES Y ECONOMÍA SOCIAL
+.. 112 AUTÓNOMOS, PYMES Y ECONOMÍA SOCIAL
 
 * Transmisión preferente de empresas a plantillas y fondos colectivos:
   Reconoceremos derechos preferentes de adquisición para los trabajadores en
@@ -4525,7 +4886,7 @@ Creación de la Banca Pública Estatal
   marco que evite que los límites de las ayudas de minimis restrinjan las
   ayudas a las empresas de inserción.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 105
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 113
 
 * Aprobaremos un marco estatal de gestión público-comunitaria. Habilitará
   fórmulas de coproducción de servicios entre las administraciones y las
@@ -4549,7 +4910,7 @@ Creación de la Banca Pública Estatal
   y que mantenga las líneas de apoyo del Fondo Social Europeo y de los
   programas de financiación para sus entidades.
 
-.. 106 AUTÓNOMOS, PYMES Y ECONOMÍA SOCIAL
+.. 114 AUTÓNOMOS, PYMES Y ECONOMÍA SOCIAL
 
 09 Lucha contra la despoblación y retos de la insularidad
 =========================================================
@@ -4656,7 +5017,7 @@ Creación de la Banca Pública Estatal
   lengua catalana en Illes Balears y a la cultura propia de Canarias frente a
   la presión de la turistificación.
 
-.. 110 LUCHA CONTRA LA DESPOBLACIÓN Y RETOS DE LA INSULARIDAD
+.. 118 LUCHA CONTRA LA DESPOBLACIÓN Y RETOS DE LA INSULARIDAD
 
 10 Empleo público de calidad
 ============================
@@ -4748,7 +5109,7 @@ Creación de la Banca Pública Estatal
     otros trabajos hoy día voluntarios repartiendo esas actividades de forma
     solidaria entre la comunidad.
 
-.. 114 EMPLEO PÚBLICO DE CALIDAD
+.. 122 EMPLEO PÚBLICO DE CALIDAD
 
 11 Financiación autonómica y vertebración territorial
 =====================================================
@@ -4857,7 +5218,7 @@ Creación de la Banca Pública Estatal
   mecanismos bilaterales en sus Estatutos podrán utilizarlos para reclamar
   compensaciones.
 
-.. 118 FINANCIACIÓN AUTONÓMICA Y VERTEBRACIÓN TERRITORIAL
+.. 126 FINANCIACIÓN AUTONÓMICA Y VERTEBRACIÓN TERRITORIAL
 
 * Actuaremos de manera firme contra el dumping fiscal incluyendo medidas de
   condicionalidad positiva para obligar a dedicar los recursos adicionales a
@@ -4914,7 +5275,7 @@ Auditoría, seguridad y gobernanza ferroviaria
   Madrid-Sevilla) por el estándar europeo ERTMS y reforzaremos las plantillas
   de mantenimiento y control de Adif.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 119
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 127
 
 * Realizaremos una auditoría exhaustiva e independiente del conjunto del
   sistema ferroviario español en los próximos seis meses, con objeto de tener
@@ -4963,7 +5324,7 @@ Infraestructuras de Cercanías, Media Distancia y articulación territorial
   proteger los derechos laborales de las personas usuarias y reforzaremos las
   conexiones fuera de los núcleos metropolitanos.
 
-.. 120 FINANCIACIÓN AUTONÓMICA Y VERTEBRACIÓN TERRITORIAL
+.. 128 FINANCIACIÓN AUTONÓMICA Y VERTEBRACIÓN TERRITORIAL
 
 * Fomento de aparcamientos disuasorios y movilidad en bicicleta: Mejora en
   colaboración con las administraciones locales y autonómicas de los accesos
@@ -5019,7 +5380,7 @@ Reconstrucción post-DANA, adaptación climática y ayudas directas
   municipios valencianos y 30 aragoneses entre los beneficiarios de los fondos
   de ayuda por la DANA según lo aprobado en el Congreso de los Diputados.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 121
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 129
 
 12 Ayuntamientos con recursos y autonomía
 =========================================
@@ -5130,7 +5491,7 @@ Reconstrucción post-DANA, adaptación climática y ayudas directas
   emergencias y fondos finalistas, articulando los cambios nacionales con la
   reforma europea y preservando la sostenibilidad financiera.
 
-.. 126 AYUNTAMIENTOS CON RECURSOS Y AUTONOMÍA
+.. 134 AYUNTAMIENTOS CON RECURSOS Y AUTONOMÍA
 
 * Permitiremos de forma permanente que las inversiones financieramente
   sostenibles sean plurianuales y ampliaremos su alcance a la vivienda pública,
@@ -5183,7 +5544,7 @@ Haremos progresivo el IBI y penalizaremos las viviendas vacías.
   desocupación sea superior a tres años, este recargo podrá alcanzar hasta el
   150 %.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 127
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 135
 
 * Recargo al IBI para pisos turísticos: Modificaremos la Ley de Haciendas
   Locales para establecer un recargo base del 50 % de la cuota líquida para
@@ -5242,7 +5603,7 @@ Haremos progresivo el IBI y penalizaremos las viviendas vacías.
   jóvenes y la tarifa podrá graduarse progresivamente por tipo de
   establecimiento.
 
-.. 128 AYUNTAMIENTOS CON RECURSOS Y AUTONOMÍA
+.. 136 AYUNTAMIENTOS CON RECURSOS Y AUTONOMÍA
 
 12.5. Un mejor gobierno local
 -----------------------------
@@ -5279,7 +5640,7 @@ Haremos progresivo el IBI y penalizaremos las viviendas vacías.
   un tramo propio en la participación en los tributos del Estado y firmará con
   ellas contratos-programa plurianuales de transporte público.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 129
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 137
 
 13 Democratización económica y poder financiero
 ===============================================
@@ -5390,7 +5751,7 @@ Regulación de la competencia y control de concentración bancaria
   y límites al reparto de dividendos y recompras de acciones cuando afecten a
   la solvencia o al crédito.
 
-.. 134 DEMOCRATIZACIÓN ECONÓMICA Y PODER FINANCIERO
+.. 142 DEMOCRATIZACIÓN ECONÓMICA Y PODER FINANCIERO
 
 * Excluiremos al capital riesgo de la gestión de los servicios esenciales y de
   cuidados. Prohibiremos la adquisición, directa o indirecta, de hospitales,
@@ -5441,7 +5802,7 @@ Reforma del Banco de España y refuerzo de la CNMV
   fraude, junto a recursos tecnológicos avanzados para investigar
   irregularidades y exigir subsanaciones.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 135
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 143
 
 14 Poder digital y pluralismo informativo
 =========================================
@@ -5549,7 +5910,7 @@ Reforma del Banco de España y refuerzo de la CNMV
   dirigidas a la juventud contra el uso humillante de estas tecnologías, con
   foco en la violencia de género.
 
-.. 140 PODER DIGITAL Y PLURALISMO INFORMATIVO
+.. 148 PODER DIGITAL Y PLURALISMO INFORMATIVO
 
 * Prohibición de chatbots con simulación afectiva y dependencia emocional:
   Prohibición a los asistentes y chatbots de compañía de simular vínculos
@@ -5604,7 +5965,7 @@ Reforma del Banco de España y refuerzo de la CNMV
   ánimo de lucro mediante convocatorias objetivas, preservando la independencia
   editorial de las presiones financieras.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 141
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 149
 
 15 Igualdad y más derechos para todas, todos y todes
 ====================================================
@@ -5669,7 +6030,7 @@ Reforma del Banco de España y refuerzo de la CNMV
   general con especial énfasis en segmentos de la población más vulnerables
   ante las infecciones por VIH.
 
-.. 146 IGUALDAD Y MÁS DERECHOS PARA TODAS, TODOS Y TODES
+.. 154 IGUALDAD Y MÁS DERECHOS PARA TODAS, TODOS Y TODES
 
 16 Migraciones y antirracismo
 =============================
@@ -5786,7 +6147,7 @@ Vías legales, seguras y marco de protección internacional
   meses de presentación de la solicitud, sin esperar a la resolución
   definitiva.
 
-.. 150 MIGRACIONES Y ANTIRRACISMO
+.. 158 MIGRACIONES Y ANTIRRACISMO
 
 Agilización del procedimiento de asilo y reagrupación familiar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5839,7 +6200,7 @@ Derechos políticos, lucha contra el racismo y diáspora
   española antes de septiembre de 1977, así como a sus descendientes en primer
   grado de consanguinidad.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 151
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 159
 
 17 La seguridad humana: paz, solidaridad y Europa
 =================================================
@@ -5954,7 +6315,7 @@ Embargo integral de armas y medidas frente a Israel y la ocupación en Palestina
   UE-Israel y para que la totalidad de Estados miembros reconozcan formalmente
   al Estado de Palestina.
 
-.. 156 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
+.. 164 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
 
 Autodeterminación del pueblo saharaui y cumplimiento de las sentencias del TJUE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6000,7 +6361,7 @@ Multilateralismo, mediación internacional, reforma de la ONU, justicia fiscal g
   Global de Derechos Laborales con la inclusión obligatoria de los convenios
   fundamentales de la OIT en los acuerdos comerciales.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 157
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 165
 
 * Unidad de mediación y resolución de conflictos: Crearemos una unidad
   especializada de mediación dentro del Ministerio de Asuntos Exteriores y
@@ -6052,7 +6413,7 @@ Consolidaremos la cooperación internacional para el desarrollo como una políti
   como objetivo principal. También debe cumplirse el compromiso internacional
   de destinar el 0,2 % del PIB para los países menos avanzados (PMA).
 
-.. 158 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
+.. 166 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
 
 * Impulsaremos una cooperación financiera, especialmente vía FEDES, alineada
   con los objetivos de la cooperación española, el desarrollo sostenible y los
@@ -6115,7 +6476,7 @@ Consolidaremos la cooperación internacional para el desarrollo como una políti
   próximos años, y que aumenten los recursos destinados al fortalecimiento de
   las propias organizaciones.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 159
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 167
 
 * Facilitaremos el papel de la cooperación descentralizada como expresión de la
   voluntad de solidaridad de nuestra sociedad eliminando las trabas que impuso
@@ -6159,7 +6520,7 @@ Una Europa autónoma y con voz propia en el mundo
   respeto a la paz, los derechos humanos, así como el bienestar social y
   medioambiental de los países europeos.
 
-.. 160 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
+.. 168 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
 
 * Apostaremos por abandonar el requisito de la unanimidad a favor de un sistema
   de mayorías cualificadas en materia de política exterior y de seguridad común
@@ -6216,7 +6577,7 @@ Democratización y ampliación del mandato del Banco Central Europeo (BCE)
   la transmisión de la política monetaria, evitando transferencias o beneficios
   injustificados hacia el sector bancario.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 161
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 169
 
 Arquitectura fiscal europea y financiación directa de bienes públicos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6272,7 +6633,7 @@ Política comercial exterior y cláusulas de derechos humanos
   decisiones que requieran unanimidad o mayorías cualificadas mientras dicho
   acuerdo siga vigente.
 
-.. 162 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
+.. 170 LA SEGURIDAD HUMANA: PAZ, SOLIDARIDAD Y EUROPA
 
 * Reconocimiento y tipificación del ecocidio como crimen tanto en la UE como
   ante la Corte Penal Internacional.
@@ -6291,7 +6652,7 @@ Política tecnológica, Fondo Soberano Europeo e inteligencia artificial
   tecnológicas que reciban financiación dentro del plan europeo InvestAI
   (dotado de hasta 200.000 millones de euros).
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 163
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 171
 
 18 Hacia una democracia avanzada
 ================================
@@ -6393,7 +6754,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   Sociedades de Capital para que los administradores y altos directivos rindan
   cuentas y compartan las consecuencias económicas de su gestión.
 
-.. 168 HACIA UNA DEMOCRACIA AVANZADA
+.. 176 HACIA UNA DEMOCRACIA AVANZADA
 
 * Actuaremos de manera firme contra las empresas corruptoras con el
   establecimiento de sanciones que impidan la contratación pública con
@@ -6454,7 +6815,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   Superior de Justicia de una comunidad autónoma y a los Ejércitos, Clases o
   Cuerpos y Fuerzas de Seguridad y enaltecimiento del terrorismo.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 169
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 177
 
 18.4. Deberes y derechos de las Fuerzas y Cuerpos de Seguridad del Estado para servir en un Estado democrático
 --------------------------------------------------------------------------------------------------------------
@@ -6501,7 +6862,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
 * Plantearemos políticas alternativas, de sustrato social y preventivo frente a
   las problemáticas de los grupos organizados juveniles.
 
-.. 170 HACIA UNA DEMOCRACIA AVANZADA
+.. 178 HACIA UNA DEMOCRACIA AVANZADA
 
 * Cambiaremos la legislación penal y de extranjería para eliminar las
   contradicciones entre la LO 4/2000 y la finalidad constitucional de
@@ -6557,7 +6918,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   humanos, diversidad de género, prevención del racismo y la xenofobia, no
   victimización secundaria y técnicas de mediación comunitaria.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 171
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 179
 
 * Crearemos un órgano de control externo e independiente a los propios cuerpos
   y similar a modelos en otros países europeos encargado de investigar
@@ -6607,7 +6968,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   definen qué es un medio de comunicación frente a otras plataformas cuya
   finalidad no es informar.
 
-.. 172 HACIA UNA DEMOCRACIA AVANZADA
+.. 180 HACIA UNA DEMOCRACIA AVANZADA
 
 * Crearemos un registro de medios de comunicación en el que se dispondrá de la
   información pública sobre su propiedad y la inversión publicitaria que
@@ -6665,7 +7026,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   expoliados, y reforzaremos las medidas de reconocimiento y reparación de las
   víctimas y sus familias.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 173
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 181
 
 * Aprobaremos una Ley sobre Bebés Robados. Impulsaremos la aprobación de una
   ley específica que recoja las reivindicaciones de las asociaciones de
@@ -6716,7 +7077,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   incorporándolas al patrimonio documental y a los relatos públicos de nuestra
   historia.
 
-.. 174 HACIA UNA DEMOCRACIA AVANZADA
+.. 182 HACIA UNA DEMOCRACIA AVANZADA
 
 * Educación y transmisión intergeneracional de la memoria: Desarrollaremos
   programas educativos y culturales que conecten a las nuevas generaciones con
@@ -6766,7 +7127,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   impartir será en el sistema público que asumirá la preparación de futuros
   jueces.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 175
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 183
 
 * Más jueces y fiscales: Aprobaremos un plan plurianual de plazas para que
   España alcance en dos legislaturas la media europea de jueces y fiscales por
@@ -6818,7 +7179,7 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   autónomas deberán impulsar una legislación que así lo disponga y disponer la
   dotación de los medios materiales y personales adecuados.
 
-.. 176 HACIA UNA DEMOCRACIA AVANZADA
+.. 184 HACIA UNA DEMOCRACIA AVANZADA
 
 18.8. Laicidad del Estado
 -------------------------
@@ -6848,4 +7209,4 @@ Promoveremos el debate para formar una mayoría social y política e impulsar el
   Derecho a la interrupción voluntaria del embarazo, a la eutanasia y al
   suicidio asistido.
 
-.. PROGRAMA ELECTORAL FRENTE AMPLIO 177
+.. PROGRAMA ELECTORAL FRENTE AMPLIO 185

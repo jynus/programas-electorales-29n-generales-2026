@@ -16,6 +16,9 @@ or added.
      * "Contenido" (a bold paragraph, so that the introduction that follows
        is not inside it) -> a table (number | section | page), with the
        chapters as rows of their own
+     * version 3 (23 November 2026) adds section 2.9 ("El deporte como
+       derecho"): its index number has no final dot ("2.9") and one of its
+       subheadings is set in Inter 12 (red) instead of MarrSans-Medium
      * the 18 chapters (a page with a big number and title: "01" +
        "Acabar con la especulación...") -> level 1; "1.1. ..." -> level 2;
        the red subheadings -> level 3
@@ -86,7 +89,7 @@ def index_rows(bs, report):
     page in three columns; the page beside one of the title's lines, mostly
     the last)."""
     small = [b for b in bs if b.font.size == 9 and not b.font.color == RED]
-    nums = [b for b in small if re.fullmatch(r"\d+\.\d+\.", b.text)]
+    nums = [b for b in small if re.fullmatch(r"\d+\.\d+\.?", b.text)]    # "2.9" (version 3) without its dot
     pages = [b for b in bs if re.fullmatch(r"\d{1,3}", b.text)]
     chapters = [b for b in bs if b.font.color == RED and b.font.size == 11 and b not in pages]
     titles = [b for b in small if b not in nums + pages]
@@ -180,7 +183,8 @@ def flow(w, bs, counts):
         elif f.name.startswith("MarrSans-Medium") and f.size == 15:
             w.emit(heading(t, "-"))
             counts["sections"] += 1
-        elif f.name.startswith("MarrSans-Medium") and f.size == 12:
+        elif f.name.startswith("MarrSans-Medium") and f.size == 12 \
+                or f.name.startswith("Inter") and f.size == 12 and f.color == RED:   # p43 of version 3
             w.emit(heading(t, "~"))
             counts["subheadings"] += 1
         elif mates.get(b) == BULLET:

@@ -95,10 +95,10 @@
 		"name": "Frente Amplio",
 		"title": "Un Programa como una Casa",
 		"language": "es",
-		"version": 2,
+		"version": 3,
 		"program_url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
 		"file": "ProgramaFrenteAmplio.pdf",
-		"sha256sum": "516c5c6caaa04d0bd6f28770a49ae312f79ff3ebcf48967db66adc4ce2335424"
+		"sha256sum": "d7e2c8152a25d0b3e8ca9f13f15e11c2616389f1e0e2309e573d665fcfff33b9"
 	},
 	{
 		"party": "frente_obrero",
